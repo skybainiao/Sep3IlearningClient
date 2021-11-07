@@ -1,0 +1,69 @@
+﻿@page "/Register"
+@using LoginExample.Models
+@using LoginExample.Data
+@using LoginExample.Data.Impl
+@inject NavigationManager NavigationManager
+<h3>Register</h3>
+
+
+<div >
+    <form>
+        <div style="margin-top: 13%; margin-left: 43%">
+            <input placeholder="username" @bind="username">
+        </div>
+        <br>
+        <div style="margin-left: 43%">
+            <input placeholder="password" @bind="password">
+        </div>
+        <br>
+        <div style="margin-left: 43%">
+            <input placeholder="password again"@bind="passwordagain">
+        </div>
+        <br>
+        <div style="margin-left: 43%">
+            <button @onclick="CreateUser">Register</button>
+        </div>
+        <br>
+        <div style="margin-left: 43%">
+            <button @onclick="Cancel">Cancel</button>
+        </div>
+        
+    </form>
+    
+</div>
+
+
+@code {
+    private String username;
+    private String password;
+    private String passwordagain;
+    private UserData _userData = new UserDataService();
+
+
+    public async void CreateUser()
+    {
+        User user = new User()
+        {
+            Username = username,
+            Password = password
+        };
+
+        if (username!=null && password!=null && passwordagain!=null)
+        {
+            if (password.Equals(passwordagain))
+            {
+                await _userData.post(user);
+                NavigationManager.NavigateTo("/Login");
+            }
+        }
+        
+    }
+
+    public void Cancel()
+    {
+        NavigationManager.NavigateTo("/Login");
+    }
+
+
+
+}
