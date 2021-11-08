@@ -82,6 +82,20 @@ using LoginExample.Authentication;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Login.razor"
+using LoginExample.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Login.razor"
+using LoginExample.Data.Impl;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/login")]
     public partial class Login : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -91,16 +105,19 @@ using LoginExample.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Login.razor"
+#line 41 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Login.razor"
        
+    
     private string username;
     private string password;
     private string errorMessage;
+    private UserData _userData = new UserDataService();
 
     public async Task PerformLogin() {
         errorMessage = "";
         try {
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+            //await _userData.postOnlinePerson(username);
             username = "";
             password = "";
         } catch (Exception e) {

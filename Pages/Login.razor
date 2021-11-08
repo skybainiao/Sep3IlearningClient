@@ -1,6 +1,8 @@
 @page "/login"
 @namespace LoginComponent
 @using LoginExample.Authentication
+@using LoginExample.Data
+@using LoginExample.Data.Impl
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
 
@@ -37,14 +39,17 @@
 </AuthorizeView>
  
 @code {
+    
     private string username;
     private string password;
     private string errorMessage;
+    private UserData _userData = new UserDataService();
 
     public async Task PerformLogin() {
         errorMessage = "";
         try {
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+            //await _userData.postOnlinePerson(username);
             username = "";
             password = "";
         } catch (Exception e) {

@@ -13,5 +13,7 @@ namespace LoginExample.Data
 
         Task<IList<User>> getAllUsers();
 
+        Task postOnlinePerson(String username);
+
     }
 }

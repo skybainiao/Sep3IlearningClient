@@ -44,6 +44,21 @@ namespace LoginExample.Data.Impl
             await client.PostAsync("http://localhost:8080/user",content);
             
         }
+        
+        
+        public async Task postOnlinePerson(String username)
+        {
+            using HttpClient client = new HttpClient();
+            String stringasjson = JsonSerializer.Serialize(username, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            HttpContent content = new StringContent(stringasjson, Encoding.UTF8, "application/json");
+            await client.PostAsync("http://localhost:8080/onlineName",content);
+            
+        }
+        
+        
 
 
 
