@@ -97,7 +97,7 @@ using LoginComponent;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 75 "D:\JetBrainsRider\Sep3IlearningClient\Shared\NavMenu.razor"
+#line 76 "D:\JetBrainsRider\Sep3IlearningClient\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
