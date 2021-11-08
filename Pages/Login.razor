@@ -6,23 +6,28 @@
 
 <AuthorizeView>
     <NotAuthorized>
-        <div class="form-group" style="margin-top: 13%; margin-left: 43%">
-            <label>Username</label>
-            <input type="text" placeholder="user name" @bind-value="username"/>
-        </div>
-        <div class="form-group" style="margin-left: 43%">
-            <label>Password</label>
-            <input type="password" placeholder="password" @bind-value="password"/>
-        </div>
-        <div style="color:red">@errorMessage</div>
+        <div>
+            <h1 class="Login">Aurora</h1>
+            <br>
+            
+            <div class="form-group">
+                <form>
+                <input style="color: #6f42c1; background-color: rgba(0,0,0,0.55);border-radius: 30px;width: 250px;height: 30px;text-align: center" type="text" placeholder="user name" @bind-value="username"/>
+<br>
+                <input style="color: #6f42c1; background-color: rgba(0,0,0,0.55);border-radius: 30px;width: 250px;height: 30px;text-align: center" type="password" placeholder="password" @bind-value="password"/>
+                </form>
+                <div class="form-class">
+                    <button type="submit" @onclick="PerformLogin" style="border-radius: 10px;width: 80px;height: 35px">
+                        Login
+                    </button>
 
-        <a href="" @onclick="PerformLogin" style="margin-left: 43%">
-            Login
-        </a>
-
-        <a href="" @onclick="goRegister" style="margin-left: 20px">
-            Register
-        </a>
+                    <button type="button" @onclick="goRegister" style="border-radius: 10px;width: 80px;height: 35px; margin-left: 90px">
+                        Register
+                    </button>
+                    </div>
+        </div>
+            <div style="color:red">@errorMessage</div>
+        </div>
     </NotAuthorized>
     <Authorized>
         <a href="" @onclick="PerformLogout">
