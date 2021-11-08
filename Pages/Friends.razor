@@ -1,7 +1,47 @@
 ﻿@page "/Friends"
-<h3>Friends</h3>
+<hr style="border: 2px solid white" />
+    <br>
 
-
+@if (_adults == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <table class="table table-hover">
+        <thead>
+        <tr style="color: white">
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>HairColor</th>
+            <th>EyeColor</th>
+            <th>Age</th>
+            <th>Weight</th>
+            <th>Height</th>
+            <th>Sex</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var adult in _adults)
+        {
+            <tr style="color: white">
+                <td>@adult.FirstName</td>
+                <td>@adult.LastName</td>
+                <td>@adult.HairColor</td>
+                <td>@adult.EyeColor</td>
+                <td>@adult.Age</td>
+                <td>@adult.Weight</td>
+                <td>@adult.Height</td>
+                <td>@adult.Sex</td>
+                <button class="oi oi-plus" @onclick="() => Add(adult)" style="margin-right: 10px"></button>
+                <button class="btn btn-dark" style="left: 10px" @onclick="() => Modify(adult)">Modify</button>
+            </tr> 
+        }
+        </tbody>
+    </table>
+}
 
 
 

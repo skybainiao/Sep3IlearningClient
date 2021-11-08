@@ -97,7 +97,7 @@ using LoginExample.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 27 "D:\JetBrainsRider\Sep3IlearningClient\Shared\MainLayout.razor"
+#line 22 "D:\JetBrainsRider\Sep3IlearningClient\Shared\MainLayout.razor"
        
 
     [CascadingParameter] protected Task<AuthenticationState> AuthStat { get; set; }

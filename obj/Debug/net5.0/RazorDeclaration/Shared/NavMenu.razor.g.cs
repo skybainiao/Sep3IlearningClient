@@ -75,7 +75,21 @@ using LoginExample.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 1 "D:\JetBrainsRider\Sep3IlearningClient\Shared\NavMenu.razor"
+using LoginExample.Authentication;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "D:\JetBrainsRider\Sep3IlearningClient\Shared\NavMenu.razor"
+using LoginComponent;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class NavMenu : LayoutComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -83,7 +97,7 @@ using LoginExample.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "D:\JetBrainsRider\Sep3IlearningClient\Shared\NavMenu.razor"
+#line 75 "D:\JetBrainsRider\Sep3IlearningClient\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
@@ -93,10 +107,25 @@ using LoginExample.Shared;
         collapseNavMenu = !collapseNavMenu;
     }
 
+    public void go()
+    {
+        try
+        {
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+            NavigationManager.NavigateTo("/Login");
+        }
+        catch (Exception e)
+        {
+            e.ToString();
+        }
+    }
+
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591
