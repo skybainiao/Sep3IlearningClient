@@ -1,5 +1,6 @@
 using System;
 using System.Security.Claims;
+using LoginComponent;
 using LoginExample.Authentication;
 using LoginExample.Data;
 using LoginExample.Data.Impl;
@@ -24,7 +25,6 @@ public class Startup {
         services.AddRazorPages();
         services.AddServerSideBlazor();
         services.AddScoped<IUserService, InMemoryUserService>();
-        
         services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 
         services.AddAuthorization(options => {

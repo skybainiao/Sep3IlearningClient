@@ -3,6 +3,7 @@
 @using LoginExample.Authentication
 @using LoginExample.Data
 @using LoginExample.Data.Impl
+@using System.Threading
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
 
@@ -40,7 +41,7 @@
  
 @code {
     
-    private string username;
+    public string username;
     private string password;
     private string errorMessage;
     private UserData _userData = new UserDataService();
@@ -49,9 +50,7 @@
         errorMessage = "";
         try {
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
-            //await _userData.postOnlinePerson(username);
-            username = "";
-            password = "";
+            _userData.postOnlinePerson(username);
         } catch (Exception e) {
             errorMessage = e.Message;
         }
@@ -70,6 +69,11 @@
     public void goRegister()
     {
         NavigationManager.NavigateTo("/Register");
+    }
+
+    public String getusername()
+    {
+        return username;
     }
 
 }

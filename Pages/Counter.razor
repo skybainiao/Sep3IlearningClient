@@ -2,6 +2,7 @@
 @using LoginExample.Data
 @using LoginExample.Data.Impl
 @using LoginExample.Models
+@inject IUserService iService;
 
 <h1>Counter</h1>
 
@@ -37,6 +38,8 @@
     public async void test()
     {
         Console.WriteLine(await _userData.get());
+        Console.WriteLine(iService.getName());
+        
     }
 
 
@@ -56,5 +59,7 @@
     }
     
     
+
+
 
 }

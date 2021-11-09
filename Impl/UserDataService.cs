@@ -10,7 +10,7 @@ namespace LoginExample.Data.Impl
 {
     public class UserDataService : UserData
     {
-
+        
         public async Task<String> get()
         {
             using HttpClient httpClient = new HttpClient();
