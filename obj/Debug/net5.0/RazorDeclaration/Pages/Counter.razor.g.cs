@@ -111,10 +111,12 @@ using LoginExample.Models;
     private UserData _userData = new UserDataService();
     private User _user = new User();
     private IList<User> _users = new List<User>();
+    private IList<User> friends = new List<User>();
 
     protected override async Task OnInitializedAsync()
     {
         _users = await _userData.getAllUsers();
+        friends = await _userData.getAllFriends(iService.getName());
     }
 
 
@@ -124,8 +126,17 @@ using LoginExample.Models;
 
     public async void test()
     {
+        
         Console.WriteLine(await _userData.get());
+        
         Console.WriteLine(iService.getName());
+
+
+        for (int i = 0; i < friends.Count; i++)
+        {
+            Console.WriteLine(friends[i].Username);
+        }
+        
         
     }
 

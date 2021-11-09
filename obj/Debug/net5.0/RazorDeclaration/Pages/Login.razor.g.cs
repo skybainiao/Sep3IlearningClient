@@ -124,7 +124,6 @@ using System.Threading;
         errorMessage = "";
         try {
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
-            _userData.postOnlinePerson(username);
         } catch (Exception e) {
             errorMessage = e.Message;
         }

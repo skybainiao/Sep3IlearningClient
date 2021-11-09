@@ -46,17 +46,18 @@ namespace LoginExample.Data.Impl
         }
         
         
-        public async Task postOnlinePerson(String username)
+        public async Task<IList<User>> getAllFriends(String username)
         {
             using HttpClient client = new HttpClient();
-            String stringasjson = JsonSerializer.Serialize(username, new JsonSerializerOptions
+            Task<string> stringAsync = client.GetStringAsync($"http://localhost:8080/getFriends?username={username}");
+            string message = await stringAsync;
+            IList<User> result = JsonSerializer.Deserialize<List<User>>(message, new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             });
-            HttpContent content = new StringContent(stringasjson, Encoding.UTF8, "application/json");
-            await client.PostAsync("http://localhost:8080/onlineName",content);
-            
+            return result;
         }
+        
         
         
 
