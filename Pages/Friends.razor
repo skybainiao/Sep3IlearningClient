@@ -1,21 +1,37 @@
 ﻿@page "/Friends"
+@using LoginExample.Data
+@using LoginExample.Data.Impl
+@using LoginExample.Models
+@inject IUserService _service;
+
 <hr style="border: 2px solid white" />
     <br>
 
+@if (_users == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
     <table class="table table-hover">
         <thead>
-        <tr style="color: white">
-            <th>FirstName</th>
-            <th>LastName</th>
-            <th>HairColor</th>
-            <th>EyeColor</th>
-            <th>Age</th>
-            <th>Weight</th>
-            <th>Height</th>
-            <th>Sex</th>
+        <tr style="color: #34ce57">
+            <th>UserName</th>
         </tr>
         </thead>
+        <tbody>
+        @foreach (var user in _users)
+        {
+            <tr style="color: #491217">
+                <td>@user.Username</td>
+            </tr>
+        }
+        </tbody>
     </table>
+}
+
 
 
 
@@ -26,5 +42,21 @@
 
 
 @code {
+    private UserData _userData = new UserDataService();
+    private IList<User> _users = new List<User>();
     
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        _users = await _userData.getAllFriends(_service.getName());
+    }
+
+
+    public void getAllFriends()
+    {
+        
+        
+    }
+
 }

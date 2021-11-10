@@ -69,11 +69,19 @@
                 <img src="css/image/person.jpg" alt="Login" width="30px" height="30px">
             </a>
         </div>
+        <div class="personal">
+            <a href="" @onclick="PerformLogout">
+                Log out
+            </a>
+            </div>
         </div>
                   
 </AuthorizeView>
 
 @code {
+    public string username;
+    private string password;
+    private string errorMessage;
     private bool collapseNavMenu = true;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
@@ -94,5 +102,13 @@
             e.ToString();
         }
     }
-
+    public async Task PerformLogout() {
+        errorMessage = "";
+        username = "";
+        password = "";
+        try {
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+            NavigationManager.NavigateTo("/");
+        } catch (Exception e) { }
+    }
 }

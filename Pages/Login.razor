@@ -9,15 +9,15 @@
 
 <AuthorizeView>
     <NotAuthorized>
-        <div>
-            <h1 class="Login">Aurora</h1>
+        <div class="login">
+            <h1 class="name">ilearning</h1>
             <br>
-            
+
             <div class="form-group">
                 <form>
-                <input style="color: #6f42c1; background-color: rgba(0,0,0,0.55);border-radius: 30px;width: 250px;height: 30px;text-align: center" type="text" placeholder="user name" @bind-value="username"/>
-<br>
-                <input style="color: #6f42c1; background-color: rgba(0,0,0,0.55);border-radius: 30px;width: 250px;height: 30px;text-align: center" type="password" placeholder="password" @bind-value="password"/>
+                    <input style="color: #6f42c1; background-color: rgba(0,0,0,0.55);border-radius: 30px;width: 250px;height: 30px;text-align: center" type="text" placeholder="user name" @bind-value="username"/>
+                    <br>
+                    <input style="color: #6f42c1; background-color: rgba(0,0,0,0.55);border-radius: 30px;width: 250px;height: 30px;text-align: center" type="password" placeholder="password" @bind-value="password"/>
                 </form>
                 <div class="form-class">
                     <button type="submit" @onclick="PerformLogin" style="border-radius: 10px;width: 80px;height: 35px">
@@ -27,16 +27,12 @@
                     <button type="button" @onclick="goRegister" style="border-radius: 10px;width: 80px;height: 35px; margin-left: 90px">
                         Register
                     </button>
-                    </div>
-        </div>
+                </div>
+            </div>
             <div style="color:red">@errorMessage</div>
         </div>
+        
     </NotAuthorized>
-    <Authorized>
-        <a href="" @onclick="PerformLogout">
-            Log out
-        </a>
-    </Authorized>
 </AuthorizeView>
  
 @code {
@@ -53,16 +49,6 @@
         } catch (Exception e) {
             errorMessage = e.Message;
         }
-    }
-
-    public async Task PerformLogout() {
-        errorMessage = "";
-        username = "";
-        password = "";
-        try {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
-            NavigationManager.NavigateTo("/");
-        } catch (Exception e) { }
     }
 
     public void goRegister()
