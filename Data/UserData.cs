@@ -15,5 +15,8 @@ namespace LoginExample.Data
 
         Task<IList<User>> getAllFriends(String username);
 
+        Task sendMessage(String sender, String receiver, String message);
+
+        Task<IList<String>> getMessages(String sender, String receiver);
     }
 }

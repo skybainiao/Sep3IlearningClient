@@ -42,7 +42,7 @@ namespace LoginExample.Data.Impl
             });
             HttpContent content = new StringContent(stringasjson, Encoding.UTF8, "application/json");
             await client.PostAsync("http://localhost:8080/user",content);
-            
+
         }
         
         
@@ -57,10 +57,29 @@ namespace LoginExample.Data.Impl
             });
             return result;
         }
-        
-        
-        
 
+
+        public async Task sendMessage(String sender, String receiver, String message)
+        {
+            using HttpClient client = new HttpClient();
+            
+            HttpContent content = new StringContent(sender, Encoding.UTF8, "application/json");
+            
+            await client.PostAsync($"http://localhost:8080/send?receiver={receiver}&text={message}", content);
+        }
+
+
+        public async Task<IList<String>> getMessages(String sender, String receiver)
+        {
+            using HttpClient client = new HttpClient();
+            Task<string> stringAsync = client.GetStringAsync($"http://localhost:8080/Messages?sender={sender}&receiver={receiver}");
+            string message = await stringAsync;
+            IList<String> result = JsonSerializer.Deserialize<List<String>>(message, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            return result;
+        }
 
 
     }
