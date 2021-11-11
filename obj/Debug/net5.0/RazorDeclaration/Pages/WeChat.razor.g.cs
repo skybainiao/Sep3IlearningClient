@@ -110,24 +110,31 @@ using LoginExample.Models;
     private UserData _userData = new UserDataService();
     private IList<User> _users = new List<User>();
     private IList<Message> _messages = new List<Message>();
+    private String username;
+    private String text;
 
 
 
     protected override async Task OnInitializedAsync()
     {
         _users = await _userData.getAllFriends(_service.getName());
-        _messages = await _userData.getMessages(_service.getName(), "Jax");
     }
 
 
-    public void getAllFriends()
+    public async void getMessagess(String username)
     {
-        for (int i = 0; i < _messages.Count; i++)
-        {
-            Console.WriteLine(_messages);
-            Console.WriteLine("did");
-        }
+        _messages = await _userData.getMessages(_service.getName(), username);
+        this.username = username;
     }
+
+    
+    public void sendMessage()
+    {
+        _userData.sendMessage(_service.getName(), username, text);
+        getMessagess(username);
+    }
+    
+    
 
 #line default
 #line hidden
