@@ -75,63 +75,13 @@ using LoginExample.Shared;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 1 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Shared\MainLayout.razor"
-using LoginComponent;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 2 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Shared\MainLayout.razor"
-using LoginExample.Authentication;
-
-#line default
-#line hidden
-#nullable disable
-    public partial class MainLayout : LayoutComponentBase
+    public partial class NavBar : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 23 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Shared\MainLayout.razor"
-       
-
-    [CascadingParameter] protected Task<AuthenticationState> AuthStat { get; set; }
-
-    protected override async Task OnInitializedAsync()
-    {
-        await base.OnInitializedAsync();
-        var user = (await AuthStat).User;
-        if(!user.Identity.IsAuthenticated)
-        {
-            NavigationManager.NavigateTo($"/Login");
-            // NavigationManager.NavigateTo($"/Login?returnUrl={Uri.EscapeDataString(NavigationManager.Uri)}");
-        }
-    }
-
-    public void go()
-    {
-        try
-        {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
-            NavigationManager.NavigateTo("/Login");
-        }
-        catch (Exception e)
-        {
-            e.ToString();
-        }
-    }
-    
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace LoginExample.Shared
+namespace LoginExample.Pages
 {
     #line hidden
     using System;
@@ -76,20 +76,28 @@ using LoginExample.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Shared\MainLayout.razor"
-using LoginComponent;
+#line 2 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\WeChat.razor"
+using LoginExample.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Shared\MainLayout.razor"
-using LoginExample.Authentication;
+#line 3 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\WeChat.razor"
+using LoginExample.Data.Impl;
 
 #line default
 #line hidden
 #nullable disable
-    public partial class MainLayout : LayoutComponentBase
+#nullable restore
+#line 4 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\WeChat.razor"
+using LoginExample.Models;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/WeChat")]
+    public partial class WeChat : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -97,41 +105,28 @@ using LoginExample.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Shared\MainLayout.razor"
+#line 58 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\WeChat.razor"
        
+    private UserData _userData = new UserDataService();
+    private IList<User> _users = new List<User>();
 
-    [CascadingParameter] protected Task<AuthenticationState> AuthStat { get; set; }
+
 
     protected override async Task OnInitializedAsync()
     {
-        await base.OnInitializedAsync();
-        var user = (await AuthStat).User;
-        if(!user.Identity.IsAuthenticated)
-        {
-            NavigationManager.NavigateTo($"/Login");
-            // NavigationManager.NavigateTo($"/Login?returnUrl={Uri.EscapeDataString(NavigationManager.Uri)}");
-        }
+        _users = await _userData.getAllFriends(_service.getName());
     }
 
-    public void go()
+
+    public void getAllFriends()
     {
-        try
-        {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
-            NavigationManager.NavigateTo("/Login");
-        }
-        catch (Exception e)
-        {
-            e.ToString();
-        }
+        
     }
-    
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUserService _service { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -69,12 +69,12 @@ namespace LoginExample.Data.Impl
         }
 
 
-        public async Task<IList<String>> getMessages(String sender, String receiver)
+        public async Task<IList<Message>> getMessages(String sender, String receiver)
         {
             using HttpClient client = new HttpClient();
             Task<string> stringAsync = client.GetStringAsync($"http://localhost:8080/Messages?sender={sender}&receiver={receiver}");
             string message = await stringAsync;
-            IList<String> result = JsonSerializer.Deserialize<List<String>>(message, new JsonSerializerOptions
+            IList<Message> result = JsonSerializer.Deserialize<List<Message>>(message, new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             });
