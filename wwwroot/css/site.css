@@ -222,3 +222,47 @@ form{
     background-repeat: no-repeat;
     background-position: center 0;
 }
+
+
+.wechat-message {
+    flex-direction: column;
+    position: relative;
+}
+.wechat-message button{
+    position: absolute;
+    border: none;
+    outline: none;
+    right: 0;
+    bottom: 0;
+}
+.wechat-main{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.btn-info {
+    border: none;
+    outline: none;
+    width: 200px;
+    background-color: white;
+    color: black;
+}
+
+.wechat-table{
+    flex-direction: column;
+    margin-top: -285px;
+}
+
+.wechat-search{
+    background: rgba(0, 0, 0, 0.55);
+    border: none;
+    width: 200px;
+    text-align: center;
+}

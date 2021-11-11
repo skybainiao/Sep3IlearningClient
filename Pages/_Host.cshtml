@@ -16,9 +16,22 @@
     <link href="css/site.css" rel="stylesheet"/>
 </head>
 <body>
-<img class="host" src="css/image/Q.png" >
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+    </div>
+    </nav>
+        <img class="host" src="css/image/Q.png">
+
 <app>
     <component type="typeof(App)" render-mode="Server"/>
+
 </app>
 
 <div id="blazor-error-ui">
@@ -33,5 +46,6 @@
 </div>
 
 <script src="_framework/blazor.server.js"></script>
+
 </body>
 </html>
