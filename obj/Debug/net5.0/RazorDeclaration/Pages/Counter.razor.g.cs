@@ -140,9 +140,8 @@ using LoginExample.Models;
         //}
 
         //await _userData.sendMessage(iService.getName(), "Jax", text);
-
-        
-            Console.WriteLine(messages[0]);
+    
+        //Console.WriteLine(messages[0]);
         
         
     }

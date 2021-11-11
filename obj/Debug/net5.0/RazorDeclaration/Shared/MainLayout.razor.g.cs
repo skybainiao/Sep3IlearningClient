@@ -97,7 +97,7 @@ using LoginExample.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 22 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Shared\MainLayout.razor"
+#line 23 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Shared\MainLayout.razor"
        
 
     [CascadingParameter] protected Task<AuthenticationState> AuthStat { get; set; }

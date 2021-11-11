@@ -17,6 +17,6 @@ namespace LoginExample.Data
 
         Task sendMessage(String sender, String receiver, String message);
 
-        Task<IList<String>> getMessages(String sender, String receiver);
+        Task<IList<Message>> getMessages(String sender, String receiver);
     }
 }
