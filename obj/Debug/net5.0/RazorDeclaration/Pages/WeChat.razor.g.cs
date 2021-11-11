@@ -105,22 +105,28 @@ using LoginExample.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 58 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\WeChat.razor"
+#line 57 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\WeChat.razor"
        
     private UserData _userData = new UserDataService();
     private IList<User> _users = new List<User>();
+    private IList<Message> _messages = new List<Message>();
 
 
 
     protected override async Task OnInitializedAsync()
     {
         _users = await _userData.getAllFriends(_service.getName());
+        _messages = await _userData.getMessages(_service.getName(), "Jax");
     }
 
 
     public void getAllFriends()
     {
-        
+        for (int i = 0; i < _messages.Count; i++)
+        {
+            Console.WriteLine(_messages);
+            Console.WriteLine("did");
+        }
     }
 
 #line default

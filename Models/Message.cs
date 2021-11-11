@@ -5,13 +5,15 @@ namespace LoginExample.Models
     public class Message
     {
 
-        private String senderName { get; set; }
+        public String senderName { get; set; }
 
-        private String receiverName { get; set; }
+        public String receiverName { get; set; }
 
-        private String chatMessages { get; set; }
+        public String chatMessages { get; set; }
 
-
-
+        public override string ToString()
+        {
+            return senderName + ": " + chatMessages;
+        }
     }
 }

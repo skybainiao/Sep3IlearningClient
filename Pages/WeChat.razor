@@ -37,9 +37,13 @@ else
     
             <div class="wechat-message">
                 <div class="wechat-box" style="width: 500px; height: 22rem;background-color: white">
+                     @foreach (var message in _messages)
+                     {
+                         <tr>@message.ToString()</tr>
+                     }
                 </div>
                 <input class="wechat-text" style="width: 500px; height: 6rem;background-color: rgba(143,143,144,0.6)">
-                <button class="enter" type="button" style="width: 110px; height: 40px; border-radius: 30px;">enter</button>
+                <button @onclick="getAllFriends" class="enter" type="button" style="width: 110px; height: 40px; border-radius: 30px;">enter</button>
             </div>
         
         
@@ -50,25 +54,26 @@ else
 
 
 
-
-
-
-
-
 @code {
     private UserData _userData = new UserDataService();
     private IList<User> _users = new List<User>();
+    private IList<Message> _messages = new List<Message>();
 
 
 
     protected override async Task OnInitializedAsync()
     {
         _users = await _userData.getAllFriends(_service.getName());
+        _messages = await _userData.getMessages(_service.getName(), "Jax");
     }
 
 
     public void getAllFriends()
     {
-        
+        for (int i = 0; i < _messages.Count; i++)
+        {
+            Console.WriteLine(_messages);
+            Console.WriteLine("did");
+        }
     }
 }
