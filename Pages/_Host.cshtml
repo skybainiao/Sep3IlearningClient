@@ -9,26 +9,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>ILearning</title>
     <base href="~/"/>
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="w3.css">
     <link href="css/site.css" rel="stylesheet"/>
 </head>
 <body>
-    <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-    </div>
-    </nav>
-        <img class="host" src="css/image/Q.png">
-
+<div class="host"></div>
 <app>
     <component type="typeof(App)" render-mode="Server"/>
 
@@ -44,7 +33,16 @@
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
 </div>
-
+<script>
+                          function myFunction(id) {
+                              var x = document.getElementById(id);
+                              if (x.className.indexOf("w3-show") == -1) {
+                                  x.className += " w3-show";
+                              } else {
+                                  x.className = x.className.replace(" w3-show", "");
+                              }
+                          }
+                      </script>
 <script src="_framework/blazor.server.js"></script>
 
 </body>

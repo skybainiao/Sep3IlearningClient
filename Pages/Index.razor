@@ -1,5 +1,20 @@
 ﻿@page "/"
+@inject NavigationManager _navigationManager;
 
 <div class="index">
-    
+   <div class="index-background"></div>
+   <div class="index-main">
+      <img src="css/image/Chat.jpg">
+   </div>
+   <button style="z-index: 2;position: fixed" @onclick="wechat">button</button>
 </div>
+
+@code
+{
+   public void wechat()
+   {
+      _navigationManager.NavigateTo("/WeChat");
+   }
+   
+   
+}

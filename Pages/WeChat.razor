@@ -4,51 +4,48 @@
 @using LoginExample.Models
 @inject IUserService _service;
 
-<hr style=" border: 2px solid white" />
-    <br>
-
-@if (_users == null)
-{
-    <p>
-        <em>Loading...</em>
-    </p>
-}
-else
-{
-    <div class="wechat-main" style="border: 3px solid white; width: 710px; text-align: center; background-color: darkgray">
-        <div class="wechat-table">
-            <input class="wechat-search" alt="search" type="text" placeholder="search">
-                <table class="wechat table-hover" style=" width: 200px; text-align: center; margin-top: 0" bgcolor="#a9a9a9">
-                <thead>
-                <tr style="color: white">
-                    <th>FriendList</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach (var user in _users)
-                {
-                    <tr>
-                        <button @onclick="() => getMessagess(user.Username)" type="button" class="btn btn-default" >@user.Username</button>
-                    </tr>
-                }
-                </tbody>
-            </table>
-        </div>
-    
-            <div class="wechat-message">
-                <div class="wechat-box" style="width: 500px; height: 22rem;background-color: grey">
-                     @foreach (var message in _messages)
-                     {
-                         <tr>@message.ToString()</tr>
-                     }
+    <hr style=" border: 2px solid white" />
+        <br>
+   
+    @if (_users == null)
+    {
+        <p>
+            <em>Loading...</em>
+        </p>
+    }
+    else
+    {
+        <div class="wechat-main" style="border: 3px solid white; width: 710px; text-align: center; background-color: darkgray">
+                <div class="wechat-table">
+                    <table class="wechat table-hover" style=" width: 200px; text-align: center; margin-top: 0; border: 1px solid black" bgcolor="#a9a9a9">
+                        <thead>
+                        <tr style="color: white;border: 1px solid black">
+                            <th>FriendList</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var user in _users)
+                        {
+                            <tr style="border: 1px solid black">
+                                <button @onclick="() => getMessagess(user.Username)" type="button" class="btn btn-default">@user.Username</button>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
                 </div>
-                <input class="wechat-text" style="width: 500px; height: 6rem;background-color: rgba(143,143,144,0.6)" @bind="text">
-                <button @onclick="sendMessage" class="enter" type="button" style="width: 110px; height: 40px; border-radius: 30px;">enter</button>
+        
+                <div class="wechat-message">
+                    <div class="wechat-box" style="width: 500px; height: 22rem;background-color: grey">
+                        @foreach (var message in _messages)
+                        {
+                            <tr>@message.ToString()</tr>
+                        }
+                    </div>
+                    <input class="wechat-text" style="width: 500px; height: 6rem;background-color: rgba(143,143,144,0.6)" @bind="text">
+                    <button @onclick="sendMessage" class="enter" type="button" style="width: 110px; height: 40px; border-radius: 30px;">enter</button>
+                </div>
             </div>
-        
-        
-        </div>
-}
+    }
 
 
 
