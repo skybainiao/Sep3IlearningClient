@@ -244,3 +244,11 @@ C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Shared\NavBar.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\WeChat.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Shared\NavBar.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Announcement.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Class.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Course.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Moment.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Announcement.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Class.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Course.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Moment.razor.g.cs

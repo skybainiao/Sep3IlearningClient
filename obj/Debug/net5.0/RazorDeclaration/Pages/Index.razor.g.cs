@@ -83,19 +83,6 @@ using LoginExample.Shared;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 13 "D:\JetBrainsRider\Sep3IlearningClient\Pages\Index.razor"
- 
-   public void wechat()
-   {
-      _navigationManager.NavigateTo("/WeChat");
-   }
-   
-   
-
-#line default
-#line hidden
-#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager _navigationManager { get; set; }
     }
 }

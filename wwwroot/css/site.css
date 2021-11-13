@@ -108,11 +108,26 @@ app {
 }
 
 .nav-ul{
-margin-left: 50%;    
+margin-left: 45%;
 }
 
-a:link,a:visited {
-    color: hotpink;
+.item-content{
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.item-content:hover {
+    filter: brightness(2);
+    background-color: rgba(95,229,208, 0.5);
+}
+
+a:link,a:visited,a:active {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
     text-decoration: none;
 }
 
@@ -213,7 +228,6 @@ form{
     background-repeat: no-repeat;
 }
 
-
 .wechat-message {
     flex-direction: column;
     position: relative;
@@ -270,7 +284,19 @@ form{
     z-index: 1;
 }
 
-.index-main{
+.index-A{
     position: absolute;
     z-index: 2;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.index-B{
+    position: absolute;
+    z-index: 2;
+    margin-top: 400px;
 }

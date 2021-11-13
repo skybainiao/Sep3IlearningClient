@@ -9,7 +9,7 @@
         <div class="nav-ul">
             <li class="nav-item">
                 <div class="item-content">
-                    <a href="/">
+                    <a href="/" style="border-radius: 10px; border: 1px solid red; background-color: red; border-bottom-width: 15px; border-top-width: 15px; border-left-width: 15px; border-right-width: 15px; font-size: 15px">
                         Home
                     </a>
                 </div>
@@ -25,20 +25,12 @@
 
             <li class="nav-item">
                 <div class="item-content">
-                    <a href="/contactus">
-                        Contact us
+                    <a href="/moment">
+                        Moment
                     </a>
                 </div>
             </li>
-
-            <li class="nav-item">
-                <div class="item-content">
-                    <a href="/edit">
-                        Edit
-                    </a>
-                </div>
-            </li>
-
+            
             <li class="nav-item">
                 <div class="item-content">
                     <a href="/wechat">
@@ -46,14 +38,31 @@
                     </a>
                 </div>
             </li>
+            
             <li class="nav-item">
-                <div class="item-content" style="width: 70px; height: 30px;">
-                    <button onclick="myFunction('Demo1')" type="button" class="w3-button w3-center-align" style="width: 70px; height: 50px; margin-top: -10px">
-                        <div class="oi oi-menu" style="font-size: 5px; font-weight: normal;">Menu</div>
+                <div class="item-content">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" style="margin-top: -7px; font-size:25px; color: #34ce57; text-align: center; background: transparent; border-width: 0; outline:none;">
+                        Course
                     </button>
-                    <div id="Demo1" class="w3-hide w3-animate-zoom" style="text-align: center; font-size: 5px">
-                        <a href="#" class="w3-button w3-block w3-left-align">Group</a>
-                        <a href="#" class="w3-button w3-block w3-left-align">GroupChat</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="">SDJ</a></li>
+                        <li><a class="dropdown-item" href="">NEP</a></li>
+                        <li><a class="dropdown-item" href="">CAO</a></li>
+                        <li><a class="dropdown-item" href="">NES</a></li>
+                    </ul>
+                </div>
+            </li>
+            
+            <li class="nav-item" style="text-align: center">
+                <div class="item-content" style="text-align: center">
+                    <button onclick="myFunction('Demo1')" type="button" class="button w3-center-align" style="text-align: center; background: transparent; border-width: 0; outline:none; color: #34ce57;text-decoration: none; margin-top: -10px">
+                        <div class="oi oi-menu" style="text-align: center; font-size: 22px; font-weight: normal;">Menu</div>
+                    </button>
+                    <div id="Demo1" class="w3-hide w3-animate-zoom" style="text-align: center; font-size: 10px">
+                        <a href="/group" class="w3-button w3-block w3-left-align" style="text-align: center">Group</a>
+                        <a href="/groupchat" class="w3-button w3-block w3-left-align" style="text-align: center">GroupChat</a>
+                        <a href="/announcement" class="w3-button w3-block w3-left-align" style="text-align: center">Announcement</a>
+                        <a href="/contactus" class="w3-button w3-block w3-left-align" style="text-align: center">ContactUs</a>
                     </div>
                 </div>
             </li>
@@ -64,7 +73,7 @@
                     </a>
                 </div>
             </li>
-        </div>
+            </div>
     </div>
 </AuthorizeView>
 

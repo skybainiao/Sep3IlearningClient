@@ -1,20 +1,31 @@
 ﻿@page "/"
 @inject NavigationManager _navigationManager;
-
-<div class="index">
-   <div class="index-background"></div>
-   <div class="index-main">
-      <img src="css/image/Chat.jpg">
-   </div>
-   <button style="z-index: 2;position: fixed" @onclick="wechat">button</button>
+<div>
+  <div class="index-background"></div>
+  <div style="position: fixed; z-index: 3; margin-left:90%; margin-top: -70px">
+    <div class="dropdown">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                                              Menu
+        </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="">Group</a></li>
+        <li><a class="dropdown-item" href="">GroupList</a></li>
+        <li><a class="dropdown-item" href="/wechat">WeChat</a></li>
+        </ul>
+      </div> 
+    </div>
+<div class="index-A">
+  <img src="css/image/backmath.jpg" width="100%" height="800px">
 </div>
+  <div class="index-B">
+    <a href="/wechat">
+      <img src="css/image/Chat.jpg"/>
+      </a>
+  </div>
+</div>
+
 
 @code
 {
-   public void wechat()
-   {
-      _navigationManager.NavigateTo("/WeChat");
-   }
-   
    
 }
