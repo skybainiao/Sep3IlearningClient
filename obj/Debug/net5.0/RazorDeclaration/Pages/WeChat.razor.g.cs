@@ -138,8 +138,11 @@ using LoginExample.Models;
     {
         NavigationManager.NavigateTo("/counter");
     }
-    
-    
+
+    public void search()
+    {
+        NavigationManager.NavigateTo("/search");
+    }
 
 #line default
 #line hidden

@@ -270,8 +270,12 @@ form{
     overflow-y: auto;
 }
 
-.wechat-tr{
+.wechat-th{
 position: relative;
+}
+
+.wechat-tr{
+    overflow-y: auto;
 }
 
 .wechat-small:hover{
@@ -283,6 +287,11 @@ position: relative;
     border-radius: 2px;
     cursor: pointer;
     transition: 0.5s;
+}
+
+.search-text{
+    width: 200px;
+    height: 50px;
 }
 
 .index-background{

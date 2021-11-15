@@ -1,31 +1,11 @@
-﻿@page "/Search"
-@using LoginExample.Data
-@using LoginExample.Data.Impl
-@using LoginExample.Models
-<h3>Search</h3>
+﻿@page "/search"
+<hr style=" border: 2px solid white" />
+<br>
+
+<imput type="text" class="search-text" @Bind="text"></imput>
 
 @code {
-
-    private UserData _userData = new UserDataService();
-
-    private IList<User> _users;
-
-    protected override async Task OnInitializedAsync()
-    {
-        _users = await _userData.getAllUsers();
-        
-    }
-
-
-    public void search()
-    {
-        
-        
-        
-    }
-
-
-
-
-
+    private String text;
+    
+    
 }

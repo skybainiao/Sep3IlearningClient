@@ -75,7 +75,7 @@ using LoginExample.Shared;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Search")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/search")]
     public partial class Search : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -83,6 +83,16 @@ using LoginExample.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 7 "D:\JetBrainsRider\Sep3IlearningClient\Pages\Search.razor"
+       
+    private String text;
+    
+    
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591
