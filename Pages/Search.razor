@@ -1,6 +1,31 @@
 ﻿@page "/Search"
+@using LoginExample.Data
+@using LoginExample.Data.Impl
+@using LoginExample.Models
 <h3>Search</h3>
 
 @code {
-    
+
+    private UserData _userData = new UserDataService();
+
+    private IList<User> _users;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _users = await _userData.getAllUsers();
+        
+    }
+
+
+    public void search()
+    {
+        
+        
+        
+    }
+
+
+
+
+
 }
