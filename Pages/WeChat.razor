@@ -3,6 +3,7 @@
 @using LoginExample.Data.Impl
 @using LoginExample.Models
 @inject IUserService _service;
+@inject NavigationManager NavigationManager
 
     <hr style=" border: 2px solid white" />
         <br>
@@ -15,12 +16,15 @@
     }
     else
     {
-        <div class="wechat-main" style="border: 3px solid white; width: 710px; text-align: center; background-color: darkgray">
+        <div class="wechat-main" style="border: 3px solid white; width: 710px; background-color: darkgray">
                 <div class="wechat-table">
-                    <table class="wechat table-hover" style=" width: 200px; text-align: center; margin-top: 0; border: 1px solid black" bgcolor="#a9a9a9">
+                    <table class="wechat table-hover" style=" width: 200px; margin-top: 0; border: 1px solid black" bgcolor="#a9a9a9">
                         <thead>
-                        <tr style="color: white;border: 1px solid black">
-                            <th>FriendList</th>
+                        <tr class="wechat-tr" style="color: white;border: 1px solid black;">
+                            <th>
+                                <imput type="text" style="text-align: center">FriendList</imput>
+                                <imput class="wechat-small" type="button" style="margin-left: 40%; color: black; font-weight: bolder;">＋</imput>
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -28,6 +32,7 @@
                         {
                             <tr style="border: 1px solid black">
                                 <button @onclick="() => getMessagess(user.Username)" type="button" class="btn btn-default">@user.Username</button>
+                                <imput @onclick="fuck" type="button"  style="margin-top: 3%; float: right; text-align: right; color: white; font-weight: bolder;">Profile</imput>
                             </tr>
                         }
                         </tbody>
@@ -35,7 +40,7 @@
                 </div>
         
                 <div class="wechat-message">
-                    <div class="wechat-box" style="width: 500px; height: 22rem;background-color: grey">
+                    <div class="wechat-box" style="width: 500px; height: 22rem;background-color: grey;">
                         @foreach (var message in _messages)
                         {
                             <tr>@message.ToString()</tr>
@@ -77,6 +82,11 @@
     {
         _userData.sendMessage(_service.getName(), username, text);
         getMessagess(username);
+    }
+
+    public void fuck()
+    {
+        NavigationManager.NavigateTo("/counter");
     }
     
     

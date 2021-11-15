@@ -252,3 +252,5 @@ D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Announcement.
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Class.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Course.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Moment.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Search.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Search.razor.g.cs

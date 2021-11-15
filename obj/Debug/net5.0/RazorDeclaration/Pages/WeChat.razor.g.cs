@@ -105,7 +105,7 @@ using LoginExample.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 54 "D:\JetBrainsRider\Sep3IlearningClient\Pages\WeChat.razor"
+#line 59 "D:\JetBrainsRider\Sep3IlearningClient\Pages\WeChat.razor"
        
     private UserData _userData = new UserDataService();
     private IList<User> _users = new List<User>();
@@ -133,12 +133,18 @@ using LoginExample.Models;
         _userData.sendMessage(_service.getName(), username, text);
         getMessagess(username);
     }
+
+    public void fuck()
+    {
+        NavigationManager.NavigateTo("/counter");
+    }
     
     
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUserService _service { get; set; }
     }
 }
