@@ -75,6 +75,27 @@ using LoginExample.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\JetBrainsRider\Sep3IlearningClient\Pages\Search.razor"
+using LoginExample.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\JetBrainsRider\Sep3IlearningClient\Pages\Search.razor"
+using LoginExample.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "D:\JetBrainsRider\Sep3IlearningClient\Pages\Search.razor"
+using LoginExample.Data.Impl;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/search")]
     public partial class Search : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -84,11 +105,20 @@ using LoginExample.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 7 "D:\JetBrainsRider\Sep3IlearningClient\Pages\Search.razor"
+#line 26 "D:\JetBrainsRider\Sep3IlearningClient\Pages\Search.razor"
        
     private String text;
-    
-    
+
+    private IList<User> _users = new List<User>();
+
+    private UserData _userData = new UserDataService();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        _users = await _userData.getAllUsers();
+    }
+
 
 #line default
 #line hidden
