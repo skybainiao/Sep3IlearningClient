@@ -105,7 +105,7 @@ using LoginExample.Data.Impl;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 27 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Search.razor"
+#line 30 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Search.razor"
        
     private String text;
 
@@ -126,6 +126,7 @@ using LoginExample.Data.Impl;
         {
             if (_users!=null)
             {
+                
                 for (int i = 0; i < _users.Count; i++)
                 {
                     if (text.Equals(_users[i].Username))
@@ -153,17 +154,9 @@ using LoginExample.Data.Impl;
     }
 
 
-    public async void SendRequest(String receiver)
-    {
-        await _userData.sendRequest(_service.getName(), receiver, "Hello,Im: "+_service.getName());
-    }
-    
-
-
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUserService _service { get; set; }
     }
 }
 #pragma warning restore 1591
