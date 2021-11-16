@@ -82,5 +82,15 @@ namespace LoginExample.Data.Impl
         }
 
 
+        public async Task sendRequest(String sender,String receiver,String comment)
+        {
+            using HttpClient client = new HttpClient();
+            
+            HttpContent content = new StringContent(sender, Encoding.UTF8, "application/json");
+            
+            await client.PostAsync($"http://localhost:8080/sendRequest?receiver={receiver}&comment={comment}", content);
+        }
+
+
     }
 }
