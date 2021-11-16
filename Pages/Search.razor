@@ -2,7 +2,6 @@
 @using LoginExample.Models
 @using LoginExample.Data
 @using LoginExample.Data.Impl
-@inject IUserService _service;
 
 <hr style=" border: 2px solid white" />
 <br>
@@ -11,19 +10,23 @@
     <form class="chaxun" style="flex-direction: row; align-items: center; justify-content: center">
         <input style=" background-color: rgba(0,0,0,0.6); color:white; width:400px; height: 30px; border-radius: 10px; text-align: center" type="text" placeholder="SearchFriend" @bind="text" >
         <span><button style="margin-left: 20%; width: 70px; height: 30px;text-align: center; border-radius: 10px" type="button" @onclick="search">Search</button></span>
+        <span><img src="css/image/Refresh.png" @onclick="getAllUsers" type="button" alt="Refresh" width="30px" height="30px" style="margin-left: 70%; "></span>
     </form>
 </div>
 <br><br>
 
+<table class="search-table" style="margin-top: 30px; width: 100%">
+    
 <tbody>
 @foreach (var user in _users)
 {
     <tr class="search-tr" style="margin-top: 1%; width: 100%; flex-direction: row; float: left">
-        <button type="button" class="button-blue" style="margin-left: 5%; width: 1300px; height: 30px; border-radius: 15px; background-color: #7abaff; font-family: Forte">@user.Username</button>
-        <button @onclick="() =>SendRequest(user.Username)" type="button" style="margin-left: 5%; width: 100px; height: 30px; border-radius: 15px; font-family: Forte">Add</button>
+        <button type="button" class="button-blue" style="margin-left: 5%; width: 70%; height: 30%; border-radius: 15px; background-color: #7abaff; font-family: Forte">@user.Username</button>
+        <button type="button" style="margin-left: 5%; width: 100px; height: 30px; border-radius: 15px; font-family: Forte">Add</button>
     </tr>
 }
 </tbody>
+</table>
 @code {
     private String text;
 
@@ -44,6 +47,7 @@
         {
             if (_users!=null)
             {
+                
                 for (int i = 0; i < _users.Count; i++)
                 {
                     if (text.Equals(_users[i].Username))
@@ -69,12 +73,5 @@
     {
         _users = await _userData.getAllUsers();
     }
-
-
-    public async void SendRequest(String receiver)
-    {
-        await _userData.sendRequest(_service.getName(), receiver, "Hello,Im: "+_service.getName());
-    }
-    
 
 }
