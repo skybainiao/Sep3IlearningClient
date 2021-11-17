@@ -199,7 +199,6 @@ D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Gr
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\GroupChat.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
-D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Profiles.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Register.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
@@ -217,7 +216,6 @@ D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Group.razor.g
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\GroupChat.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
-D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Profiles.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Register.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs
@@ -262,3 +260,7 @@ C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Class
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Course.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Moment.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Search.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Profile.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Settings.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Profile.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Settings.razor.g.cs

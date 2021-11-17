@@ -43,14 +43,21 @@
                               }
                           }
                       </script>
+
 <script>
-const fileInp = document.getElementById('fileInp')
-const download = document.getElementById("download")
-download.onclick = function (){
-    fileInp.click()
+$("[name='sexRadio']:eq(0)").parent("span").addClass("checked");
+$("[name='sexRadio']:eq(0)").prop("checked",true);
+</script>
+
+<script>
+function getRadio(){
+    var c = $('input:radio[name="sexRadio"]:checked').val(); 
+    var b = $('input[name="sexRadio"]:checked').val();
+    alert(c);
 }
 </script>
+
 <script src="_framework/blazor.server.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

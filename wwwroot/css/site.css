@@ -132,7 +132,7 @@ a:hover{
 }
 
 .name{
-    margin-top: 70px;
+    margin-top: 10%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -216,7 +216,7 @@ form{
 }
 
 .host{
-    background-image: url("../css/image/Q.png");
+    background-image:url("../css/image/Day.png");
     -webkit-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
@@ -330,8 +330,20 @@ position: relative;
     right: 0;
 }
 
-.index-B{
+.index-B {
     position: absolute;
     z-index: 2;
     margin-top: 400px;
+}
+
+.settings-label1{
+    display: inline-block;
+    text-align: right;
+    width: 15%;
+}
+
+.settings-label2{
+    display: inline-block;
+    text-align: right;
+    width: 15%;
 }

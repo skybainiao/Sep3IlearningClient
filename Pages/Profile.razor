@@ -1,0 +1,40 @@
+﻿@page "/Profile"
+@inject NavigationManager NavigationManager
+
+<hr style=" border: 2px solid white" />
+<br>
+
+<div style="font-family: Arial; font-weight: bold; font-size: 50px">Personal Profile</div>
+<div class="media">
+  <div class="media-1">
+    <img href="" alt="ProfileMedia" class="media-object" width="400px" height="400px">
+  </div>
+  <div class="media-body">
+    <div style="margin-left: 20%">
+      Name:<label style="margin-left: 5%"></label>
+      Sex:<label style="margin-left: 5%"></label>
+      <hr style=" border: 1px solid grey" />
+      <br>
+      Phone Number:<label style="margin-left: 5%"></label>
+    </div>
+  </div>
+</div>
+
+<button @onclick="setttings">Edit</button>
+
+@code {
+  private string src;
+
+  public void setttings()
+  {
+    NavigationManager.NavigateTo("/settings");
+  }
+
+  public void print()
+  {
+    Console.WriteLine(src);
+  }
+  
+  
+  
+}

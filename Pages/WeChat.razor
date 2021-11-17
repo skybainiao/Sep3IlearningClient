@@ -32,7 +32,7 @@
                         {
                             <tr class="wechat-tr" style="border: 1px solid black">
                                 <button @onclick="() => getMessagess(user.Username)" type="button" class="btn btn-default">@user.Username</button>
-                                <put @onclick="fuck" type="button"  style="margin-top: 3%; float: right; text-align: right; color: white;"><img src="css/image/Profile.png" alt="Profile" width="25px" height="25px"></put>
+                                <put @onclick="profile" type="button"  style="margin-top: 3%; float: right; text-align: right; color: white;"><img src="css/image/Profile.png" alt="Profile" width="25px" height="25px"></put>
                             </tr>
                         }
                         </tbody>
@@ -51,9 +51,6 @@
                 </div>
             </div>
     }
-
-
-
 
 
 @code {
@@ -84,9 +81,9 @@
         getMessagess(username);
     }
 
-    public void fuck()
+    public void profile()
     {
-        NavigationManager.NavigateTo("/counter");
+        NavigationManager.NavigateTo("/profile");
     }
 
     public void search()
