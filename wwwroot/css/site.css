@@ -215,8 +215,8 @@ form{
     background-position: center 0;
 }
 
-.host{
-    background-image:url("../css/image/Day.png");
+.image{
+    background-image: url("../css/image/Day.png");
     -webkit-background-size: cover;
     -o-background-size: cover;
     background-size: cover;

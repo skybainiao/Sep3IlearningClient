@@ -153,7 +153,6 @@ using LoginExample.Data.Impl;
         _users = await _userData.getAllUsers();
     }
 
-
 #line default
 #line hidden
 #nullable disable

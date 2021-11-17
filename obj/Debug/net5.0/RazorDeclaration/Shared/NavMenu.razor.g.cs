@@ -97,7 +97,7 @@ using LoginComponent;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 86 "D:\JetBrainsRider\Sep3IlearningClient\Shared\NavMenu.razor"
+#line 88 "D:\JetBrainsRider\Sep3IlearningClient\Shared\NavMenu.razor"
        
     public string username;
     private string password;
@@ -131,6 +131,7 @@ using LoginComponent;
             NavigationManager.NavigateTo("/");
         } catch (Exception e) { }
     }
+    
 
 #line default
 #line hidden
