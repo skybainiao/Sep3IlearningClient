@@ -90,6 +90,9 @@ namespace LoginExample.Data.Impl
             
             await client.PostAsync($"http://localhost:8080/sendRequest?receiver={receiver}&comment={comment}", content);
         }
+        
+        
+        
 
 
     }

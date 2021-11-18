@@ -20,6 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="DataBaseCode" />
       <Folder Include="JavaServerCode" />
     </ItemGroup>
 
