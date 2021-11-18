@@ -105,7 +105,7 @@ using LoginExample.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 56 "D:\JetBrainsRider\Sep3IlearningClient\Pages\WeChat.razor"
+#line 55 "D:\JetBrainsRider\Sep3IlearningClient\Pages\WeChat.razor"
        
     private UserData _userData = new UserDataService();
     private IList<User> _users = new List<User>();

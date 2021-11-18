@@ -4,23 +4,46 @@
 <hr style=" border: 2px solid white" />
 <br>
 
-<div style="font-family: Arial; font-weight: bold; font-size: 50px">Personal Profile</div>
+<div style="font-family: Arial; font-weight: bold; font-size: 50px; color: white;">Personal Profile</div>
 <div class="media">
-  <div class="media-1">
-    <img href="" alt="ProfileMedia" class="media-object" width="400px" height="400px">
+  <div class="media">
+    <img src="css/image/ProfileMedia.jpg" alt="ProfileMedia" class="media-object" width="350px" height="400px">
   </div>
   <div class="media-body">
-    <div style="margin-left: 20%">
-      Name:<label style="margin-left: 5%"></label>
-      Sex:<label style="margin-left: 5%"></label>
-      <hr style=" border: 1px solid grey" />
+    <div style="margin-left: 12%; ">
+    
+      <label class="settings-label1">Name:</label>
+
+      <label style="margin-left: 20%; font-family: Forte; font-size: 25px; color: white">Sex:</label>
+      <label style="margin-left: 3%"></label> 
+      <label style="margin-left: 3%"></label>
+    
       <br>
-      Phone Number:<label style="margin-left: 5%"></label>
+      <hr style=" border: 0.5px solid grey" />
+      <br>
+    
+      <label class="settings-label1">User Name:</label>
+    
+      <br>
+      <hr style=" border: 0.5px solid grey" />
+      <br>
+    
+      <label class="settings-label1">Phone Number:</label>
+      
+      <br>
+      <hr style=" border: 0.5px solid grey" />
+      <br>
+    
+      <label class="settings-label1">E-mail:</label>
+    
     </div>
   </div>
 </div>
 
-<button @onclick="setttings">Edit</button>
+<br>
+<hr style=" border: 0.5px solid grey" />
+
+<button @onclick="setttings" style="margin-top: 10%; margin-left: 90%">Edit</button>
 
 @code {
   private string src;

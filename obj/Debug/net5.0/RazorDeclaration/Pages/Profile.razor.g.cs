@@ -84,7 +84,7 @@ using LoginExample.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 25 "D:\JetBrainsRider\Sep3IlearningClient\Pages\Profile.razor"
+#line 48 "D:\JetBrainsRider\Sep3IlearningClient\Pages\Profile.razor"
        
   private string src;
 

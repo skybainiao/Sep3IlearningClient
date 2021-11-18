@@ -105,7 +105,7 @@ using LoginExample.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 22 "D:\JetBrainsRider\Sep3IlearningClient\Pages\Counter.razor"
+#line 23 "D:\JetBrainsRider\Sep3IlearningClient\Pages\Counter.razor"
        
     private int currentCount = 0;
     private UserData _userData = new UserDataService();
@@ -161,7 +161,6 @@ using LoginExample.Models;
         }
         Console.WriteLine("getdid");
     }
-    
     
 
 #line default
