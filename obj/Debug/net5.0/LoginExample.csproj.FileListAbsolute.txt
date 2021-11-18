@@ -156,7 +156,6 @@ C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\_Host
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\LoginExample.RazorAssemblyInfo.cache
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\LoginExample.RazorAssemblyInfo.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\staticwebassets\LoginExample.StaticWebAssets.Manifest.cache
-C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\staticwebassets\LoginExample.StaticWebAssets.xml
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\scopedcss\bundle\LoginExample.styles.css
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\LoginExample.RazorTargetAssemblyInfo.cache
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\LoginExample.RazorTargetAssemblyInfo.cs
@@ -169,11 +168,9 @@ C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\LoginExample.cspr
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\EditProfiles.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Group.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\GroupChat.razor.g.cs
-C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Profiles.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\EditProfiles.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Group.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\GroupChat.razor.g.cs
-C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Profiles.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\bin\Debug\net5.0\appsettings.Development.json
 D:\JetBrainsRider\Sep3IlearningClient\bin\Debug\net5.0\appsettings.json
 D:\JetBrainsRider\Sep3IlearningClient\bin\Debug\net5.0\LoginExample.exe
@@ -274,3 +271,17 @@ D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Notice.razor.
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\SDJ.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\DNP.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\DNP.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\CAO.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\DNP.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\NES.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Notice.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Profile.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\SDJ.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Settings.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\CAO.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\DNP.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\NES.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Notice.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Profile.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\SDJ.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Settings.razor.g.cs

@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "gbQapRuYn5QeVk0w5rFzTQJu+liVR3mMMnlElsUHFXqQFowv428NcQRgD7Ky40vbePy6A2Cm2d9wim0Q2RIgqg==",
+  "dgSpecHash": "OzPi9QWxUR6IgE2g+GUrwCkd8pK/OP0SzDr+23KqCaP5QfWZAxlQcxFurAU1Ktjnda/0x0uYCmwyeeG2Uo3dmA==",
   "success": true,
-  "projectFilePath": "D:\\JetBrainsRider\\Sep3IlearningClient\\LoginExample.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\45527\\Desktop\\Sep3Project\\Sep3Client\\LoginExample.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\45527\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "C:\\Users\\45527\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.2\\microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512",
+    "C:\\Users\\45527\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+  ],
   "logs": []
 }

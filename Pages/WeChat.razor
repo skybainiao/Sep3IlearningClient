@@ -64,6 +64,7 @@
     protected override async Task OnInitializedAsync()
     {
         _users = await _userData.getAllFriends(_service.getName());
+        Console.WriteLine(System.Diagnostics.Process.GetCurrentProcess());
     }
 
 
@@ -89,4 +90,7 @@
     {
         NavigationManager.NavigateTo("/search");
     }
+    
+    
+    
 }

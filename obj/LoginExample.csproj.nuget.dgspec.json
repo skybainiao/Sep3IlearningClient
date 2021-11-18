@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\JetBrainsRider\\Sep3IlearningClient\\LoginExample.csproj": {}
+    "C:\\Users\\45527\\Desktop\\Sep3Project\\Sep3Client\\LoginExample.csproj": {}
   },
   "projects": {
-    "D:\\JetBrainsRider\\Sep3IlearningClient\\LoginExample.csproj": {
+    "C:\\Users\\45527\\Desktop\\Sep3Project\\Sep3Client\\LoginExample.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\JetBrainsRider\\Sep3IlearningClient\\LoginExample.csproj",
+        "projectUniqueName": "C:\\Users\\45527\\Desktop\\Sep3Project\\Sep3Client\\LoginExample.csproj",
         "projectName": "LoginExample",
-        "projectPath": "D:\\JetBrainsRider\\Sep3IlearningClient\\LoginExample.csproj",
-        "packagesPath": "C:\\Users\\Chenben Tong\\.nuget\\packages\\",
-        "outputPath": "D:\\JetBrainsRider\\Sep3IlearningClient\\obj\\",
+        "projectPath": "C:\\Users\\45527\\Desktop\\Sep3Project\\Sep3Client\\LoginExample.csproj",
+        "packagesPath": "C:\\Users\\45527\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\45527\\Desktop\\Sep3Project\\Sep3Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Chenben Tong\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\45527\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -37,6 +37,20 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "Microsoft.NETFramework.ReferenceAssemblies.net472": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -47,6 +61,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.12, 5.0.12]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -55,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
