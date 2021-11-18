@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
     <link rel="stylesheet" href="w3.css">
     <link href="css/site.css" rel="stylesheet"/>
-   
+    <script type="text/javascript" src="home.js"></script>
 </head>
 <body>
 
@@ -37,9 +37,25 @@
     <a class="dismiss">🗙</a>
 </div>
 
+<script>
+
+function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+
+
+</script>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="_framework/blazor.server.js"></script>
-<script type="text/javascript" src="home.js"></script>
+
 
 </body>
 </html>

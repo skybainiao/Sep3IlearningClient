@@ -285,3 +285,4 @@ C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Notic
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Profile.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\SDJ.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Settings.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\bin\Debug\net5.0\LoginExample.StaticWebAssets.xml
