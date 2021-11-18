@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "OzPi9QWxUR6IgE2g+GUrwCkd8pK/OP0SzDr+23KqCaP5QfWZAxlQcxFurAU1Ktjnda/0x0uYCmwyeeG2Uo3dmA==",
+  "dgSpecHash": "JLxIsyaHS+nRXQ45/UqWqeb4KfohRTR03ZNKSazodqhSl1yYNydsGQs57V8Aw3tksuTctk1rJhabyyyclQQQrw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\45527\\Desktop\\Sep3Project\\Sep3Client\\LoginExample.csproj",
+  "projectFilePath": "D:\\JetBrainsRider\\Sep3IlearningClient\\LoginExample.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\45527\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
-    "C:\\Users\\45527\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.2\\microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512",
-    "C:\\Users\\45527\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+    "C:\\Users\\Chenben Tong\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "C:\\Users\\Chenben Tong\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.2\\microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
   ],
   "logs": []
 }
