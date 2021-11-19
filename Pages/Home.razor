@@ -1,0 +1,86 @@
+﻿@page "/Home"
+@inject NavigationManager _navigationManager;
+@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+<div>
+  <div class="index-background"></div>
+  <div style="position: fixed; z-index: 3; list-style-type: none; margin-left: 75%; margin-top: -3%">
+    <li class="nav-item">
+      <div class="item-content">
+        <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" style="font-weight: normal; text-align: center; font-size:25px; color: #34ce57; background: transparent; border-width: 0; outline:none;">
+          Course
+        </button>
+        <ul class="dropdown-menu" style="background-color: rgba(0,0,0,0.4)">
+          <li><a class="dropdown-item" href="/SDJ" style="font-family: 'Arial'; font-weight: lighter">SDJ</a></li>
+          <li><a class="dropdown-item" href="/DNP" style="font-family: 'Arial'; font-weight: lighter">DNP</a></li>
+          <li><a class="dropdown-item" href="/CAO" style="font-family: 'Arial'; font-weight: lighter">CAO</a></li>
+          <li><a class="dropdown-item" href="/NES" style="font-family: 'Arial'; font-weight: lighter">NES</a></li>
+        </ul>
+      </div>
+    </li>
+    
+    <li class="nav-item">
+      <div class="item-content">
+        <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" style="font-weight: normal; text-align: center; font-size:25px; color: #34ce57; background: transparent; border-width: 0; outline:none;">
+          <div class="oi oi-menu" style="text-align: center; font-size: 25px; font-weight: normal;">Menu</div>
+        </button>
+        <ul class="dropdown-menu" style="background-color: rgba(0,0,0,0.4)">
+          <li><a class="dropdown-item" href="/wechat" style="font-family: 'Arial'; font-weight: lighter; text-align: center">SDJ</a></li>
+          <li><a class="dropdown-item" href="/moment" style="font-family: 'Arial'; font-weight: lighter; text-align: center">DNP</a></li>
+          <li><a class="dropdown-item" href="/group" style="font-family: 'Arial'; font-weight: lighter; text-align: center">CAO</a></li>
+          <li><a class="dropdown-item" href="/groupchat" style="font-family: 'Arial'; font-weight: lighter; text-align: center">NES</a></li>
+          <li><a class="dropdown-item" href="/contactus" style="font-family: 'Arial'; font-weight: lighter; text-align: center">NES</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="nav-item">
+                    <div class="item-content">
+                        <a href="/Notice">
+                            <img src="css/image/Notice.png" alt="Notice" type="button" width="30px" height="30px" style="margin-top: 2%"><label style="color: red; font-size: 10px">100</label>
+                            </a>
+                    </div>
+                                 </li>
+    
+                <li class="nav-item">
+                    <div class="item-content">
+                        <img src="css/image/person.jpg" alt="Login" type="button" class="dropdown-toggle" data-bs-toggle="dropdown" width="30px" height="30px" style="margin-top: 3%">
+                        <ul class="dropdown-menu" style="background-color: rgba(0,0,0,0.4)">
+                            <li><a class="dropdown-item" style="text-align: center; font-family: Aharoni" href="/Profile">Profile</a></li>
+                            <li><a class="dropdown-item" style="text-align: center; font-family: Aharoni; background-color: rgba(0,0,0,0.4); color: rgba(255,255,255,0.4)" >Logout</a></li>
+                        </ul>
+                    </div>
+                </li>
+  </div>
+  <div class="index-A">
+    <div style="">
+      <ul style="list-style-type: none; display: flex">
+      <li class="Home-li"><label style="text-shadow: 3px 3px 3px grey; color: white; font-size: 50px; position: absolute; z-index: 3; margin-top: 30%; margin-left: 66%; margin-right: 2%;">Software</label></li>
+      <li class="Home-li"><button style="width: 300px; height: 50px; position: absolute; z-index: 3; margin-top: 35%; margin-left: 66%; margin-right: 2%">Addd</button></li>
+      </ul>
+    </div>
+    <img src="css/image/backmath.jpg" width="100%" height="1000px">
+
+  </div>
+  <div class="index-B" style="text-align: center">
+    <a href="/SDJ">
+      <img src="css/image/SDJ.png" width="23%" height="60%" style="border-radius: 50%; overflow: hidden;">
+    </a>
+    <a href="/DNP">
+      <img src="css/image/DNP.png" width="23%" height="60%" style="border-radius: 50%; overflow: hidden;">
+    </a>
+    <a href="/CAO">
+      <img src="css/image/CAO.png" width="23%" height="60%" style="border-radius: 50%; overflow: hidden;">
+    </a>
+    <a href="/NES">
+      <img src="css/image/NES.png" width="23%" height="60%" style="border-radius: 50%; overflow: hidden;">
+    </a>
+  </div>
+</div>
+
+
+@code
+{
+   
+}

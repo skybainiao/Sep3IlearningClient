@@ -10,7 +10,7 @@
 
             <li class="nav-item">
                 <div class="item-content">
-                    <a href="/" style="border-radius: 10px; border: 1px solid red; background-color: red; border-bottom-width: 15px; border-top-width: 15px; border-left-width: 15px; border-right-width: 15px; font-size: 25px">
+                    <a href="/home" style="border-radius: 10px; border: 1px solid red; background-color: red; border-bottom-width: 15px; border-top-width: 15px; border-left-width: 15px; border-right-width: 15px; font-size: 25px">
                         Home
                     </a>
                 </div>
@@ -50,7 +50,6 @@
                         <li><a class="dropdown-item" href="/DNP" style="font-family: 'Arial'; font-weight: lighter">DNP</a></li>
                         <li><a class="dropdown-item" href="/CAO" style="font-family: 'Arial'; font-weight: lighter">CAO</a></li>
                         <li><a class="dropdown-item" href="/NES" style="font-family: 'Arial'; font-weight: lighter">NES</a></li>
-                        <li><a class="dropdown-item" href="/Notice" style="font-family: 'Arial'; font-weight: lighter">Notice</a></li>
                     </ul>
                 </div>
             </li>
@@ -93,36 +92,36 @@
 
 @code {
     public string username;
-    private string password;
-    private string errorMessage;
-    private bool collapseNavMenu = true;
-
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu() {
-        collapseNavMenu = !collapseNavMenu;
-    }
-
-    public void go()
-    {
-        try
-        {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
-            NavigationManager.NavigateTo("/Login");
-        }
-        catch (Exception e)
-        {
-            e.ToString();
-        }
-    }
-    public async Task PerformLogout() {
-        errorMessage = "";
-        username = "";
-        password = "";
-        try {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
-            NavigationManager.NavigateTo("/");
-        } catch (Exception e) { }
-    }
+         private string password;
+         private string errorMessage;
+         private bool collapseNavMenu = true;
+     
+         private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+     
+         private void ToggleNavMenu() {
+             collapseNavMenu = !collapseNavMenu;
+         }
+     
+         public void go()
+         {
+             try
+             {
+                 ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+                 NavigationManager.NavigateTo("/Login");
+             }
+             catch (Exception e)
+             {
+                 e.ToString();
+             }
+         }
+         public async Task PerformLogout() {
+             errorMessage = "";
+             username = "";
+             password = "";
+             try {
+                 ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+                 NavigationManager.NavigateTo("/");
+             } catch (Exception e) { }
+         }
     
 }

@@ -194,7 +194,6 @@ D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Co
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\EditProfiles.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Group.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\GroupChat.razor.g.cs
-D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Register.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
@@ -211,7 +210,6 @@ D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Counter.razor
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\EditProfiles.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Group.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\GroupChat.razor.g.cs
-D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Register.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
@@ -286,3 +284,5 @@ C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Profi
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\SDJ.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Settings.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\bin\Debug\net5.0\LoginExample.StaticWebAssets.xml
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Home.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Home.razor.g.cs
