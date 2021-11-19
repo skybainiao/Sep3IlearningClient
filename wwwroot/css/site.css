@@ -380,7 +380,16 @@ position: relative;
 .settings-label2{
     display: inline-block;
     text-align: right;
-    width: 20%;
+    width: 15%;
+    font-size: 25px;
+    font-family: Forte;
+    color: white;
+}
+
+.settings-label3{
+    display: inline-block;
+    text-align: right;
+    width: 15%;
     font-size: 25px;
     font-family: Forte;
     color: white;
