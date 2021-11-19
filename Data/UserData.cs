@@ -23,7 +23,7 @@ namespace LoginExample.Data
         
         Task addProfile(Profile profile);
 
-        Task<IList<Profile>> getProfile(String username);
+        Task<IList<Profile>> getProfile();
 
         Task deleteProfile(String username);
     }

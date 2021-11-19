@@ -104,10 +104,10 @@ namespace LoginExample.Data.Impl
         }
 
 
-        public async Task<IList<Profile>> getProfile(String username)
+        public async Task<IList<Profile>> getProfile()
         {
             using HttpClient client = new HttpClient();
-            Task<string> stringAsync = client.GetStringAsync($"http://localhost:8080/getProfile?username={username}");
+            Task<string> stringAsync = client.GetStringAsync($"http://localhost:8080/getProfile");
             string message = await stringAsync;
             IList<Profile> result = JsonSerializer.Deserialize<List<Profile>>(message, new JsonSerializerOptions
             {

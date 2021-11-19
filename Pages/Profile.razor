@@ -13,33 +13,41 @@
     <img src="css/image/ProfileMedia.jpg" alt="ProfileMedia" class="media-object" width="350px" height="400px">
   </div>
   <div class="media-body">
-    <div style="margin-left: 12%; ">
     
-      <label class="settings-label3">User Name:</label>
-      <label class="settings-label3" style="margin-left: 25%;">Sex:</label>
-
-      <br>
-      <hr style=" border: 0.5px solid grey" />
-      <br>
-    
-      <label class="settings-label3">Firstname:</label>
-      <label class="settings-label3" style="margin-left: 25%">lastname:</label>
-    
-      <br>
-      <hr style=" border: 0.5px solid grey" />
-      <br>
-    
-      <label class="settings-label3">Age:</label>
-      <label class="settings-label3" style="margin-left: 25%" >Country:</label>
-      
-      <br>
-      <hr style=" border: 0.5px solid grey" />
-      <br>
-    
-      <label class="settings-label3">Phone Number:</label>
-      <label class="settings-label3" style="margin-left: 25%">E-mail:</label>
-    
-    </div>
+    @foreach (var profile in _profiles)
+    {
+      if (_profiles!=null)
+      {
+           <div style="margin-left: 12%; ">
+        
+              <label class="settings-label3">Username:@profile.username</label>
+              <label class="settings-label3" style="margin-left: 25%;">Sex:@profile.sex</label>
+        
+              <br>
+              <hr style=" border: 0.5px solid grey"/>
+              <br>
+        
+              <label class="settings-label3">Firstname:@profile.firstName</label>
+              <label class="settings-label3" style="margin-left: 25%">lastname:@profile.lastName</label>
+        
+              <br>
+              <hr style=" border: 0.5px solid grey"/>
+              <br>
+        
+              <label class="settings-label3">Age:@profile.age</label>
+              <label class="settings-label3" style="margin-left: 25%">Country:@profile.country</label>
+        
+              <br>
+              <hr style=" border: 0.5px solid grey"/>
+              <br>
+        
+              <label class="settings-label3">PhoneNumber:@profile.phoneNumber</label>
+              <label class="settings-label3" style="margin-left: 25%">E-mail:@profile.email</label>
+        
+            </div>
+      }
+    }
+ 
   </div>
 </div>
 
@@ -56,7 +64,7 @@
 
   protected override async Task OnInitializedAsync()
   {
-    _profiles = await _userData.getProfile(_service.getName());
+    _profiles = await _userData.getProfile();
   }
 
   public void setttings()

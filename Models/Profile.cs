@@ -18,6 +18,8 @@ namespace LoginExample.Models
         public string country { get; set; }
         
         public string age { get; set; }
+        
+        public string sex { get; set; }
     }
     
 }
