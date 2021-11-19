@@ -1,4 +1,7 @@
 ﻿@page "/Settings"
+@using LoginExample.Data
+@using LoginExample.Data.Impl
+@inject IUserService _service;
 
 <hr style=" border: 2px solid white" />
 <br>
@@ -8,56 +11,86 @@
   <div class="media">
     <img src="css/image/ProfileMedia.jpg" alt="ProfileMedia" class="media-object" width="350px" height="400px">
   </div>
-<div class="media-body">
-  <div style="margin-left: 10%; ">
+  <div class="media-body">
     
-    <label class="settings-label1">User Name:</label>
-    <input style="margin-left:2%; width: 25%; height: 20%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
-    
-    <label style="margin-left: 20%; font-family: Forte; font-size: 25px; color: white">Sex:</label>
-    <label style="margin-left: 3%; color: white"><input type="radio" name="sexRadio"  οnclick="getRadio();" checked="checked"/>Male</label> 
-    <label style="margin-left: 3%; color: white"><input type="radio" name="sexRadio"  οnclick="getRadio();"/>Female</label>
-    
-    <br>
-    <hr style=" border: 0.5px solid grey" />
-    <br>
-      
-    <label class="settings-label1">Firstname:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
-    <label class="settings-label2">lastname:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
-    
-    <br>
-    <hr style=" border: 0.5px solid grey" />
-    <br>
-    
-    <label class="settings-label1">Age:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
-    <label class="settings-label2">Country:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
-      
-    <br>
-    <hr style=" border: 0.5px solid grey" />
-    <br>
-    <label class="settings-label1">Phone Number:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
-    <label class="settings-label2">E-mail:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+    @foreach (var profile in _profiles)
+    {
+      if (_profiles!=null)
+      {
+            <div style="margin-left: 10%; ">
+        
+              <label class="settings-label1">User Name:</label>
+              <input style="margin-left:2%; width: 25%; height: 20%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+        
+              <label style="margin-left: 20%; font-family: Forte; font-size: 25px; color: white">Sex:</label>
+              <label style="margin-left: 3%; color: white"><input type="radio" name="sexRadio" οnclick="getRadio();" checked="checked"/>Male</label>
+              <label style="margin-left: 3%; color: white"><input type="radio" name="sexRadio" οnclick="getRadio();"/>Female</label>
+        
+              <br>
+              <hr style=" border: 0.5px solid grey"/>
+              <br>
+        
+              <label class="settings-label1">Firstname:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+              <label class="settings-label2">lastname:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+        
+              <br>
+              <hr style=" border: 0.5px solid grey"/>
+              <br>
+        
+              <label class="settings-label1">Age:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+              <label class="settings-label2">Country:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+        
+              <br>
+              <hr style=" border: 0.5px solid grey"/>
+              <br>
+              <label class="settings-label1">Phone Number:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+              <label class="settings-label2">E-mail:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+        
+              <br>
+              <hr style=" border: 0.5px solid grey"/>
+        
+              <label class="settings-label1">Recent Password:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+        
+              <br>
+              <hr style=" border: 0.5px solid grey"/>
+        
+              <label class="settings-label1">New password:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+        
+              <br>
+              <hr style=" border: 0.5px solid grey"/>
+        
+              <label class="settings-label1">Confirm new password:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+        
+            </div>
+      }
+    }
 
-    <br>
-    <hr style=" border: 0.5px solid grey" />
-
-    <label class="settings-label1">Recent Password:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
-
-      <br>
-      <hr style=" border: 0.5px solid grey"/>
-
-      <label class="settings-label1">New password:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
-
-      <br>
-      <hr style=" border: 0.5px solid grey"/>
-
-      <label class="settings-label1">Confirm new password:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
-
-    </div>
   </div>
 </div>
 <button style="margin-left: 93%; margin-top: 1%; width: 70px; height: 30px">Save</button>
 
 @code {
+  private Models.Profile _profile;
+
+  private UserData userData = new UserDataService();
+
+  private IList<Models.Profile> _profiles = new List<Models.Profile>();
+
+  
+  protected override async Task OnInitializedAsync()
+  {
+    _profiles = await userData.getProfile();
+  }
+
+
+  public async void save()
+  {
     
+  }
+
+
+
+
+
+
 }
