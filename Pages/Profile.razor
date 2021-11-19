@@ -1,5 +1,8 @@
 ﻿@page "/Profile"
+@using LoginExample.Data
+@using LoginExample.Data.Impl
 @inject NavigationManager NavigationManager
+@inject IUserService _service;
 
 <hr style=" border: 2px solid white" />
 <br>
@@ -47,16 +50,20 @@
 
 @code {
   private string src;
+  private UserData _userData = new UserDataService();
+  private IList<Models.Profile> _profiles = new List<Models.Profile>();
+
+
+  protected override async Task OnInitializedAsync()
+  {
+    _profiles = await _userData.getProfile(_service.getName());
+  }
 
   public void setttings()
   {
     NavigationManager.NavigateTo("/settings");
   }
 
-  public void print()
-  {
-    Console.WriteLine(src);
-  }
   
   
   

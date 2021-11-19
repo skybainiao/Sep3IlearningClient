@@ -90,6 +90,43 @@ namespace LoginExample.Data.Impl
             
             await client.PostAsync($"http://localhost:8080/sendRequest?receiver={receiver}&comment={comment}", content);
         }
+
+
+        public async Task addProfile(Profile profile)
+        {
+            using HttpClient client = new HttpClient();
+            String stringasjson = JsonSerializer.Serialize(profile, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            HttpContent content = new StringContent(stringasjson, Encoding.UTF8, "application/json");
+            await client.PostAsync("http://localhost:8080/addProfile",content);
+        }
+
+
+        public async Task<IList<Profile>> getProfile(String username)
+        {
+            using HttpClient client = new HttpClient();
+            Task<string> stringAsync = client.GetStringAsync($"http://localhost:8080/getProfile?username={username}");
+            string message = await stringAsync;
+            IList<Profile> result = JsonSerializer.Deserialize<List<Profile>>(message, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            return result;
+        }
+
+
+        public async Task deleteProfile(String username)
+        {
+            using HttpClient client = new HttpClient();
+            String stringasjson = JsonSerializer.Serialize(username, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            HttpContent content = new StringContent(stringasjson, Encoding.UTF8, "application/json");
+            await client.PostAsync("http://localhost:8080/deleteProfile",content);
+        }
         
         
         

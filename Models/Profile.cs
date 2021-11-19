@@ -1,4 +1,6 @@
-﻿namespace LoginExample.Models
+﻿using System;
+
+namespace LoginExample.Models
 {
     public class Profile
     {
@@ -15,6 +17,7 @@
         
         public string country { get; set; }
         
+        public string age { get; set; }
     }
     
 }

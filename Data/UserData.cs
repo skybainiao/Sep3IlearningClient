@@ -21,5 +21,10 @@ namespace LoginExample.Data
 
         Task sendRequest(String sender, String receiver, String comment);
         
+        Task addProfile(Profile profile);
+
+        Task<IList<Profile>> getProfile(String username);
+
+        Task deleteProfile(String username);
     }
 }

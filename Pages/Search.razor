@@ -2,6 +2,7 @@
 @using LoginExample.Models
 @using LoginExample.Data
 @using LoginExample.Data.Impl
+@inject IUserService _service;
 
 <hr style=" border: 2px solid white" />
 <br>
@@ -22,7 +23,7 @@
 {
     <tr class="search-tr" style="margin-top: 1%; width: 100%; flex-direction: row; float: left">
         <button type="button" class="button-blue" style="margin-left: 5%; width: 70%; height: 30%; border-radius: 15px; background-color: #7abaff; font-family: Forte">@user.Username</button>
-        <button type="button" style="margin-left: 5%; width: 100px; height: 30px; border-radius: 15px; font-family: Forte">Add</button>
+        <button @onclick="() => sendRequest(user.Username)" type="button" style="margin-left: 5%; width: 100px; height: 30px; border-radius: 15px; font-family: Forte">Add</button>
     </tr>
 }
 </tbody>
@@ -66,6 +67,11 @@
             getAllUsers();
         }
         
+    }
+
+    public async void sendRequest(String receiver)
+    {
+        await _userData.sendRequest(_service.getName(), receiver, text);
     }
 
 
