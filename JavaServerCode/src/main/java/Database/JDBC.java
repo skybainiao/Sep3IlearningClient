@@ -123,5 +123,42 @@ public class JDBC {
   }
 
 
+  public int addProfile(String username,String firstName,String lastName,String email,String phoneNumber,String country,String age,String sex) throws SQLException
+  {
+    String sql = "insert into sep3data.Profile(username, firstName, lastName, email, phoneNumber, country)\n" + "values (?,?,?,?,?,?,?,?)";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+    preparedStatement.setString(1,username);
+    preparedStatement.setString(2,firstName);
+    preparedStatement.setString(3,lastName);
+    preparedStatement.setString(4,email);
+    preparedStatement.setString(5,phoneNumber);
+    preparedStatement.setString(6,country);
+    preparedStatement.setString(7,age);
+    preparedStatement.setString(8,sex);
+
+    return preparedStatement.executeUpdate();
+  }
+
+
+  public ResultSet getProfile() throws SQLException
+  {
+    String sql = "select * from sep3data.Profile";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+    return preparedStatement.executeQuery();
+  }
+
+
+  public int deleteProfile(String username) throws SQLException
+  {
+    String sql = "delete from sep3data.Profile where username = ?";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+    preparedStatement.setString(1,username);
+
+    return preparedStatement.executeUpdate();
+  }
+
+
+
 
 }
