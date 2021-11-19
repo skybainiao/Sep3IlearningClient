@@ -374,7 +374,7 @@ position: relative;
     width: 20%;
     color: white;
     font-size: 25px;
-    font-family: Forte;
+    font-family: "Berlin Sans FB";
 }
 
 .settings-label2{
@@ -382,15 +382,15 @@ position: relative;
     text-align: right;
     width: 15%;
     font-size: 25px;
-    font-family: Forte;
+    font-family: "Berlin Sans FB";
     color: white;
 }
 
 .settings-label3{
     display: inline-block;
-    text-align: right;
+    text-align: left;
     width: 15%;
     font-size: 25px;
-    font-family: Forte;
+    font-family: "Berlin Sans FB";
     color: white;
 }
