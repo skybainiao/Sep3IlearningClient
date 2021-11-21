@@ -26,5 +26,7 @@ namespace LoginExample.Data
         Task<IList<Profile>> getProfile();
 
         Task deleteProfile(String username);
+
+        Task<IList<Request>> getRequest(String username);
     }
 }

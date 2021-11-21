@@ -92,6 +92,20 @@ namespace LoginExample.Data.Impl
         }
 
 
+        public async Task<IList<Request>> getRequest(String username)
+        {
+            using HttpClient client = new HttpClient();
+            Task<string> stringAsync = client.GetStringAsync($"http://localhost:8080/getRequest?username={username}");
+            string message = await stringAsync;
+            IList<Request> result = JsonSerializer.Deserialize<List<Request>>(message, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            return result;
+            
+        }
+
+
         public async Task addProfile(Profile profile)
         {
             using HttpClient client = new HttpClient();
