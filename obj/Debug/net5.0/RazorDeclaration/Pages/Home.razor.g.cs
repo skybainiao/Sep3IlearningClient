@@ -75,6 +75,13 @@ using LoginExample.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "D:\JetBrainsRider\Sep3IlearningClient\Pages\Home.razor"
+using LoginExample.Authentication;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/Home")]
     public partial class Home : LayoutComponentBase
     {
@@ -83,8 +90,31 @@ using LoginExample.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 90 "D:\JetBrainsRider\Sep3IlearningClient\Pages\Home.razor"
+ 
+
+  private bool collapseNavMenu = true;
+     
+  private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+     
+  private void ToggleNavMenu() {
+    collapseNavMenu = !collapseNavMenu;
+  }
+     
+
+  public async Task go() {
+
+    try {
+      ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+      _navigationManager.NavigateTo("/Login");
+    } catch (Exception e) { }
+  }
+
+#line default
+#line hidden
+#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager _navigationManager { get; set; }
     }
 }

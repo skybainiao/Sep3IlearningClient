@@ -1,8 +1,9 @@
 ﻿@page "/Home"
 @inject NavigationManager _navigationManager;
-@inherits LayoutComponentBase
-@inject NavigationManager NavigationManager
 @inject AuthenticationStateProvider AuthenticationStateProvider
+@using LoginExample.Authentication
+@inherits LayoutComponentBase
+
 <div>
   <div class="index-background"></div>
   <div style="position: fixed; z-index: 3; list-style-type: none; margin-left: 75%; margin-top: -3%">
@@ -26,11 +27,11 @@
           <div class="oi oi-menu" style="text-align: center; font-size: 25px; font-weight: normal;">Menu</div>
         </button>
         <ul class="dropdown-menu" style="background-color: rgba(0,0,0,0.4)">
-          <li><a class="dropdown-item" href="/wechat" style="font-family: 'Arial'; font-weight: lighter; text-align: center">SDJ</a></li>
-          <li><a class="dropdown-item" href="/moment" style="font-family: 'Arial'; font-weight: lighter; text-align: center">DNP</a></li>
-          <li><a class="dropdown-item" href="/group" style="font-family: 'Arial'; font-weight: lighter; text-align: center">CAO</a></li>
-          <li><a class="dropdown-item" href="/groupchat" style="font-family: 'Arial'; font-weight: lighter; text-align: center">NES</a></li>
-          <li><a class="dropdown-item" href="/contactus" style="font-family: 'Arial'; font-weight: lighter; text-align: center">NES</a></li>
+          <li><a class="dropdown-item" href="/wechat" style="font-family: 'Arial'; font-weight: lighter; text-align: center">WeChat</a></li>
+          <li><a class="dropdown-item" href="/moment" style="font-family: 'Arial'; font-weight: lighter; text-align: center">Moment</a></li>
+          <li><a class="dropdown-item" href="/group" style="font-family: 'Arial'; font-weight: lighter; text-align: center">Group</a></li>
+          <li><a class="dropdown-item" href="/groupchat" style="font-family: 'Arial'; font-weight: lighter; text-align: center">GroupChat</a></li>
+          <li><a class="dropdown-item" href="/contactus" style="font-family: 'Arial'; font-weight: lighter; text-align: center">ContactUs</a></li>
         </ul>
       </div>
     </li>
@@ -48,38 +49,60 @@
                         <img src="css/image/person.jpg" alt="Login" type="button" class="dropdown-toggle" data-bs-toggle="dropdown" width="30px" height="30px" style="margin-top: 3%">
                         <ul class="dropdown-menu" style="background-color: rgba(0,0,0,0.4)">
                             <li><a class="dropdown-item" style="text-align: center; font-family: Aharoni" href="/Profile">Profile</a></li>
-                            <li><a class="dropdown-item" style="text-align: center; font-family: Aharoni; background-color: rgba(0,0,0,0.4); color: rgba(255,255,255,0.4)" >Logout</a></li>
+                            <li><a class="dropdown-item" style="text-align: center; font-family: Aharoni; background-color: rgba(0,0,0,0.4); color: rgba(255,255,255,0.4)" @onclick="go">Logout</a></li>
                         </ul>
                     </div>
                 </li>
   </div>
   <div class="index-A">
-    <div style="">
-      
-      <label style="text-shadow: 3px 3px 3px grey; color: white; font-size: 50px; position: absolute; z-index: 3; margin-top: 30%; margin-left: 66%; margin-right: 2%;">Software</label>
-      <button style="width: 300px; height: 50px; position: absolute; z-index: 3; margin-top: 35%; margin-left: 66%; margin-right: 2%">Addd</button>
-    </div>
-    <img src="css/image/backmath.jpg" width="100%" height="1000px">
+    
+    <div style="flex-direction: column; position: absolute; z-index: 3; margin-top: 27%; margin-left: 57%; margin-bottom: 73%; margin-right: 33%">
 
-  </div>
-  <div class="index-B" style="text-align: center">
-    <a href="/SDJ">
-      <img src="css/image/SDJ.png" width="23%" height="60%" style="border-radius: 50%; overflow: hidden;">
-    </a>
-    <a href="/DNP">
-      <img src="css/image/DNP.png" width="23%" height="60%" style="border-radius: 50%; overflow: hidden;">
-    </a>
-    <a href="/CAO">
-      <img src="css/image/CAO.png" width="23%" height="60%" style="border-radius: 50%; overflow: hidden;">
-    </a>
-    <a href="/NES">
-      <img src="css/image/NES.png" width="23%" height="60%" style="border-radius: 50%; overflow: hidden;">
-    </a>
+      <form class="chaxun" style="">
+        <span style="width:600px; height: 30px; text-align: center; font-size: 50px; color: white; margin-right: 10%">Software Engineering</span>
+        <br>
+        <button style="font-size: 25px; color: white; width: 420px; height: 50px; text-align: center; border-radius: 10px; margin-top: 40px; margin-right: 10%; border: 1px solid red; background-color: red; border-bottom-width: 10px; border-top-width: 5px; border-left-width: 10px; border-right-width: 10px; transform: rotate(-45deg);
+                                                                                                                                                                                                                                                                                                   -webkit-transform: rotate(-45deg);" type="button">Welcome our Journey </button>
+      </form>
+      
+    </div>
+    <img src="css/image/backmath.jpg" width="100%" height="70%" style="position: relative">
+    <div class="index-B" style="text-align: center">
+      <a href="/SDJ">
+        <img src="css/image/SDJ.png" width="23%" height="60%" style="border-radius: 50%; overflow: hidden;">
+      </a>
+      <a href="/DNP">
+        <img src="css/image/DNP.png" width="23%" height="60%" style="border-radius: 50%; overflow: hidden;">
+      </a>
+      <a href="/CAO">
+        <img src="css/image/CAO.png" width="23%" height="60%" style="border-radius: 50%; overflow: hidden;">
+      </a>
+      <a href="/NES">
+        <img src="css/image/NES.png" width="23%" height="60%" style="border-radius: 50%; overflow: hidden;">
+      </a>
+      <p style="margin: auto; top: 150%; bottom: 0; left: 0; right: 0; text-align: center; color: black; font-size: 30px; font-weight: normal; position: absolute; width: 60%; height: 40%">Software engineering is a discipline that studies the use of engineering methods to build and maintain effective, practical and high-quality software.It involves programming languages, databases, software development tools, system platforms, standards, embedded systems, man-machine interfaces, operating systems, compilers, databases, etc. These applications promote economic and social development, and also improve work efficiency and life efficiency.</p>
+    </div>  
   </div>
 </div>
 
 
 @code
 {
-   
+
+  private bool collapseNavMenu = true;
+     
+  private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+     
+  private void ToggleNavMenu() {
+    collapseNavMenu = !collapseNavMenu;
+  }
+     
+
+  public async Task go() {
+
+    try {
+      ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+      _navigationManager.NavigateTo("/Login");
+    } catch (Exception e) { }
+  }
 }

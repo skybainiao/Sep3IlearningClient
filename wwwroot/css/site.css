@@ -109,7 +109,8 @@ app {
 }
 
 .nav-ul{
-margin-left: 67%;
+margin-left: 55%;
+    margin-right: 2%;
 }
 
 .item-content{
@@ -337,6 +338,12 @@ position: relative;
     background-position: center 0;
 }
 
+.notice-button{
+    width: 300px;
+    height: 50px;
+    border-radius: 15px;
+}
+
 .index-background{
     background-image: url("../css/image/true.jpg");
     -webkit-background-size: cover;
@@ -365,7 +372,7 @@ position: relative;
 .index-B {
     position: absolute;
     z-index: 2;
-    margin-top: 50%;
+    margin-top: 5%;
 }
 
 .settings-label1{
