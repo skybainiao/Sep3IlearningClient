@@ -130,7 +130,6 @@ C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\LoginExample.MvcA
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\LoginExample.RazorComponent.input.cache
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
-C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Register.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
@@ -144,7 +143,6 @@ C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\LoginExample.TagH
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\LoginExample.RazorCoreGenerate.cache
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\App.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
-C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Register.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
@@ -286,3 +284,5 @@ C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Setti
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\bin\Debug\net5.0\LoginExample.StaticWebAssets.xml
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Home.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Home.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Home.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Home.razor.g.cs

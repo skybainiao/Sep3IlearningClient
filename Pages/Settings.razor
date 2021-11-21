@@ -2,6 +2,7 @@
 @using LoginExample.Data
 @using LoginExample.Data.Impl
 @inject IUserService _service;
+@inject NavigationManager _navigationManager;
 
 <hr style=" border: 2px solid white" />
 <br>
@@ -13,38 +14,40 @@
   </div>
   <div class="media-body">
     
-    @foreach (var profile in _profiles)
-    {
-      if (_profiles!=null)
-      {
             <div style="margin-left: 10%; ">
         
-              <label class="settings-label1">User Name:</label>
-              <input style="margin-left:2%; width: 25%; height: 20%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+              <label class="settings-label1">Username:</label>
+              <input @bind="_profile.username" style="margin-left:2%; width: 25%; height: 20%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
         
-              <label style="margin-left: 20%; font-family: Forte; font-size: 25px; color: white">Sex:</label>
-              <label style="margin-left: 3%; color: white"><input type="radio" name="sexRadio" οnclick="getRadio();" checked="checked"/>Male</label>
-              <label style="margin-left: 3%; color: white"><input type="radio" name="sexRadio" οnclick="getRadio();"/>Female</label>
-        
-              <br>
-              <hr style=" border: 0.5px solid grey"/>
-              <br>
-        
-              <label class="settings-label1">Firstname:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
-              <label class="settings-label2">lastname:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+              <label @bind="_profile.sex" style="margin-left: 20%; font-family: Forte; font-size: 25px; color: white">Sex:</label>
+              <label style="margin-left: 3%; color: white"><input type="radio" name="sexRadio" οnclick="getRadio();" checked="checked"/>Male:</label>
+              <label style="margin-left: 3%; color: white"><input type="radio" name="sexRadio" οnclick="getRadio();"/>Female:</label>
         
               <br>
               <hr style=" border: 0.5px solid grey"/>
               <br>
         
-              <label class="settings-label1">Age:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
-              <label class="settings-label2">Country:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+              <label class="settings-label1">Firstname:</label>
+              <input @bind="_profile.firstName" style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+              <label class="settings-label2">lastname:</label>
+              <input @bind="_profile.lastName" style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
         
               <br>
               <hr style=" border: 0.5px solid grey"/>
               <br>
-              <label class="settings-label1">Phone Number:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
-              <label class="settings-label2">E-mail:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+        
+              <label class="settings-label1">Age:</label>
+              <input @bind="_profile.age" style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+              <label class="settings-label2">Country:</label>
+              <input @bind="_profile.country" style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+        
+              <br>
+              <hr style=" border: 0.5px solid grey"/>
+              <br>
+              <label class="settings-label1">PhoneNumber:</label>
+              <input @bind="_profile.phoneNumber" style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
+              <label class="settings-label2">Email:</label>
+              <input @bind="_profile.email" style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
         
               <br>
               <hr style=" border: 0.5px solid grey"/>
@@ -62,19 +65,18 @@
               <label class="settings-label1">Confirm new password:</label><input style="margin-left: 2%; width: 25%; height: 40%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
         
             </div>
-      }
-    }
-
+     
   </div>
 </div>
-<button style="margin-left: 93%; margin-top: 1%; width: 70px; height: 30px">Save</button>
+<button @onclick="save" style="margin-left: 93%; margin-top: 1%; width: 70px; height: 30px">Save</button>
 
 @code {
-  private Models.Profile _profile;
+  private Models.Profile _profile = new Models.Profile();
 
   private UserData userData = new UserDataService();
 
   private IList<Models.Profile> _profiles = new List<Models.Profile>();
+  
 
   
   protected override async Task OnInitializedAsync()
@@ -86,6 +88,16 @@
   public async void save()
   {
     
+    if (_profile!=null)
+    {
+      await userData.deleteProfile(_service.getName());
+
+      await userData.addProfile(_profile);
+      
+      _navigationManager.NavigateTo("/profile");
+      
+    }
+
   }
 
 

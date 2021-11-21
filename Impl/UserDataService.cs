@@ -120,11 +120,9 @@ namespace LoginExample.Data.Impl
         public async Task deleteProfile(String username)
         {
             using HttpClient client = new HttpClient();
-            String stringasjson = JsonSerializer.Serialize(username, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            });
-            HttpContent content = new StringContent(stringasjson, Encoding.UTF8, "application/json");
+           
+            HttpContent content = new StringContent(username, Encoding.UTF8, "application/json");
+            
             await client.PostAsync("http://localhost:8080/deleteProfile",content);
         }
         
