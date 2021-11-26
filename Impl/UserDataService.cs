@@ -140,9 +140,6 @@ namespace LoginExample.Data.Impl
             await client.PostAsync("http://localhost:8080/deleteProfile",content);
         }
         
-        
-        
-
 
     }
 }

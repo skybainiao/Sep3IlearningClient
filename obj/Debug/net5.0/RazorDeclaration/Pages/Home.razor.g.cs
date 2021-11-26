@@ -76,7 +76,7 @@ using LoginExample.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\JetBrainsRider\Sep3IlearningClient\Pages\Home.razor"
+#line 4 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Home.razor"
 using LoginExample.Authentication;
 
 #line default
@@ -91,7 +91,7 @@ using LoginExample.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 90 "D:\JetBrainsRider\Sep3IlearningClient\Pages\Home.razor"
+#line 90 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Home.razor"
  
 
   private bool collapseNavMenu = true;

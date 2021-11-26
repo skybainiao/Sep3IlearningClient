@@ -75,6 +75,27 @@ using LoginExample.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Notice.razor"
+using LoginExample.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Notice.razor"
+using LoginExample.Data.Impl;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Notice.razor"
+using LoginExample.Models;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/Notice")]
     public partial class Notice : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -83,6 +104,30 @@ using LoginExample.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 22 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Notice.razor"
+ 
+        private String type;
+        private UserData _userData = new UserDataService();
+        private IList<Request> _requests = new List<Request>();
+
+        protected override async Task OnInitializedAsync()
+        {
+                _requests = await _userData.getRequest(_service.getName());
+        }
+
+
+        public void getRequest()
+        {
+                
+        }
+
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUserService _service { get; set; }
     }
 }
 #pragma warning restore 1591
