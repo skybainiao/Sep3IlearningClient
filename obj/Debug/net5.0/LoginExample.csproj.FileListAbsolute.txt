@@ -307,7 +307,6 @@ D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\LoginExample.RazorCompon
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\Pages\Announcement.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\Pages\CAO.razor.g.cs
-D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\Pages\Class.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\Pages\Course.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\Pages\DNP.razor.g.cs
@@ -337,7 +336,6 @@ D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\LoginExample.RazorCoreGe
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\App.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\Pages\Announcement.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\Pages\CAO.razor.g.cs
-D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\Pages\Class.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\Pages\Course.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\Pages\DNP.razor.g.cs
@@ -374,3 +372,5 @@ D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\ref\LoginExample.dll
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\LoginExample.pdb
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\LoginExample.genruntimeconfig.cache
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\LoginExample.csproj.CopyComplete
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\Pages\ContactUs.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\Pages\ContactUs.razor.g.cs

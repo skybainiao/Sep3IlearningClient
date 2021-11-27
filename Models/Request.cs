@@ -4,8 +4,8 @@ namespace LoginExample.Models
 {
     public class Request
     {
-        private String sender { set; get; }
-        private String receiver{ set; get; }
-        private String comment{ set; get; }
+        public String sender { set; get; }
+        public String receiver{ set; get; }
+        public String comment{ set; get; }
     }
 }

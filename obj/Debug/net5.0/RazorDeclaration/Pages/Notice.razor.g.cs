@@ -112,11 +112,12 @@ using System.Diagnostics;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 26 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Notice.razor"
+#line 70 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Notice.razor"
  
         private String type = "";
         private UserData _userData = new UserDataService();
         private IList<Request> _requests = new List<Request>();
+        private IList<Message> _messages = new List<Message>();
 
         protected override async Task OnInitializedAsync()
         {
@@ -126,19 +127,19 @@ using System.Diagnostics;
 
         public void getRequest()
         {
-                
+              type = "Request";  
         }
 
 
         public void getMessage()
         {
-                
+                type = "Message";
         }
 
 
         public void getAnnouncement()
         {
-                
+                type = "Announcement";
         }
 
 
