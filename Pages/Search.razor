@@ -31,6 +31,8 @@
 @code {
     private String text;
 
+    private Request _request = new Request();
+
     private IList<User> _users = new List<User>();
 
     private UserData _userData = new UserDataService();
@@ -71,7 +73,10 @@
 
     public async void sendRequest(String receiver)
     {
-        await _userData.sendRequest(_service.getName(), receiver, text);
+        _request.sender = _service.getName();
+        _request.receiver = receiver;
+        _request.comment = "Hello";
+        await _userData.sendRequest(_request);
     }
 
 

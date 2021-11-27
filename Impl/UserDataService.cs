@@ -95,13 +95,16 @@ namespace LoginExample.Data.Impl
         }
 
 
-        public async Task sendRequest(String sender,String receiver,String comment)
+        public async Task sendRequest(Request request)
         {
             using HttpClient client = new HttpClient();
-            
-            HttpContent content = new StringContent(sender, Encoding.UTF8, "application/json");
-            
-            await client.PostAsync($"http://localhost:8080/sendRequest?receiver={receiver}&comment={comment}", content);
+            String stringasjson = JsonSerializer.Serialize(request, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            HttpContent content = new StringContent(stringasjson, Encoding.UTF8, "application/json");
+            await client.PostAsync("http://localhost:8080/sendRequest",content);
+            Console.WriteLine(request.sender);
         }
 
 

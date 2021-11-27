@@ -244,12 +244,10 @@ D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Moment.razor.
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\RazorDeclaration\Pages\Search.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\obj\Debug\net5.0\Razor\Pages\Search.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Announcement.razor.g.cs
-C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Class.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Course.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Moment.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Search.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Announcement.razor.g.cs
-C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Class.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Course.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Moment.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Search.razor.g.cs
@@ -374,3 +372,5 @@ D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\LoginExample.genruntimec
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\LoginExample.csproj.CopyComplete
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\Pages\ContactUs.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\Pages\ContactUs.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\ContactUs.razor.g.cs
+C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\ContactUs.razor.g.cs

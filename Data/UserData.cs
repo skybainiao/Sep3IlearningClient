@@ -21,7 +21,7 @@ namespace LoginExample.Data
 
         Task<IList<Message>> getAllMessages(String receiver);
 
-        Task sendRequest(String sender, String receiver, String comment);
+        Task sendRequest(Request request);
         
         Task addProfile(Profile profile);
 
