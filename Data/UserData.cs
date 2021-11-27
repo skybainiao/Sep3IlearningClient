@@ -19,7 +19,7 @@ namespace LoginExample.Data
 
         Task<IList<Message>> getMessages(String sender, String receiver);
 
-        Task<IList<Message>> getallMessages(String receiver);
+        Task<IList<Message>> getAllMessages(String receiver);
 
         Task sendRequest(String sender, String receiver, String comment);
         

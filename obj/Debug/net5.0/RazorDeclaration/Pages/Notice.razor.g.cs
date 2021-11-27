@@ -112,7 +112,7 @@ using System.Diagnostics;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 70 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Notice.razor"
+#line 83 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Notice.razor"
  
         private String type = "";
         private UserData _userData = new UserDataService();
@@ -122,14 +122,19 @@ using System.Diagnostics;
         protected override async Task OnInitializedAsync()
         {
                 _requests = await _userData.getRequest(_service.getName());
+                _messages = await _userData.getAllMessages(_service.getName());
         }
 
 
-        public void getRequest()
+        public void getFriendRequest()
         {
-              type = "Request";  
+              type = "FriendRequest";  
         }
 
+        public void getGroupRequest()
+        {
+                type = "GroupRequest";
+        }
 
         public void getMessage()
         {

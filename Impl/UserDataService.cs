@@ -82,7 +82,7 @@ namespace LoginExample.Data.Impl
         }
 
 
-        public async Task<IList<Message>> getallMessages(String receiver)
+        public async Task<IList<Message>> getAllMessages(String receiver)
         {
             using HttpClient client = new HttpClient();
             Task<string> stringAsync = client.GetStringAsync($"http://localhost:8080/getAllMessages?receiver={receiver}");
