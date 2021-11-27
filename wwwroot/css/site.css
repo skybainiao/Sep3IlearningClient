@@ -294,7 +294,7 @@ form{
 
 .wechat-table{
     flex-direction: column;
-    margin-top: -285px;
+    margin-bottom: auto;
 }
 
 .wechat-box{
@@ -402,7 +402,7 @@ position: relative;
 .settings-label3{
     display: inline-block;
     text-align: left;
-    width: 15%;
+    width: 20%;
     font-size: 25px;
     font-family: "Berlin Sans FB";
     color: white;
