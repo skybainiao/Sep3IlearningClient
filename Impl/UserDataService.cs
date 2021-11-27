@@ -82,6 +82,19 @@ namespace LoginExample.Data.Impl
         }
 
 
+        public async Task<IList<Message>> getallMessages(String receiver)
+        {
+            using HttpClient client = new HttpClient();
+            Task<string> stringAsync = client.GetStringAsync($"http://localhost:8080/getAllMessages?receiver={receiver}");
+            string message = await stringAsync;
+            IList<Message> result = JsonSerializer.Deserialize<List<Message>>(message, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            return result;
+        }
+
+
         public async Task sendRequest(String sender,String receiver,String comment)
         {
             using HttpClient client = new HttpClient();
