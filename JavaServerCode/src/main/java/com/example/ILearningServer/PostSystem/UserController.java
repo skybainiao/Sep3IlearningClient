@@ -15,12 +15,13 @@ import java.sql.SQLException;
 public class UserController
 {
 
-  private Gson gson = new Gson();
+  private Gson gson;
   private Greeting greeting = new Greeting("Chen");
   private Client client;
 
   public UserController() throws RemoteException, NotBoundException
   {
+    gson = new Gson();
     client = new ClientImpl();
   }
 
@@ -90,8 +91,7 @@ public class UserController
 
 
   @GetMapping("/getProfile")
-  public String getProfile()
-      throws SQLException, RemoteException
+  public String getProfile() throws SQLException, RemoteException
   {
     String str = gson.toJson(client.getProfiles());
 
@@ -104,6 +104,17 @@ public class UserController
       throws SQLException, RemoteException
   {
     client.deleteProfile(username);
+    System.out.println(username);
+  }
+
+
+  @GetMapping("/getRequest")
+  public String getRequest(@RequestParam String username) throws SQLException, RemoteException
+  {
+    String str = gson.toJson(client.getRequest(username));
+
+    return str;
+
   }
 
 

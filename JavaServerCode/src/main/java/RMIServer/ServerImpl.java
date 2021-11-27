@@ -1,9 +1,8 @@
 package RMIServer;
 
 import Database.JDBC;
-import Model.Message;
-import Model.Profile;
-import Model.User;
+import Model.*;
+
 import javax.swing.*;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -59,6 +58,37 @@ public class ServerImpl implements Server
 
     return users;
 
+  }
+
+
+  public void addLecturerAccount(LecturerAccount lecturerAccount) throws SQLException,RemoteException
+  {
+    jdbc.addLecturerAccount(lecturerAccount.getLecturerName(), lecturerAccount.getUsername(), lecturerAccount.getPassword());
+  }
+
+
+  public ArrayList<LecturerAccount> getAllLecturerAccounts() throws SQLException,RemoteException
+  {
+    ResultSet resultSet = jdbc.getAllLecturerAccount();
+    ArrayList<LecturerAccount> lecturerAccounts = new ArrayList<>();
+
+    try
+    {
+      while (resultSet.next()){
+        String lecturerName = resultSet.getString(1);
+        String username = resultSet.getString(2);
+        String password = resultSet.getString(3);
+
+        LecturerAccount lecturerAccount = new LecturerAccount(lecturerName,username,password);
+        lecturerAccounts.add(lecturerAccount);
+
+      }
+    }
+    catch (Exception e){
+      e.printStackTrace();
+    }
+
+    return lecturerAccounts;
   }
 
 
@@ -164,6 +194,31 @@ public class ServerImpl implements Server
   }
 
 
+  public ArrayList<Request> getRequest(String username) throws SQLException,RemoteException
+  {
+    ResultSet resultSet = jdbc.getRequest(username);
+    ArrayList<Request> requests = new ArrayList<>();
+
+    try
+    {
+      while (resultSet.next()){
+        String sender = resultSet.getString(1);
+        String receiver = resultSet.getString(2);
+        String comment = resultSet.getString(3);
+
+        Request request = new Request(sender,receiver,comment);
+        requests.add(request);
+
+      }
+    }
+    catch (Exception e){
+      e.printStackTrace();
+    }
+    return requests;
+
+  }
+
+
   public void addProfile(Profile profile) throws SQLException
   {
     jdbc.addProfile(profile.getUsername(), profile.getFirstName(),
@@ -206,6 +261,8 @@ public class ServerImpl implements Server
   public void deleteProfile(String username) throws SQLException
   {
     jdbc.deleteProfile(username);
+    System.out.println(jdbc.deleteProfile(username));
+    System.out.println("uesd");
   }
 
 
