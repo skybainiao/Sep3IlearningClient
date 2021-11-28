@@ -59,6 +59,16 @@ namespace LoginExample.Data.Impl
         }
 
 
+        public async Task addFriend(string username,string friendName)
+        {
+            using HttpClient client = new HttpClient();
+            
+            HttpContent content = new StringContent(username, Encoding.UTF8, "application/json");
+            
+            await client.PostAsync($"http://localhost:8080/addFriend?friendName={friendName}", content);
+        }
+
+
         public async Task sendMessage(String sender, String receiver, String message)
         {
             using HttpClient client = new HttpClient();
@@ -119,6 +129,16 @@ namespace LoginExample.Data.Impl
             });
             return result;
             
+        }
+
+
+        public async Task deleteRequest(string sender,string receiver)
+        {
+            using HttpClient client = new HttpClient();
+           
+            HttpContent content = new StringContent(sender, Encoding.UTF8, "application/json");
+            
+            await client.PostAsync($"http://localhost:8080/deleteRequest?receiver={receiver}",content);
         }
 
 

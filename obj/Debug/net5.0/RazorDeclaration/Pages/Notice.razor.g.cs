@@ -118,13 +118,21 @@ using System.Diagnostics;
         private UserData _userData = new UserDataService();
         private IList<Request> _requests = new List<Request>();
         private IList<Message> _messages = new List<Message>();
+        private IList<User> friends = new List<User>();
+        private IList<Request> requests = new List<Request>();
 
         protected override async Task OnInitializedAsync()
         {
                 _requests = await _userData.getRequest(_service.getName());
                 _messages = await _userData.getAllMessages(_service.getName());
+                friends = await _userData.getAllFriends(_service.getName());
+                requests = await _userData.getRequest(_service.getName());
         }
 
+        public async void getRequest()
+        {
+                _requests = await _userData.getRequest(_service.getName());
+        }
 
         public void getFriendRequest()
         {
@@ -145,6 +153,27 @@ using System.Diagnostics;
         public void getAnnouncement()
         {
                 type = "Announcement";
+        }
+
+        public void accept(string sender,string receiver)
+        {
+                for (int i = 0; i < friends.Count; i++)
+                {
+                        if (!friends[i].Username.Equals(sender))
+                        {
+                                _userData.addFriend(receiver, sender);
+                        }
+                }
+                
+                _userData.deleteRequest(sender, receiver);
+                getRequest();
+                Console.WriteLine("add friend");
+
+        }
+
+        public void refuse()
+        {
+                
         }
 
 

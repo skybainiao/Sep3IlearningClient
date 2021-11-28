@@ -30,5 +30,9 @@ namespace LoginExample.Data
         Task deleteProfile(String username);
 
         Task<IList<Request>> getRequest(String username);
+
+        Task deleteRequest(string sender, string receiver);
+
+        Task addFriend(string username, string friendName);
     }
 }
