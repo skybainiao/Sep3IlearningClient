@@ -32,7 +32,7 @@
                                 @foreach (var message in _messages)
                                 {
                                         <tr style="text-align: center">
-                                                <td><a href="/profile" style="font-size: 1vw; font-weight: bolder">@message.senderName</a></td>
+                                                <td><a href="/profile" style="font-size: 1vw; font-weight: bolder; color: #0f6674">@message.senderName</a></td>
                                                 <td><span style="font-size: 1vw; font-weight: bolder">@message.chatMessages</span></td>
                                                 <td><button style="outline: none; background: transparent; border: none"><a href="/wechat" ><img src="css/image/WEchat.png" width="30%" height="30%"></a></button></td>
                                         </tr>
@@ -68,11 +68,33 @@
                 }
                 else if (type.Equals("GroupRequest"))
                 {
-                        
+                        <table class="table table-striped" style="width: 100%">
+                                <thead>
+                                <tr style="text-align: center">
+                                        <th><span></span></th>
+                                        <th><span>Groupname</span></th>
+                                        <th><span>Accept</span></th>
+                                        <th><span>Refuse</span></th>
+                                        <th><span>Information</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach (var request in _requests)
+                                {
+                                        <tr style="text-align: center">
+                                                <td><label><img src="css/image/GroupRequest.png" width="30%" height="30%"></label></td>
+                                                <td><span style="font-weight: bolder; font-size: 2vw;"></span></td>
+                                                <td><button class="notice-button2"><img src="css/image/GreenBingo.png" width="30%" height="30%"></button></td>
+                                                <td><button class="notice-button2"><img src="css/image/RedCross.png" width="30%" height="30%"></button></td>
+                                                <td><button class="notice-button2"><img src="css/image/BlueInformation.png" width="30%" height="30%"></button></td>
+                                        </tr>
+                                }
+                                </tbody>
+                        </table>
                 }
                 else if (type.Equals("Announcement"))
                 {
-                        
+                        <p style="font-size: 30px; margin-left: 3%; margin-top: 1%"><img src="css/image/trumpet.png" width="4%" height="4%" style="margin-right: 1%">New announcement available in <a></a><a></a>by teacher</p>
                 }
 
         </div>

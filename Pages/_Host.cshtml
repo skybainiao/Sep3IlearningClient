@@ -50,6 +50,16 @@ function myFunction(id) {
 
 </script>
 
+<script language="javascript" type="text/javascript">
+    window.onload = function() {
+        var oTable = document.getElementById("bbsTab");
+        for ( var i = 0; i < oTable.rows.length; i++) {
+            oTable.rows[i].cells[0].innerHTML = (i + 1);
+            if (i % 2 == 0)
+                oTable.rows[i].className = "ys01";
+        }
+    }
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="_framework/blazor.server.js"></script>
