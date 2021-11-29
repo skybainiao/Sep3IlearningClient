@@ -1,69 +1,46 @@
 ﻿@page "/SDJ"
+@using LoginExample.Data
+@using LoginExample.Data.Impl
 
 <hr style=" border: 2px solid white" />
 <br>
 
 <table class="table table-striped" style=" color: #95999c; font-weight: bolder">
     <thead>
-    <tr style="text-align: center; font-size: 25px">
-        <th>Session</th>
-        <th>Date</th>
-        <th>Content</th>
-        <th>Preparation</th>
+    <tr style="text-align: center; font-size: 1.5vw">
+        <th class="th">Session</th>
+        <th class="th">Date</th>
+        <th class="th">Content</th>
+        <th class="th">Preparation</th>
     </tr>
     </thead>
     <tbody>
-        <tr style="text-align: center; font-size: 35px">
-        
-            <td>
-                <ol>
-                    <li>Cryptography</li>
-                    <li>Confidentiality & Integrity</li>
-                    <li>Integrity & Authentication</li>
-                </ol>
-            </td>
-            <td>
-asdfas
-            </td>
-            <td>
-                <ul>
-                        <li>123</li>
-                        <li>123</li>
-                    </ul>
-                <ul>
-                        <li>123</li>
-                        <li>123</li>
-                    </ul>
-            </td>
-            <td></td>
-        </tr>
-    
-    <tr style="text-align: center; font-size: 35px; list-style-type: none">
-        <td>
-            <ol>
-                <li>Cryptography</li>
-                <li>Confidentiality & Integrity</li>
-                <li>Integrity & Authentication</li>
-            </ol>
-        </td>
-        <td>
-
-        </td>
-        <td>
-            <ul>
-                    <li>123</li>
-                    <li>123</li>
-                </ul>
-            
-                <ul>
-                    <li>123</li>
-                    <li>123</li>
-                </ul>
-        </td>
-        <td></td>
-    </tr>
+    @foreach(var SDJ in courses)
+    {<tr style="text-align: center; font-size: 1vw">
+         <td class="td">
+             @SDJ.session
+             </td>
+         <td class="td">
+             @SDJ.date
+         </td>
+         <td class="td">
+             <ul>
+                 @SDJ.content
+             </ul>
+             </td>
+         <td class="td">
+             @SDJ.preparation
+             </td>
+         </tr>}
     </tbody>
 </table>
 @code {
-    
+    private CourseData _courseData = new CourseDataService();
+    private IList<Models.Course> courses = new List<Models.Course>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        courses = await _courseData.getAllCourses("SDJ");
+    }
+
 }

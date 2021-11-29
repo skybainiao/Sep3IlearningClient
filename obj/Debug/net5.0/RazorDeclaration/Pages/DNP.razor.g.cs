@@ -75,6 +75,20 @@ using LoginExample.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\DNP.razor"
+using LoginExample.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\DNP.razor"
+using LoginExample.Data.Impl;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/DNP")]
     public partial class DNP : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -83,6 +97,20 @@ using LoginExample.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 37 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\DNP.razor"
+       
+    private CourseData _courseData = new CourseDataService();
+    private IList<Models.Course> courses = new List<Models.Course>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        courses = await _courseData.getAllCourses("DNP");
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

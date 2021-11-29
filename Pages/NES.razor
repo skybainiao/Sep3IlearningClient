@@ -7,28 +7,28 @@
 
 <table class="table table-striped" style=" color: #95999c; font-weight: bolder">
     <thead>
-    <tr style="text-align: center; font-size: 25px">
-        <th>Session</th>
-        <th>Date</th>
-        <th>Content</th>
-        <th>Preparation</th>
+    <tr style="text-align: center; font-size: 1.5vw">
+        <th class="th">Session</th>
+        <th class="th">Date</th>
+        <th class="th">Content</th>
+        <th class="th">Preparation</th>
     </tr>
     </thead>
     <tbody>
     @foreach(var NES in courses)
-    {<tr style="text-align: center; font-size: 35px">
-         <td>
+    {<tr style="text-align: center; font-size: 1vw">
+         <td class="td">
              @NES.session
              </td>
-         <td>
+         <td class="td">
              @NES.date
          </td>
-         <td>
+         <td class="td">
              <ul>
-                 <li>@NES.content</li>
+                 @NES.content
              </ul>
              </td>
-         <td>
+         <td class="td">
              @NES.preparation
              </td>
          </tr>}

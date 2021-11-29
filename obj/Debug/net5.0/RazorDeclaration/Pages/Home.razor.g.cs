@@ -91,7 +91,7 @@ using LoginExample.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 89 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Home.razor"
+#line 90 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Home.razor"
  
 
   private bool collapseNavMenu = true;

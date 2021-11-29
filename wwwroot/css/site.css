@@ -258,7 +258,7 @@ form{
     -webkit-animation-name: fadeInOut;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 12s;
+    -webkit-animation-duration: 16s;
     -webkit-animation-direction: alternate;
 }
 .wechat-message {
@@ -451,4 +451,12 @@ position: relative;
     flex-direction: column;
     font-size: 50px;
     font-family: Forte;
+}
+
+.td{
+    border: 2px solid wheat;
+}
+
+.th{
+    border: 2px solid wheat;
 }

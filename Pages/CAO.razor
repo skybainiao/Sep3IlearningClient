@@ -1,14 +1,45 @@
 ﻿@page "/CAO"
+@using LoginExample.Data
+@using LoginExample.Data.Impl
 
 <hr style=" border: 2px solid white" />
 <br>
 
-<el-table-column prop="xuhao" label="xing">
-<template slot-scope="scope">
-    <span v-if="scope.row.xuhao == 0">man</span>
-    <span v-if="scope.row.xuhao == 1">woman</span>
-</template>
-</el-table-column>
+<table class="table table-striped" style=" color: #95999c; font-weight: bolder">
+    <thead>
+    <tr style="text-align: center; font-size: 1.5vw">
+        <th class="th">Session</th>
+        <th class="th">Date</th>
+        <th class="th">Content</th>
+        <th class="th">Preparation</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach(var CAO in courses)
+    {<tr style="text-align: center; font-size: 1vw">
+         <td class="td">
+             @CAO.session
+             </td>
+         <td class="td">
+             @CAO.date
+         </td>
+         <td class="td">
+             <ul>
+                 @CAO.content
+             </ul>
+             </td>
+         <td class="td">
+             @CAO.preparation
+             </td>
+         </tr>}
+    </tbody>
+</table>
 @code {
-    
+    private CourseData _courseData = new CourseDataService();
+    private IList<Models.Course> courses = new List<Models.Course>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        courses = await _courseData.getAllCourses("CAO");
+    }
 }

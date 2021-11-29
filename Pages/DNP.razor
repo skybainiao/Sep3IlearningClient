@@ -1,6 +1,45 @@
 ﻿@page "/DNP"
-<h3>DNP</h3>
+@using LoginExample.Data
+@using LoginExample.Data.Impl
 
+<hr style=" border: 2px solid white" />
+<br>
+
+<table class="table table-striped" style=" color: #95999c; font-weight: bolder">
+    <thead>
+    <tr style="text-align: center; font-size: 1.5vw">
+        <th class="th">Session</th>
+        <th class="th">Date</th>
+        <th class="th">Content</th>
+        <th class="th">Preparation</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach(var DNP in courses)
+    {<tr style="text-align: center; font-size: 1vw">
+         <td class="td">
+             @DNP.session
+             </td>
+         <td class="td">
+             @DNP.date
+         </td>
+         <td class="td">
+             <ul>
+                 @DNP.content
+             </ul>
+             </td>
+         <td class="td">
+             @DNP.preparation
+             </td>
+         </tr>}
+    </tbody>
+</table>
 @code {
-    
+    private CourseData _courseData = new CourseDataService();
+    private IList<Models.Course> courses = new List<Models.Course>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        courses = await _courseData.getAllCourses("DNP");
+    }
 }
