@@ -1,4 +1,6 @@
 ﻿@page "/NES"
+@using LoginExample.Data
+@using LoginExample.Data.Impl
 
 <hr style=" border: 2px solid white" />
 <br>
@@ -13,24 +15,33 @@
     </tr>
     </thead>
     <tbody>
-        <tr style="text-align: center; font-size: 35px">
-        
-            <td>
-                <li></li>
-            </td>
-            <td>
-                
-            </td>
-            <td>
-                
-            </td>
-            <td>
-                
-            </td>
-        </tr>
+    @foreach(var NES in courses)
+    {<tr style="text-align: center; font-size: 35px">
+         <td>
+             @NES.session
+             </td>
+         <td>
+             @NES.date
+         </td>
+         <td>
+             <ul>
+                 <li>@NES.content</li>
+             </ul>
+             </td>
+         <td>
+             @NES.preparation
+             </td>
+         </tr>}
     </tbody>
 </table>
 
 @code {
-    
+    private CourseData _courseData = new CourseDataService();
+    private IList<Models.Course> courses = new List<Models.Course>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        courses = await _courseData.getAllCourses("NES");
+    }
+
 }

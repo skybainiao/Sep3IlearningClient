@@ -108,6 +108,7 @@ using LoginExample.Models;
 #line 55 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\WeChat.razor"
        
     private UserData _userData = new UserDataService();
+    private ChatData chatData = new ChatDataService();
     private IList<User> _users = new List<User>();
     private IList<Message> _messages = new List<Message>();
     private String username;
@@ -124,14 +125,14 @@ using LoginExample.Models;
 
     public async void getMessagess(String username)
     {
-        _messages = await _userData.getMessages(_service.getName(), username);
+        _messages = await chatData.getMessages(_service.getName(), username);
         this.username = username;
     }
 
     
     public void sendMessage()
     {
-        _userData.sendMessage(_service.getName(), username, text);
+        chatData.sendMessage(_service.getName(), username, text);
         getMessagess(username);
     }
 

@@ -7,7 +7,7 @@
         
         public string session{ set; get; }
         
-        public string data{ set; get; }
+        public string date{ set; get; }
         
         public string preparation{ set; get; }
         

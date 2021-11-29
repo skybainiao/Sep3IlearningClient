@@ -75,6 +75,20 @@ using LoginExample.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\NES.razor"
+using LoginExample.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\NES.razor"
+using LoginExample.Data.Impl;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/NES")]
     public partial class NES : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -83,6 +97,21 @@ using LoginExample.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 38 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\NES.razor"
+       
+    private CourseData _courseData = new CourseDataService();
+    private IList<Models.Course> courses = new List<Models.Course>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        courses = await _courseData.getAllCourses("NES");
+    }
+
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

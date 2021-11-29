@@ -116,6 +116,7 @@ using System.Diagnostics;
  
         private String type = "";
         private UserData _userData = new UserDataService();
+        private ChatData chatData = new ChatDataService();
         private IList<Request> _requests = new List<Request>();
         private IList<Message> _messages = new List<Message>();
         private IList<User> friends = new List<User>();
@@ -124,7 +125,7 @@ using System.Diagnostics;
         protected override async Task OnInitializedAsync()
         {
                 _requests = await _userData.getRequest(_service.getName());
-                _messages = await _userData.getAllMessages(_service.getName());
+                _messages = await chatData.getAllMessages(_service.getName());
                 friends = await _userData.getAllFriends(_service.getName());
                 requests = await _userData.getRequest(_service.getName());
         }
