@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using LoginExample.Models;
+using LoginExample.Pages;
+using Course = LoginExample.Models.Course;
 
 namespace LoginExample.Data
 {
     public interface CourseData
     {
-        Task<IList<Course>> getAllUsers(string courseName);
+        Task<IList<Course>> getAllCourses(string courseName);
+
+        Task<IList<Announcement>> getAllAnnouncement(string courseName);
     }
 }
