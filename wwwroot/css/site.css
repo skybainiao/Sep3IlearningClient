@@ -350,6 +350,13 @@ position: relative;
     outline: none;
 }
 
+.Moment-main{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
 .index-background{
     background-image: url("../css/image/true.jpg");
     -webkit-background-size: cover;

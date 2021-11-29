@@ -112,7 +112,7 @@ using System.Diagnostics;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 105 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Notice.razor"
+#line 108 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Notice.razor"
  
         private String type = "";
         private UserData _userData = new UserDataService();
@@ -164,9 +164,10 @@ using System.Diagnostics;
                                 _userData.addFriend(receiver, sender);
                         }
                 }
-                
                 _userData.deleteRequest(sender, receiver);
+                
                 getRequest();
+                
                 Console.WriteLine("add friend");
 
         }
