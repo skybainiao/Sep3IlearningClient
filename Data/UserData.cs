@@ -30,5 +30,7 @@ namespace LoginExample.Data
         Task addFriend(string username, string friendName);
 
         Task<IList<Moment>> getMoments();
+
+        Task addMoment(Moment moment);
     }
 }

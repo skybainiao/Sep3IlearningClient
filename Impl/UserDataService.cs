@@ -152,6 +152,18 @@ namespace LoginExample.Data.Impl
             });
             return result;
         }
+
+
+        public async Task addMoment(Moment moment)
+        {
+            using HttpClient client = new HttpClient();
+            String stringasjson = JsonSerializer.Serialize(moment, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            HttpContent content = new StringContent(stringasjson, Encoding.UTF8, "application/json");
+            await client.PostAsync("http://localhost:8080/addMoment",content);
+        }
         
 
     }
