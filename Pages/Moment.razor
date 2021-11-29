@@ -14,19 +14,18 @@
                 <a style="font-size: 1vw">@moment.username</a>
                 <span style="font-size: 1vw">@moment.time</span>
             </div>
-             <button @onclick="() => ooo(moment)">add</button>  
                      </div>
                         <span>@moment.content</span>
                                           
                     }
     </div>
 </div>
-                              
-                          
+<img @onclick="change" src=@url width="30%" height="30%">            
 <a href="css/image/Chat.jpg" style="display: flex; text-align: center; outline: none; background: transparent; border: none; align-items: center; justify-content: center; margin-top: 1%; "><img src="css/image/EdiMoment.png" width="2%" height="2%"></a>
 <hr style=" border: 2px solid white" />
 
 @code {
+    private string url = "css/image/WhiteStar.png";
     private UserData _userData = new UserDataService();
     private IList<Models.Moment> _moments = new List<Models.Moment>();
 
@@ -35,9 +34,18 @@
         _moments = await _userData.getMoments();
     }
 
-    public void ooo(Models.Moment moment)
+    public void change()
     {
-        Console.WriteLine(moment.content);
+        if (url.Equals("css/image/WhiteStar.png"))
+        {
+            url = "css/image/Redheart.png";
+        }
+        else
+        {
+            url = "css/image/WhiteStar.png";
+        }
+        
     }
+    
 
 } 
