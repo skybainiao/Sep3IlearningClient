@@ -139,6 +139,19 @@ namespace LoginExample.Data.Impl
             
             await client.PostAsync("http://localhost:8080/deleteProfile",content);
         }
+
+
+        public async Task<IList<Moment>> getMoments()
+        {
+            using HttpClient client = new HttpClient();
+            Task<string> stringAsync = client.GetStringAsync($"http://localhost:8080/getMoments");
+            string message = await stringAsync;
+            IList<Moment> result = JsonSerializer.Deserialize<List<Moment>>(message, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            return result;
+        }
         
 
     }

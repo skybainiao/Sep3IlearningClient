@@ -28,5 +28,7 @@ namespace LoginExample.Data
         Task deleteRequest(string sender, string receiver);
 
         Task addFriend(string username, string friendName);
+
+        Task<IList<Moment>> getMoments();
     }
 }
