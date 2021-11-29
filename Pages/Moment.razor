@@ -1,22 +1,43 @@
 ﻿@page "/Moment"
+@using LoginExample.Data
+@using LoginExample.Data.Impl
 
 <hr style=" border: 2px solid white" />
 <br>
 <div class="Moment-main" style="height: 70vh">
     <div style="position: relative; width: 100%; height: 100%; background-color: rgba(255,255,255,0.5); text-align: center">
-        <div style="display: flex; flex-direction: row; display: flex; display: -webkit-flex; justify-content: center;">
+         @foreach(var moment in _moments)
+                    {<div style="display: flex; flex-direction: row; display: flex; display: -webkit-flex; justify-content: center;">
             <img src="css/image/MomentPerson.png" width="2.5%" height="2.5%">
+           
             <div style="display: flex; flex-direction: column">
-                <a style="font-size: 1vw">Name</a>
-                <span style="font-size: 1vw">shijian</span>
+                <a style="font-size: 1vw">@moment.username</a>
+                <span style="font-size: 1vw">@moment.time</span>
             </div>
-        </div>
-        <p>asdsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+             <button @onclick="() => ooo(moment)">add</button>  
+                     </div>
+                        <span>@moment.content</span>
+                                          
+                    }
     </div>
 </div>
+                              
+                          
 <a href="css/image/Chat.jpg" style="display: flex; text-align: center; outline: none; background: transparent; border: none; align-items: center; justify-content: center; margin-top: 1%; "><img src="css/image/EdiMoment.png" width="2%" height="2%"></a>
 <hr style=" border: 2px solid white" />
 
 @code {
-    
+    private UserData _userData = new UserDataService();
+    private IList<Models.Moment> _moments = new List<Models.Moment>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _moments = await _userData.getMoments();
+    }
+
+    public void ooo(Models.Moment moment)
+    {
+        Console.WriteLine(moment.content);
+    }
+
 } 

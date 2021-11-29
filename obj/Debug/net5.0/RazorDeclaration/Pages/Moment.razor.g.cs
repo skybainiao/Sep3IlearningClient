@@ -75,6 +75,20 @@ using LoginExample.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Moment.razor"
+using LoginExample.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Moment.razor"
+using LoginExample.Data.Impl;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/Moment")]
     public partial class Moment : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -83,6 +97,26 @@ using LoginExample.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 29 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Moment.razor"
+       
+    private UserData _userData = new UserDataService();
+    private IList<Models.Moment> _moments = new List<Models.Moment>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _moments = await _userData.getMoments();
+    }
+
+    public void ooo(Models.Moment moment)
+    {
+        Console.WriteLine(moment.content);
+    }
+
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

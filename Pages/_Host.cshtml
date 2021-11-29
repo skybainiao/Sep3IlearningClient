@@ -18,9 +18,10 @@
     <script type="text/javascript" src="home.js"></script>
 </head>
 <body>
-<img class="trans_fade_image" src="css/image/backsnow.jpeg" />
-<img class="tran_fade_image" src="css/image/backmath.jpg" />
-
+<img class="tran_fade_image" src="css/image/backmath.jpg">
+<img class="trans_fade_image" src="css/image/backsnow.jpeg">
+<img id="Red" src="css/image/Redheart.png" width="30%" height="30%">
+                              <img id="White" src="css/image/WhiteStar.png" width="30%" height="30%">
 <app>
     <component type="typeof(App)" render-mode="Server"/>
 
@@ -64,8 +65,30 @@ function myFunction(id) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="_framework/blazor.server.js"></script>
 
-
+<style type="text/css">
+  #Red{
+    display:none;
+  }
+</style>
+<script type="text/javascript">
+  var White = document.getElementById("White");
+  var Red = document.getElementById("Red");
+   
+  //空心点击变实心
+  White.onclick=function(){
+    this.style.display = 'none';
+    Red.style.display = 'block';
+      
+  }
+  //实心点击变空心
+  Red.onclick=function(){
+    this.style.display = 'none';
+    White.style.display = 'block';
+      
+  }
+</script>
 </body>
+
 </html>
 
 
