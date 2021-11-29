@@ -85,6 +85,16 @@ public class JDBC {
   }
 
 
+  public ResultSet getAllMessage(String receiver) throws SQLException
+  {
+    String sql = "select *\n" + "from sep3data.Message\n" + "where receiveName = ?";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+    preparedStatement.setString(1,receiver);
+
+    return preparedStatement.executeQuery();
+  }
+
+
   public ResultSet getFriends(String username) throws SQLException {
     String sql="select friendName from sep3data.Friend where username = ?";
     PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -134,7 +144,7 @@ public class JDBC {
 
   public int sendFriendRequest(String sender,String receiver,String comment) throws SQLException
   {
-    String sql = "insert into FriendRequest(sender, receiver, comment)\n" + "values (?,?,?)";
+    String sql = "insert into sep3data.FriendRequest(sender, receiver, comment)\n" + "values (?,?,?)";
     PreparedStatement preparedStatement = connection.prepareStatement(sql);
     preparedStatement.setString(1,sender);
     preparedStatement.setString(2,receiver);
@@ -151,6 +161,17 @@ public class JDBC {
     preparedStatement.setString(1,username);
 
     return preparedStatement.executeQuery();
+  }
+
+
+  public int deleteRequest(String sender,String receiver) throws SQLException
+  {
+    String sql = "delete from sep3data.FriendRequest where sender = ? and receiver = ?";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+    preparedStatement.setString(1,sender);
+    preparedStatement.setString(2,receiver);
+
+    return preparedStatement.executeUpdate();
   }
 
 
@@ -187,6 +208,16 @@ public class JDBC {
     preparedStatement.setString(1,username);
 
     return preparedStatement.executeUpdate();
+  }
+
+
+  public ResultSet getCourses(String courseName) throws SQLException
+  {
+    String sql = "select *\n" + "from sep3data.Course\n" + "where courseName = ?";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+    preparedStatement.setString(1,courseName);
+
+    return preparedStatement.executeQuery();
   }
 
 

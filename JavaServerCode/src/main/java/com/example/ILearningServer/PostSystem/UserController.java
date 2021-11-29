@@ -1,6 +1,7 @@
 package com.example.ILearningServer.PostSystem;
 
 import Model.Profile;
+import Model.Request;
 import RMIClient.Client;
 import RMIClient.ClientImpl;
 import Model.Greeting;
@@ -64,20 +65,15 @@ public class UserController
   public void addFriend(@RequestBody String username,String friendName) throws SQLException, RemoteException
   {
     client.addFriend(username,friendName);
+    System.out.println("Added a new friend");
   }
 
 
   @PostMapping("/sendRequest")
-  public void sendFriendRequest(@RequestBody String sender,String receiver,String comment) throws SQLException, RemoteException
+  public void sendFriendRequest(@RequestBody Request request) throws SQLException, RemoteException
   {
-    try
-    {
-      client.sendFriendRequest(sender, receiver, comment);
-    }
-    catch (Exception e){
-      System.out.println("you already send request");
-    }
-
+      client.sendFriendRequest(request.getSender(), request.getReceiver(), request.getComment());
+      System.out.println(request.getSender()+""+request.getReceiver()+""+request.getComment());
   }
 
 
@@ -114,7 +110,13 @@ public class UserController
     String str = gson.toJson(client.getRequest(username));
 
     return str;
+  }
 
+
+  @PostMapping("/deleteRequest")
+  public void delete(@RequestBody String sender,String receiver) throws SQLException, RemoteException
+  {
+    client.deleteRequest(sender, receiver);
   }
 
 

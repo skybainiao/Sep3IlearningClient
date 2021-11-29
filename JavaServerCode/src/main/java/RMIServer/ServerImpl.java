@@ -119,6 +119,30 @@ public class ServerImpl implements Server
   }
 
 
+  public ArrayList<Message> getAllMessageByReceiver(String receiver) throws SQLException,RemoteException
+  {
+    ResultSet resultSet = jdbc.getAllMessage(receiver);
+    ArrayList<Message> messages = new ArrayList<>();
+
+    try
+    {
+      while (resultSet.next()){
+
+        String sender = resultSet.getString("senderName");
+        String receiverName = resultSet.getString("receiveName");
+        String text = resultSet.getString("chatMessages");
+        messages.add(new Message(sender,receiverName,text));
+
+      }
+    }
+    catch (Exception e){
+      e.printStackTrace();
+    }
+
+    return messages;
+  }
+
+
   public ArrayList<User> getAllFriends(String username) throws SQLException,RemoteException{
     ResultSet rs = jdbc.getFriends(username);
     ArrayList<User> users = new ArrayList<>();
@@ -181,16 +205,8 @@ public class ServerImpl implements Server
 
   public void sendFriendRequest(String sender,String receiver,String comment) throws SQLException
   {
-    try
-    {
       jdbc.sendFriendRequest(sender, receiver, comment);
-
-    }
-    catch (Exception e){
-      System.out.println("you already send request");
-      JOptionPane.showMessageDialog(null,"you already send request","Tip",JOptionPane.ERROR_MESSAGE);
-    }
-
+      System.out.println(sender+" to "+receiver);
   }
 
 
@@ -216,6 +232,12 @@ public class ServerImpl implements Server
     }
     return requests;
 
+  }
+
+
+  public void deleteRequest(String sender,String receiver) throws SQLException,RemoteException
+  {
+    jdbc.deleteRequest(sender,receiver);
   }
 
 
@@ -258,11 +280,37 @@ public class ServerImpl implements Server
   }
 
 
-  public void deleteProfile(String username) throws SQLException
+  public void deleteProfile(String username) throws SQLException,RemoteException
   {
     jdbc.deleteProfile(username);
     System.out.println(jdbc.deleteProfile(username));
     System.out.println("uesd");
+  }
+
+
+  public ArrayList<Course> getCourses(String courseName) throws SQLException,RemoteException
+  {
+    ResultSet resultSet = jdbc.getCourses(courseName);
+    ArrayList<Course> courses = new ArrayList<>();
+
+    try
+    {
+      while (resultSet.next()){
+        String coursename = resultSet.getString(1);
+        String session = resultSet.getString(2);
+        String date = resultSet.getString(3);
+        String preparation = resultSet.getString(4);
+
+        Course course = new Course(courseName,session,date,preparation);
+        courses.add(course);
+       }
+    }
+    catch (SQLException throwables)
+    {
+      throwables.printStackTrace();
+    }
+
+    return courses;
   }
 
 

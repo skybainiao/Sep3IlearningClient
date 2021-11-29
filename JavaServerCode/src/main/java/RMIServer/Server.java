@@ -41,5 +41,10 @@ public interface Server extends Remote
 
   ArrayList<LecturerAccount> getAllLecturerAccounts() throws SQLException,RemoteException;
 
+  ArrayList<Message> getAllMessageByReceiver(String receiver) throws SQLException,RemoteException;
+
+  void deleteRequest(String sender,String receiver) throws SQLException,RemoteException;
+
+  ArrayList<Course> getCourses(String courseName) throws SQLException,RemoteException;
 
 }

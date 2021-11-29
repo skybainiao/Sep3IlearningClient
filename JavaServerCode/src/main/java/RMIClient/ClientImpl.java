@@ -131,4 +131,22 @@ public class ClientImpl implements Client
     return server.getAllLecturerAccounts();
   }
 
+  @Override public ArrayList<Message> getAllMessageByReceiver(String receiver)
+      throws SQLException, RemoteException
+  {
+    return server.getAllMessageByReceiver(receiver);
+  }
+
+  @Override public void deleteRequest(String sender, String receiver)
+      throws SQLException, RemoteException
+  {
+    server.deleteRequest(sender,receiver);
+  }
+
+  @Override public ArrayList<Course> getCourses(String courseName)
+      throws SQLException, RemoteException
+  {
+    return server.getCourses(courseName);
+  }
+
 }
