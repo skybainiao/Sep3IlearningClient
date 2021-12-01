@@ -5,27 +5,45 @@
 <hr style=" border: 2px solid white" />
 <br>
 <div class="Moment-main" style="height: 70vh">
-    <div style="position: relative; width: 100%; height: 100%; background-color: rgba(255,255,255,0.5); text-align: center">
-         @foreach(var moment in _moments)
-                    {<div style="display: flex; flex-direction: row; display: flex; display: -webkit-flex; justify-content: center;">
-            <img src="css/image/MomentPerson.png" width="2.5%" height="2.5%">
-           
-            <div style="display: flex; flex-direction: column">
-                <a style="font-size: 1vw">@moment.username</a>
-                <span style="font-size: 1vw">@moment.time</span>
+    <div style="position: relative; width: 100%; height: 100%; background-color: rgba(255,255,255,0.5); overflow-y: auto">
+        @foreach(var moment in _moments)
+        {
+            <div style="display: flex; flex-direction: row; display: -webkit-flex; justify-content: center; text-align: center">
+                <img src="css/image/MomentPerson.png" width="2.5%" height="2.5%">
+             
+                <div style="display: flex; flex-direction: column">
+                    <a style="font-size: 1vw; font-family: Algerian; color:#3200f8">@moment.username</a>
+                    <span style="font-size: 1vw; font-family: 'Berlin Sans FB'">@moment.time</span>
+                </div>
             </div>
-                     </div>
-                        <span>@moment.content</span>
-                                          
-                    }
+            <div style="display: flex; flex-direction: column; margin-top: -3%; justify-content: center; text-align: center">
+                <span style="margin-top: 5%; text-align: center; font-family: 'Bell MT'; font-weight: bolder; font-size: 1vw">@moment.content</span>
+                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 3%">
+                    <p>Like:
+                        <img @onclick="change1" src=@url1 width="10%" height="60%" style="text-align: center">
+                        <label style="color: black">@moment.like</label>
+                    </p>
+                    <p>Dislike:
+                        <img @onclick="change2" src=@url2 width="10%" height="60%" style="text-align: center">
+                        <label style="color: black">@moment.dislike</label>
+                    </p>
+                </div>
+            </div>
+                          
+            <br>
+            <hr style=" border: 1px solid black" />
+            <br>
+        }
     </div>
 </div>
-<img @onclick="change" src=@url width="30%" height="30%">            
-<a href="css/image/Chat.jpg" style="display: flex; text-align: center; outline: none; background: transparent; border: none; align-items: center; justify-content: center; margin-top: 1%; "><img src="css/image/EdiMoment.png" width="2%" height="2%"></a>
+
+<a href="/editmoment" style="display: flex; text-align: center; outline: none; background: transparent; border: none; align-items: center; justify-content: center; margin-top: 1%; "><img src="css/image/EdiMoment.png" width="2%" height="2%"></a>
+<p style="justify-content: center; text-align: center; font-size: 1.2vw; font-family: Fonte; color: #4dff80">Publish</p>
 <hr style=" border: 2px solid white" />
 
 @code {
-    private string url = "css/image/WhiteStar.png";
+    private string url1 = "css/image/WhiteStar.png";
+    private string url2 = "css/image/WhiteDislike.png";
     private UserData _userData = new UserDataService();
     private IList<Models.Moment> _moments = new List<Models.Moment>();
 
@@ -34,18 +52,28 @@
         _moments = await _userData.getMoments();
     }
 
-    public void change()
+    public void change1()
     {
-        if (url.Equals("css/image/WhiteStar.png"))
+        if (url1.Equals("css/image/WhiteStar.png"))
         {
-            url = "css/image/Redheart.png";
+            url1 = "css/image/Redheart.png";
         }
         else
         {
-            url = "css/image/WhiteStar.png";
+            url1 = "css/image/WhiteStar.png";
         }
-        
     }
-    
+
+    public void change2()
+    {
+        if (url2.Equals("css/image/WhiteDislike.png"))
+        {
+            url2 = "css/image/GreenDislike.png";
+        }
+        else
+        {
+            url2 = "css/image/WhiteDislike.png";
+        }
+    }
 
 } 

@@ -138,7 +138,6 @@ a:hover{
     display: flex;
     align-items: center;
     flex-direction: column;
-    color: white;
     font-family: Forte;
     font-size: 10rem;
     background: -webkit-linear-gradient(45deg, #000000,#ffffff, #000000, #ffffff,#000000,#ffffff, #000000);
@@ -355,6 +354,30 @@ position: relative;
     justify-content: center;
     display: flex;
     flex-wrap: nowrap;
+}
+
+.EditMoment-main{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.EditMoment-head{
+    text-align: center;
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: Forte;
+    font-size: 2vw;
+    background: -webkit-linear-gradient(45deg, #50ff3c,#3cfffc, #50ff3c, #3cfffc,#50ff3c,#3cfffc, #50ff3c);
+-moz-linear-gradient(45deg, #50ff3c,#3cfffc, #50ff3c, #3cfffc,#50ff3c,#3cfffc, #50ff3c);
+-ms-linear-gradient(45deg, #50ff3c,#3cfffc, #50ff3c, #3cfffc,#50ff3c,#3cfffc, #50ff3c);
+    color: transparent;
+    -webkit-background-clip: text;
+    animation: ran 1s linear infinite;
 }
 
 .index-background{

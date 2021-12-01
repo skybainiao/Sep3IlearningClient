@@ -98,9 +98,10 @@ using LoginExample.Data.Impl;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 27 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Moment.razor"
+#line 44 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Moment.razor"
        
-    private string url = "css/image/WhiteStar.png";
+    private string url1 = "css/image/WhiteStar.png";
+    private string url2 = "css/image/WhiteDislike.png";
     private UserData _userData = new UserDataService();
     private IList<Models.Moment> _moments = new List<Models.Moment>();
 
@@ -109,19 +110,29 @@ using LoginExample.Data.Impl;
         _moments = await _userData.getMoments();
     }
 
-    public void change()
+    public void change1()
     {
-        if (url.Equals("css/image/WhiteStar.png"))
+        if (url1.Equals("css/image/WhiteStar.png"))
         {
-            url = "css/image/Redheart.png";
+            url1 = "css/image/Redheart.png";
         }
         else
         {
-            url = "css/image/WhiteStar.png";
+            url1 = "css/image/WhiteStar.png";
         }
-        
     }
-    
+
+    public void change2()
+    {
+        if (url2.Equals("css/image/WhiteDislike.png"))
+        {
+            url2 = "css/image/GreenDislike.png";
+        }
+        else
+        {
+            url2 = "css/image/WhiteDislike.png";
+        }
+    }
 
 
 #line default
