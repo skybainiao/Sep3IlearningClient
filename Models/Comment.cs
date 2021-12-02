@@ -2,9 +2,9 @@
 {
     public class Comment
     {
-        private string username { set; get; }
-        string publisher{ set; get; }
-        string content{ set; get; }
-        string time{ set; get; }
+        public string username { set; get; }
+        public  string publisher{ set; get; }
+        public  string content{ set; get; }
+        public  string time{ set; get; }
     }
 }

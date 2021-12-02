@@ -1,6 +1,37 @@
 ﻿@page "/GroupChat"
-<h3>GroupChat</h3>
 
+<hr style=" border: 2px solid white" />
+<br>
+
+<div style="display:flex; flex-direction: column">
+    <div style="display: flex; flex-direction: row">
+        <button>Application</button>
+        <button>MyGroup</button>
+    </div>
+    <div class="Group-text" style="position: relative; width: 100%; height: 100%; background-color: rgba(255,255,255,0.7); color: black;">
+        @if (type.Equals(""))
+        {
+            <table>
+            <thead>
+            <tr>
+                <th>Groupname</th>
+                <th>Choice</th>
+            </tr>
+            </thead>
+        <tbody>
+        <tr>
+            <td><p></p></td>
+            <td><button>Add</button></td>
+        </tr>
+        </tbody>
+        </table>
+        }
+        else if(type.Equals(""))
+    {
+        
+    }
+    </div>
+</div>
 @code {
-    
+    private string type = "";
 }

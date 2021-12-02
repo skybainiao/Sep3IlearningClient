@@ -31,8 +31,34 @@
                         <label style="color: black">@moment.dislike</label>
                     </p>
                 </div>
-            </div>
-                          
+                
+                @if (show)
+                {
+                   <button @onclick="() => getComment(moment.username,moment.time)" style="font-size: 2vw; font-family: Forte; color: hotpink; outline: none; background: transparent; border: none">Comment</button>
+                }
+                else if (show == false)
+                {
+                    @if (comments != null)
+                    {
+                        @foreach (var comment1 in comments)
+                            {
+                                <p>@comment1.username :  @comment1.content</p>
+                                   
+                            }
+                        <div style="flex-direction: row; display: flex; float: left; margin-top: 3%; left: 0; right: 0; margin: auto;">
+                                                                    <input @bind="content" style="display: flex; height: 40px; width: 600px; border-radius: 1vw">
+                                                                    <button @onclick="() => comment(moment.username,moment.time)" style="margin-left: 5%; border-radius: 1vw; height: 40px; width: 200px">Submit</button>
+                                                                </div>
+                    }
+                    else
+                    {
+                        <p>no comments were found</p>
+                    }
+                    
+                    
+                }
+                
+                </div>
             <br>
             <hr style=" border: 1px solid black" />
             <br>
@@ -51,12 +77,18 @@
     private ChatData _chatData = new ChatDataService();
     private IList<Message> _messages = new List<Message>();
     private IList<Models.Moment> _moments = new List<Models.Moment>();
-    private string un = "";
+    private string content = "";
+    private IList<Comment> comments = new List<Comment>();
+    private bool show = true;
+    
+    
 
     protected override async Task OnInitializedAsync()
     {
         _moments = await _userData.getMoments();
         _messages = await _chatData.getAMS();
+          
+        
     }
     
     public async void like(string username,string time)
@@ -77,5 +109,28 @@
         _moments = await _userData.getMoments();
 
     }
+
+    public async void comment(string publisher,string time)
+    {
+        Comment comment = new Comment()
+        {
+            username = _service.getName(),
+            publisher = publisher,
+            content = content,
+            time = time
+        };
+        await _userData.addComment(comment);
+        comments = await _userData.getComments(_service.getName(), publisher, time);
+        content = "";
+    }
+
+    public async void getComment(string publisher,string time)
+    {
+        comments = await _userData.getComments(_service.getName(), publisher, time);
+        show = false;
+       
+        
+    }
+    
 
 } 
