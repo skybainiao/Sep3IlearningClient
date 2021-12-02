@@ -13,78 +13,85 @@ namespace LoginExample.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 1 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 2 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 3 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 4 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 5 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 6 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 7 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 8 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using LoginExample;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 9 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using LoginExample.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Moment.razor"
+#line 2 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Moment.razor"
 using LoginExample.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Moment.razor"
+#line 3 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Moment.razor"
 using LoginExample.Data.Impl;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Moment.razor"
+using LoginExample.Models;
 
 #line default
 #line hidden
@@ -98,46 +105,46 @@ using LoginExample.Data.Impl;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 44 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Moment.razor"
+#line 47 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Moment.razor"
        
-    private string url1 = "css/image/WhiteStar.png";
-    private string url2 = "css/image/WhiteDislike.png";
+    private string url1 = "css/image/Redheart.png";
+    private string url2 = "css/image/GreenDislike.png";
     private UserData _userData = new UserDataService();
+    private ChatData _chatData = new ChatDataService();
+    private IList<Message> _messages = new List<Message>();
     private IList<Models.Moment> _moments = new List<Models.Moment>();
+    private string un = "";
 
     protected override async Task OnInitializedAsync()
     {
         _moments = await _userData.getMoments();
+        _messages = await _chatData.getAMS();
+    }
+    
+    public async void like(string username,string time)
+    {
+
+        await _chatData.sendMessage(_service.getName(), "System", "like"+time);
+        await _userData.like(username);
+        _moments = await _userData.getMoments();
+        
     }
 
-    public void change1()
+    
+    public async void dislike(string username,string time)
     {
-        if (url1.Equals("css/image/WhiteStar.png"))
-        {
-            url1 = "css/image/Redheart.png";
-        }
-        else
-        {
-            url1 = "css/image/WhiteStar.png";
-        }
-    }
+        
+        await _chatData.sendMessage(_service.getName(), "System", "dislike"+time);
+        await _userData.dislike(username);
+        _moments = await _userData.getMoments();
 
-    public void change2()
-    {
-        if (url2.Equals("css/image/WhiteDislike.png"))
-        {
-            url2 = "css/image/GreenDislike.png";
-        }
-        else
-        {
-            url2 = "css/image/WhiteDislike.png";
-        }
     }
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUserService _service { get; set; }
     }
 }
 #pragma warning restore 1591

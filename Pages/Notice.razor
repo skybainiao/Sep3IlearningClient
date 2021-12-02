@@ -60,7 +60,7 @@
                                                 <td><span style="font-weight: bolder; font-size: 2vw;">@request.sender</span></td>
                                                 <td><span style="font-weight: bolder; font-size: 2vw;">@request.comment</span></td>
                                                 <td><button @onclick="() =>accept(request.sender,request.receiver) "class="notice-button2"><img src="css/image/GreenBingo.png" width="30%" height="30%"></button></td>
-                                                <td><button class="notice-button2"><img src="css/image/RedCross.png" width="30%" height="30%"></button></td>
+                                                <td><button @onclick="() => refuse(request.sender)" class="notice-button2"><img src="css/image/RedCross.png" width="30%" height="30%"></button></td>
                                                 <td><button class="notice-button2"><img src="css/image/BlueInformation.png" width="30%" height="30%"></button></td>
                                         </tr>
                                 }
@@ -165,9 +165,10 @@
 
         }
 
-        public void refuse()
+        public void refuse(string username)
         {
-                
+                chatData.sendMessage(_service.getName(), username, _service.getName() + " refuse your request");
+                _userData.deleteRequest(username, _service.getName());
         }
 
 

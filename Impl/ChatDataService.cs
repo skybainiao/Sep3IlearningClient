@@ -44,5 +44,19 @@ namespace LoginExample.Data.Impl
             });
             return result;
         }
+        
+        
+        public async Task<IList<Message>> getAMS()
+        {
+            using HttpClient client = new HttpClient();
+            Task<string> stringAsync = client.GetStringAsync($"http://localhost:8080/getAMS");
+            string message = await stringAsync;
+            IList<Message> result = JsonSerializer.Deserialize<List<Message>>(message, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            return result;
+        }
+        
     }
 }

@@ -1,6 +1,9 @@
 ﻿@page "/Moment"
 @using LoginExample.Data
 @using LoginExample.Data.Impl
+@using LoginExample.Models
+@inject IUserService _service;
+
 
 <hr style=" border: 2px solid white" />
 <br>
@@ -19,12 +22,12 @@
             <div style="display: flex; flex-direction: column; margin-top: -3%; justify-content: center; text-align: center">
                 <span style="margin-top: 5%; text-align: center; font-family: 'Bell MT'; font-weight: bolder; font-size: 1vw">@moment.content</span>
                 <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 3%">
-                    <p>Like:
-                        <img @onclick="change1" src=@url1 width="10%" height="60%" style="text-align: center">
+                    <p>
+                        <img @onclick="() => like(moment.username,moment.time)" src=@url1 width="10%" height="60%" style="text-align: center">
                         <label style="color: black">@moment.like</label>
                     </p>
-                    <p>Dislike:
-                        <img @onclick="change2" src=@url2 width="10%" height="60%" style="text-align: center">
+                    <p>
+                        <img @onclick="() => dislike(moment.username,moment.time)" src=@url2 width="10%" height="60%" style="text-align: center">
                         <label style="color: black">@moment.dislike</label>
                     </p>
                 </div>
@@ -42,38 +45,37 @@
 <hr style=" border: 2px solid white" />
 
 @code {
-    private string url1 = "css/image/WhiteStar.png";
-    private string url2 = "css/image/WhiteDislike.png";
+    private string url1 = "css/image/Redheart.png";
+    private string url2 = "css/image/GreenDislike.png";
     private UserData _userData = new UserDataService();
+    private ChatData _chatData = new ChatDataService();
+    private IList<Message> _messages = new List<Message>();
     private IList<Models.Moment> _moments = new List<Models.Moment>();
+    private string un = "";
 
     protected override async Task OnInitializedAsync()
     {
         _moments = await _userData.getMoments();
+        _messages = await _chatData.getAMS();
+    }
+    
+    public async void like(string username,string time)
+    {
+
+        await _chatData.sendMessage(_service.getName(), "System", "like"+time);
+        await _userData.like(username);
+        _moments = await _userData.getMoments();
+        
     }
 
-    public void change1()
+    
+    public async void dislike(string username,string time)
     {
-        if (url1.Equals("css/image/WhiteStar.png"))
-        {
-            url1 = "css/image/Redheart.png";
-        }
-        else
-        {
-            url1 = "css/image/WhiteStar.png";
-        }
-    }
+        
+        await _chatData.sendMessage(_service.getName(), "System", "dislike"+time);
+        await _userData.dislike(username);
+        _moments = await _userData.getMoments();
 
-    public void change2()
-    {
-        if (url2.Equals("css/image/WhiteDislike.png"))
-        {
-            url2 = "css/image/GreenDislike.png";
-        }
-        else
-        {
-            url2 = "css/image/WhiteDislike.png";
-        }
     }
 
 } 

@@ -164,7 +164,27 @@ namespace LoginExample.Data.Impl
             HttpContent content = new StringContent(stringasjson, Encoding.UTF8, "application/json");
             await client.PostAsync("http://localhost:8080/addMoment",content);
         }
+
+
+        public async Task like(string username)
+        {
+            using HttpClient client = new HttpClient();
+          
+            HttpContent content = new StringContent(username, Encoding.UTF8, "application/json");
+            
+            await client.PostAsync("http://localhost:8080/like",content);
+        }
         
+        
+        public async Task dislike(string username)
+        {
+            using HttpClient client = new HttpClient();
+          
+            HttpContent content = new StringContent(username, Encoding.UTF8, "application/json");
+            
+            await client.PostAsync("http://localhost:8080/dislike",content);
+        }
+
 
     }
 }

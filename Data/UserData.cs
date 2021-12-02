@@ -32,5 +32,9 @@ namespace LoginExample.Data
         Task<IList<Moment>> getMoments();
 
         Task addMoment(Moment moment);
+
+        Task like(string username);
+
+        Task dislike(string username);
     }
 }
