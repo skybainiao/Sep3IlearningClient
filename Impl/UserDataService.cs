@@ -184,6 +184,31 @@ namespace LoginExample.Data.Impl
             
             await client.PostAsync("http://localhost:8080/dislike",content);
         }
+        
+        
+        public async Task<IList<Comment>> getComments(string username,string publisher,string time)
+        {
+            using HttpClient client = new HttpClient();
+            Task<string> stringAsync = client.GetStringAsync($"http://localhost:8080/getComments?username={username}&publisher={publisher}&time={time}");
+            string message = await stringAsync;
+            IList<Comment> result = JsonSerializer.Deserialize<List<Comment>>(message, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            return result;
+        }
+
+
+        public async Task addComment(Comment comment)
+        {
+            using HttpClient client = new HttpClient();
+            String stringasjson = JsonSerializer.Serialize(comment, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            HttpContent content = new StringContent(stringasjson, Encoding.UTF8, "application/json");
+            await client.PostAsync("http://localhost:8080/addComment",content);
+        }
 
 
     }

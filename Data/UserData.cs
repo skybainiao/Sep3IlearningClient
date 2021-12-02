@@ -36,5 +36,9 @@ namespace LoginExample.Data
         Task like(string username);
 
         Task dislike(string username);
+
+        Task<IList<Comment>> getComments(string username, string publisher, string time);
+
+        Task addComment(Comment comment);
     }
 }
