@@ -5,90 +5,93 @@
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
 <AuthorizeView>
+    
     <div class="nav">
-        <div class="nav-ul">
-            
-            <li class="nav-item">
-                <div class="item-content">
-                    <a href="/home" style="border-radius: 10px; border: 1px solid red; background-color: red; border-bottom-width: 15px; border-top-width: 15px; border-left-width: 15px; border-right-width: 15px; font-size: 25px">
-                        Home
-                    </a>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <div class="item-content">
-                    <a href="/Counter">
-                        Counter
-                    </a>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <div class="item-content">
-                    <a href="/search">
-                        search
-                    </a>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <div class="item-content">
-                    <a href="/profile">
-                        profile
-                    </a>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <div class="item-content">
-                    <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" style="font-weight: normal; text-align: center; margin-top: -10px; font-size:25px; color: #34ce57; background: transparent; border-width: 0; outline:none;">
-                        Course
-                    </button>
-                    <ul class="dropdown-menu" style="background-color: rgba(0,0,0,0.4)">
-                        <li><a class="dropdown-item" href="/SDJ" style="font-family: 'Arial'; font-weight: lighter">SDJ</a></li>
-                        <li><a class="dropdown-item" href="/DNP" style="font-family: 'Arial'; font-weight: lighter">DNP</a></li>
-                        <li><a class="dropdown-item" href="/CAO" style="font-family: 'Arial'; font-weight: lighter">CAO</a></li>
-                        <li><a class="dropdown-item" href="/NES" style="font-family: 'Arial'; font-weight: lighter">NES</a></li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="nav-item" style="text-align: center">
-                <div class="item-content" style="text-align: center">
-                    <button onclick="myFunction('Demo1')" type="button" class="button w3-center-align" style="text-align: center; background: transparent; border-width: 0; outline:none; color: #34ce57;text-decoration: none; margin-top: -10px">
-                        <div class="oi oi-menu" style="text-align: center; font-size: 25px; font-weight: normal;">Menu</div>
-                    </button>
-                    <div id="Demo1" class="w3-hide w3-animate-zoom" style="text-align: center; font-size: 10px">
-                        <a href="/wechat" class="w3-button w3-block w3-left-align" style="text-align: center; font-family: 'Arial Black'">WeChat</a>
-                        <a href="/moment" class="w3-button w3-block w3-left-align" style="text-align: center; font-family: 'Arial Black'">Moment</a>
-                        <a href="/group" class="w3-button w3-block w3-left-align" style="text-align: center; font-family: 'Arial Black'">Group</a>
-                        <a href="/groupchat" class="w3-button w3-block w3-left-align" style="text-align: center; font-family: 'Arial Black'">GroupChat</a>
-                        <a href="/contactus" class="w3-button w3-block w3-left-align" style="text-align: center; font-family: 'Arial Black'">ContactUs</a>
+        <nav class="navbar navbar-expand-lg navbar-toggleable-lg navbar-dark navbar-custom  box-shadow mb-3 fixed-top" style="background-color: rgba(178,255,244,0.3); max-width: 100%">
+            <div class="nav-ul">
+                <li class="nav-item">
+                    <div class="item-content">
+                        <a href="/home" style="border-radius: 10px; border: 1px solid red; background-color: red; border-bottom-width: 15px; border-top-width: 15px; border-left-width: 15px; border-right-width: 15px; font-size: 25px">
+                            Home
+                        </a>
                     </div>
-                </div>
-            </li>
+                </li>
 
-            <li class="nav-item">
-                <div class="item-content">
-                    <a href="/Notice">
-                        <img src="css/image/Notice.png" alt="Notice" type="button" width="30px" height="30px" style="margin-top: -10%"><label style="color: red; font-size: 10px">100</label>
-                    </a>
-                </div>
-            </li>
+                <li class="nav-item">
+                    <div class="item-content">
+                        <a href="/Counter">
+                            Counter
+                        </a>
+                    </div>
+                </li>
 
-            <li class="nav-item">
-                <div class="item-content">
-                    <img src="css/image/person.jpg" alt="Login" type="button" class="dropdown-toggle" data-bs-toggle="dropdown" width="30px" height="30px" style="margin-top: -10%">
-                    <ul class="dropdown-menu" style="background-color: rgba(0,0,0,0.4)">
-                        <li><a class="dropdown-item" style="text-align: center; font-family: Aharoni" href="/Profile">Profile</a></li>
-                        <li><a class="dropdown-item" style="text-align: center; font-family: Aharoni" href="/OwnMoment">MyMoment</a></li>
-                        <li><a class="dropdown-item" style="text-align: center; font-family: Aharoni; background-color: rgba(0,0,0,0.4); color: rgba(255,255,255,0.4)" @onclick="go">Logout</a></li>
-                    </ul>
-                </div>
-            </li>
-        </div>
+                <li class="nav-item">
+                    <div class="item-content">
+                        <a href="/search">
+                            search
+                        </a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <div class="item-content">
+                        <a href="/profile">
+                            profile
+                        </a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <div class="item-content">
+                        <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" style="font-weight: normal; text-align: center; margin-top: -10px; font-size:25px; color: #37ff00; background: transparent; border-width: 0; outline:none;">
+                            Course
+                        </button>
+                        <ul class="dropdown-menu" style="background-color: rgba(0,0,0,0.4)">
+                            <li><a class="dropdown-item" href="/SDJ" style="font-family: 'Arial'; font-weight: lighter">SDJ</a></li>
+                            <li><a class="dropdown-item" href="/DNP" style="font-family: 'Arial'; font-weight: lighter">DNP</a></li>
+                            <li><a class="dropdown-item" href="/CAO" style="font-family: 'Arial'; font-weight: lighter">CAO</a></li>
+                            <li><a class="dropdown-item" href="/NES" style="font-family: 'Arial'; font-weight: lighter">NES</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item" style="text-align: center">
+                    <div class="item-content" style="text-align: center">
+                        <button onclick="myFunction('Demo1')" type="button" class="button w3-center-align" style="text-align: center; background: transparent; border-width: 0; outline:none; color: #37ff00;text-decoration: none; margin-top: -10px">
+                            <div class="oi oi-menu" style="text-align: center; font-size: 25px; font-weight: normal;">Menu</div>
+                        </button>
+                        <div id="Demo1" class="w3-hide w3-animate-zoom" style="text-align: center; font-size: 10px">
+                            <a href="/wechat" class="w3-button w3-block w3-left-align" style="text-align: center; font-family: 'Arial Black'">WeChat</a>
+                            <a href="/moment" class="w3-button w3-block w3-left-align" style="text-align: center; font-family: 'Arial Black'">Moment</a>
+                            <a href="/group" class="w3-button w3-block w3-left-align" style="text-align: center; font-family: 'Arial Black'">Group</a>
+                            <a href="/groupchat" class="w3-button w3-block w3-left-align" style="text-align: center; font-family: 'Arial Black'">GroupChat</a>
+                            <a href="/contactus" class="w3-button w3-block w3-left-align" style="text-align: center; font-family: 'Arial Black'">ContactUs</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <div class="item-content">
+                        <a href="/Notice">
+                            <img src="css/image/Notice.png" alt="Notice" type="button" width="30px" height="30px" style="margin-top: -10%"><label style="color: red; font-size: 10px">100</label>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <div class="item-content">
+                        <img src="css/image/person.jpg" alt="Login" type="button" class="dropdown-toggle" data-bs-toggle="dropdown" width="30px" height="30px" style="margin-top: -10%">
+                        <ul class="dropdown-menu dropdown-menu-right" style="background-color: rgba(0,0,0,0.4); margin-right: auto">
+                            <li><a class="dropdown-item" style="text-align: center; font-family: 'Arial'; font-weight: lighter; color: rgba(255,255,255,0.5); background-color: rgba(0,0,0,0.4)" href="/Profile">Profile</a></li>
+                            <li><a class="dropdown-item" style="text-align: center; font-family: 'Arial'; font-weight: lighter; color: rgba(255,255,255,0.5); background-color: rgba(0,0,0,0.4)" href="/OwnMoment">MyMoment</a></li>
+                            <li><a class="dropdown-item" style="text-align: center; font-family: 'Arial'; background-color: rgba(0,0,0,0.4); color: rgba(0,162,231,0.6)" @onclick="go">Logout</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </div>
+            </nav>
     </div>
+    
 </AuthorizeView>
 
 @code {
