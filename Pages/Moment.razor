@@ -42,13 +42,15 @@
                     {
                         @foreach (var comment1 in comments)
                             {
-                                <p>@comment1.username :  @comment1.content</p>
-                                   
+                                if (comment1.username.Equals(_service.getName()) && comment1.publisher.Equals(moment.username))
+                                {
+                                    <p>@comment1.username :  @comment1.content</p>
+                                }
                             }
                         <div style="flex-direction: row; display: flex; float: left; margin-top: 3%; left: 0; right: 0; margin: auto;">
-                                                                    <input @bind="content" style="display: flex; height: 40px; width: 600px; border-radius: 1vw">
-                                                                    <button @onclick="() => comment(moment.username,moment.time)" style="margin-left: 5%; border-radius: 1vw; height: 40px; width: 200px">Submit</button>
-                                                                </div>
+                            <input @bind="content" style="display: flex; height: 40px; width: 600px; border-radius: 1vw">
+                            <button @onclick="() => comment(moment.username,moment.time)" style="margin-left: 5%; border-radius: 1vw; height: 40px; width: 200px">Submit</button>
+                        </div>
                     }
                     else
                     {
@@ -119,9 +121,13 @@
             content = content,
             time = time
         };
-        await _userData.addComment(comment);
-        comments = await _userData.getComments(_service.getName(), publisher, time);
-        content = "";
+        if (content!=null)
+        {
+            await _userData.addComment(comment);
+            comments = await _userData.getComments(_service.getName(), publisher, time);
+            content = "";  
+        }
+         
     }
 
     public async void getComment(string publisher,string time)

@@ -136,6 +136,41 @@ public class UserController
   }
 
 
+  @PostMapping("/like")
+  public void like(@RequestBody String username)
+      throws SQLException, RemoteException
+  {
+    client.like(username);
+  }
+
+
+  @PostMapping("/dislike")
+  public void dislike(@RequestBody String username)
+      throws SQLException, RemoteException
+  {
+    client.dislike(username);
+  }
+
+
+  @PostMapping("/addComment")
+  public void addComment(@RequestBody String comment)
+      throws SQLException, RemoteException
+  {
+    Comment comment1 = gson.fromJson(comment,Comment.class);
+    client.addComment(comment1);
+
+  }
+
+
+  @GetMapping("/getComments")
+  public String getComments(@RequestParam String username,String publisher,String time)
+      throws SQLException, RemoteException
+  {
+    String str = gson.toJson(client.getAllComments(username, publisher, time));
+    return str;
+  }
+
+
 
 
 

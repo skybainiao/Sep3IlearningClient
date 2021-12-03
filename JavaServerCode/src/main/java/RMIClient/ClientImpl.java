@@ -167,4 +167,34 @@ public class ClientImpl implements Client
     server.addMoment(moment);
   }
 
+  @Override public void like(String username)
+      throws SQLException, RemoteException
+  {
+    server.like(username);
+  }
+
+  @Override public void dislike(String username)
+      throws SQLException, RemoteException
+  {
+    server.dislike(username);
+  }
+
+  @Override public ArrayList<Message> getAllMessagesWithoutEverything()
+      throws SQLException, RemoteException
+  {
+    return server.getAllMessagesWithoutEverything();
+  }
+
+  @Override public void addComment(Comment comment)
+      throws SQLException, RemoteException
+  {
+    server.addComment(comment);
+  }
+
+  @Override public ArrayList<Comment> getAllComments(String username,
+      String publisher, String time) throws SQLException, RemoteException
+  {
+    return server.getAllComments(username, publisher, time);
+  }
+
 }

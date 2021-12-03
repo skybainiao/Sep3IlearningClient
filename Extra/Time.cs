@@ -12,13 +12,13 @@ namespace LoginExample.Extra
 
         public string getTime()
         {
-            return DateTime.Now.ToString("hh:mm:ss t z");
+            return DateTime.Now.ToString("hh:mm:ss");
         }
 
 
         public string getNowTime()
         {
-            return getDate() + " at " + getTime();
+            return getDate() + "/" + getTime();
         }
         
         

@@ -164,10 +164,8 @@ C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\LoginExample.pdb
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\LoginExample.genruntimeconfig.cache
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\LoginExample.csproj.CopyComplete
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\EditProfiles.razor.g.cs
-C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\Group.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\GroupChat.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\EditProfiles.razor.g.cs
-C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\Group.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\GroupChat.razor.g.cs
 D:\JetBrainsRider\Sep3IlearningClient\bin\Debug\net5.0\appsettings.Development.json
 D:\JetBrainsRider\Sep3IlearningClient\bin\Debug\net5.0\appsettings.json
