@@ -6,6 +6,8 @@ namespace LoginExample.Data
 {
     public interface GroupData
     {
-        Task<IList<Group>> getAllCourses();
+        Task<IList<Group>> getAllGroups();
+
+        Task<IList<string>> getAllGroupName();
     }
 }
