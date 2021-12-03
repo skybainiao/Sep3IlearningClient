@@ -1,4 +1,7 @@
 ﻿@page "/GroupChat"
+@using LoginExample.Data
+@using LoginExample.Data.Impl
+@using LoginExample.Models
 
 <hr style=" border: 2px solid white" />
 <br>
@@ -8,9 +11,24 @@
         <button>Group</button>
         <button style="margin-left: 5%">MyGroup</button>
     </div>
-    <div class="Group-text" style="position: relative; width: 100%; height: 100%; background-color: rgba(255,255,255,0.7); color: black; margin-top: 3%">
+    <div class="Group-text" style="position: relative; width: 100%; height: 100%; background-color: rgba(255,255,255,0.7); color: black; margin-top: 3%; overflow-y: auto">
         @if (type.Equals(""))
         {
+            @foreach (var groupName in groupName)
+            {
+                <div style="width: 20%; height: 55%; background-color: blue; margin-top: 4%; margin-left: 4%; float: left; border-radius: 1vw; box-shadow: 10px 10px 15px grey;
+                 background: -webkit-linear-gradient(left, #d7edff,#a7d6ff); background: -o-linear-gradient(right,#d7edff,#a7d6ff); background: -moz-linear-gradient(right,#d7edff,#a7d6ff);
+                 background: linear-gradient(to right,#d7edff,#a7d6ff);">
+                    <div style="text-align: center; font-family: Forte; font-size: 2vw; color: #3200f8">@groupName</div>
+                    @foreach (var group in _groups)
+                    {
+                        if (group.groupName.Equals(groupName))
+                        {
+                            <div style="text-align: center; font-size: 1.5vw; margin-top: 1%">@group.memberName</div>
+                        }
+                    }
+                    </div>
+                    }
             <div>
                 
             </div>
@@ -26,4 +44,15 @@
 
 @code {
     private string type = "";
-}
+    private GroupData _groupData = new GroupDataService();
+    private IList<Group> _groups = new List<Group>();
+    private IList<string> groupName = new List<string>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        _groups = await _groupData.getAllGroups();
+        groupName = await _groupData.getAllGroupName();
+    }
+
+} 

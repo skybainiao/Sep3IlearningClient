@@ -75,6 +75,27 @@ using LoginExample.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\GroupChat.razor"
+using LoginExample.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\GroupChat.razor"
+using LoginExample.Data.Impl;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\GroupChat.razor"
+using LoginExample.Models;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/GroupChat")]
     public partial class GroupChat : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -84,9 +105,20 @@ using LoginExample.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 27 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\GroupChat.razor"
+#line 45 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\GroupChat.razor"
        
     private string type = "";
+    private GroupData _groupData = new GroupDataService();
+    private IList<Group> _groups = new List<Group>();
+    private IList<string> groupName = new List<string>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        _groups = await _groupData.getAllGroups();
+        groupName = await _groupData.getAllGroupName();
+    }
+
 
 #line default
 #line hidden

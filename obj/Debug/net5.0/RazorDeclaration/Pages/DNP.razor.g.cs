@@ -122,7 +122,7 @@ using LoginExample.Models;
         _announcements = await _courseData.getAllAnnouncement("DNP");
 
     }
-    
+
     public async void comment(string publisher, string time)
     {
         Comment comment = new Comment()
@@ -132,11 +132,14 @@ using LoginExample.Models;
             content = content,
             time = time
         };
-        await _userData.addComment(comment);
-        _comments = await _userData.getComments(_service.getName(), publisher, time);
-        content = "";
+        if (content != null)
+        {
+            await _userData.addComment(comment);
+            _comments = await _userData.getComments(_service.getName(), publisher, time);
+            content = "";
+        }
     }
-    
+
     public async void getcontent(string publisher, string time)
     {
         _comments = await _userData.getComments(_service.getName(), publisher, time);

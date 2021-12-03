@@ -56,8 +56,6 @@
                     {
                         <p>no comments were found</p>
                     }
-                    
-                    
                 }
                 
                 </div>
@@ -125,7 +123,7 @@
         {
             await _userData.addComment(comment);
             comments = await _userData.getComments(_service.getName(), publisher, time);
-            content = "";  
+            content = ""; 
         }
          
     }
