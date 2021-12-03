@@ -86,7 +86,6 @@ app {
 }
 
 
-
 .nav-item {
     padding: 10px;
     float: left;
@@ -291,10 +290,6 @@ form{
     color: black;
 }
 
-.wechat-table{
-    flex-direction: column;
-    margin-bottom: auto;
-}
 
 .wechat-box{
     min-height: 22rem;

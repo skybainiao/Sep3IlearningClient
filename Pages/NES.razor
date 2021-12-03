@@ -1,47 +1,147 @@
 ﻿@page "/NES"
 @using LoginExample.Data
 @using LoginExample.Data.Impl
+@using LoginExample.Models
+@inject IUserService _service;
 
 <hr style=" border: 2px solid white" />
 <br>
 
-<table class="table table-striped" style=" color: #f83a00; font-weight: bolder">
-    <thead>
-    <tr style="text-align: center; font-size: 1.5vw">
-        <th class="th">Session</th>
-        <th class="th">Date</th>
-        <th class="th">Content</th>
-        <th class="th">Preparation</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach(var NES in courses)
-    {<tr style="text-align: center; font-size: 1vw">
-         <td class="td">
-             @NES.session
-             </td>
-         <td class="td">
-             @NES.date
-         </td>
-         <td class="td">
-             <ul>
-                 @NES.content
-             </ul>
-             </td>
-         <td class="td">
-             @NES.preparation
-             </td>
-         </tr>}
-    </tbody>
-</table>
+<div style="display:flex; flex-direction: column; height: 75vh">
+    <div style="display: flex; flex-direction: row; justify-content: center">
+        <button @onclick="announcement">Announcement</button>
+        <button @onclick="plan" style="margin-left: 5%">Plan</button>
+    </div>
+<div class="NES-text" style="position: relative; width: 70%; height: 100%; top: 0; right: 0; left: 0; bottom: 0; margin: auto; background-color: rgba(255,255,255,0.7); color: black; margin-top: 3%; overflow-y: auto">
+    @if (type.Equals("Announcement"))
+    {
+         @foreach (var announcement in _announcements)
+        {
+            <div style="display: flex; flex-direction: row; display: -webkit-flex; justify-content: center; text-align: center">
+                <img src="css/image/MomentPerson.png" width="2.5%" height="2.5%">
+
+                <div style="display: flex; flex-direction: column">
+                    <a style="font-size: 1vw; font-family: Algerian; color:#3200f8">@announcement.LecturerName</a>
+                    <span style="font-size: 1vw; font-family: 'Berlin Sans FB'">@announcement.time</span>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; margin-top: -3%; justify-content: center; text-align: center">
+                <span style="margin-top: 5%; text-align: center; font-family: 'Bell MT'; font-weight: bolder; font-size: 1vw">@announcement.content</span>
+                <br>
+                @if (look)
+                {
+                    <button @onclick="() => getcontent(announcement.LecturerName, announcement.time)" style="font-size: 2vw; font-family: Forte; color: hotpink; outline: none; background: transparent; border: none">Comment</button>
+                }
+                else if (look == false)
+                {
+                    @if (content != null)
+                    {
+                        <br>
+                        <p style="font-size: 2vw; font-weight: bolder; color: rgba(255,68,221,0.8); font-family: Forte">Comment</p>
+                        <br>
+                        @foreach (var commentNES in _comments)
+                        {
+                            if (commentNES.username.Equals(_service.getName()) && commentNES.publisher.Equals(announcement.LecturerName))
+                            {
+                                <p style="color: #02abff; font-size: 1vw">@commentNES.username : @commentNES.content</p>
+                            }
+
+                        }
+                        <div style="width: 70%; height: 100%; flex-direction: row; display: flex; float: left; margin-top: 3%; left: 0; right: 0; margin: auto;">
+                            <input @bind="content" style="display: flex; height: 30px; width: 100%; border-radius: 2vw">
+                            <button @onclick="() => comment(announcement.LecturerName, announcement.time)" style="margin-left: 5%; border-radius: 1vw; height: 30px; width: 20%">Submit</button>
+                        </div>
+                    }
+                    else
+                    {
+                        <p>no comments were found</p>
+                    }
+                }
+
+            </div>
+            <br>
+            <hr style=" border: 1px solid black"/>
+            <br>
+        }
+    }
+    else if (type.Equals("Plan"))
+    {
+        <table class="table table-striped" style=" color: #f83a00; font-weight: bolder">
+                 <thead>
+                 <tr style="text-align: center; font-size: 1.5vw">
+                     <th class="th">Session</th>
+                     <th class="th">Date</th>
+                     <th class="th">Content</th>
+                     <th class="th">Preparation</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 @foreach(var NES in courses)
+                 {<tr style="text-align: center; font-size: 1vw">
+                      <td class="td">
+                          @NES.session
+                      </td>
+                      <td class="td">
+                          @NES.date
+                      </td>
+                      <td class="td">
+                          <ul>
+                              @NES.content
+                          </ul>
+                      </td>
+                      <td class="td">
+                          @NES.preparation
+                      </td>
+                  </tr>}
+                 </tbody>
+             </table> 
+    }
+</div>
+</div>
 
 @code {
     private CourseData _courseData = new CourseDataService();
     private IList<Models.Course> courses = new List<Models.Course>();
+    private IList<Announcement> _announcements = new List<Announcement>();
+    private IList<Comment> _comments = new List<Comment>();
+    private string content = "";
+    private UserData _userData = new UserDataService();
+    private bool look = true;
+    private string type = "";
 
     protected override async Task OnInitializedAsync()
     {
         courses = await _courseData.getAllCourses("NES");
+        _announcements = await _courseData.getAllAnnouncement("NES");
     }
 
+    public async void comment(string publisher, string time)
+    {
+        Comment comment = new Comment()
+        {
+            username = (_service.getName()),
+            publisher = publisher,
+            content = content,
+            time = time
+        };
+        await _userData.addComment(comment);
+        _comments = await _userData.getComments(_service.getName(), publisher, time);
+        content = "";
+    }
+    
+    public async void getcontent(string publisher, string time)
+    {
+        _comments = await _userData.getComments(_service.getName(), publisher, time);
+        look = false;
+    }
+
+    public void announcement()
+    {
+        type = "Announcement";
+    }
+    
+    public void plan()
+    {
+        type = "Plan";
+    }
 }

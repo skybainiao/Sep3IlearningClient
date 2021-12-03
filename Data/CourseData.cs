@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using LoginExample.Models;
 using LoginExample.Pages;
 using Course = LoginExample.Models.Course;
 
