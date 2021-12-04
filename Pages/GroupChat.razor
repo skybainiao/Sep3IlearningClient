@@ -35,20 +35,7 @@
         }
         else if(type.Equals("MyGroup"))
         {
-        @foreach (var groupname in groupName)
-        {
-            foreach (var mygroup in _groups)
-                {
-                    if (mygroup.memberName.Equals(_service.getName()))
-                             {
-                    if (groupname.Equals(mygroup.groupName))
-                    {
-                        <div>@groupname</div>
-                        <div>@mygroup.memberName</div>
-                    }
-                }   
-            }
-        }
+        
         }
     </div>
 </div>
@@ -60,12 +47,14 @@
     private GroupData _groupData = new GroupDataService();
     private IList<Group> _groups = new List<Group>();
     private IList<string> groupName = new List<string>();
+    private IList<string> memberName = new List<string>();
 
 
     protected override async Task OnInitializedAsync()
     {
         _groups = await _groupData.getAllGroups();
         groupName = await _groupData.getAllGroupName();
+        memberName = await _groupData.getAllGroupMember();
     }
 
     public void group()
