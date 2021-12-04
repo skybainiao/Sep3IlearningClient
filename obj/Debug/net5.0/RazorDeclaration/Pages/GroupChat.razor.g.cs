@@ -105,18 +105,20 @@ using LoginExample.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 58 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\GroupChat.razor"
+#line 57 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\GroupChat.razor"
        
     private string type = "";
     private GroupData _groupData = new GroupDataService();
     private IList<Group> _groups = new List<Group>();
     private IList<string> groupName = new List<string>();
+    private IList<string> memberName = new List<string>();
 
 
     protected override async Task OnInitializedAsync()
     {
         _groups = await _groupData.getAllGroups();
         groupName = await _groupData.getAllGroupName();
+        memberName = await _groupData.getAllGroupMember(_service.getName());
     }
 
     public void group()

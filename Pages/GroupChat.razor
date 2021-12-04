@@ -35,7 +35,19 @@
         }
         else if(type.Equals("MyGroup"))
         {
-        
+            foreach (var group in _groups)
+            {
+                if (group.memberName.Equals(_service.getName()))
+                {
+                    <div>@group.groupName</div>
+                                     
+
+                }
+            }
+            foreach (var memberName in memberName)
+            {
+                <div>@memberName</div>
+            }
         }
     </div>
 </div>
@@ -54,7 +66,7 @@
     {
         _groups = await _groupData.getAllGroups();
         groupName = await _groupData.getAllGroupName();
-        memberName = await _groupData.getAllGroupMember();
+        memberName = await _groupData.getAllGroupMember(_service.getName());
     }
 
     public void group()
