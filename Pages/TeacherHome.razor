@@ -1,0 +1,42 @@
+﻿@page "/TeacherHome"
+@inject NavigationManager _navigationManager;
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@using LoginExample.Authentication
+@inherits LayoutComponentBase
+
+<div class="nav">
+<div class="nav-ul">
+  <div class="item-content">
+    <img src="css/image/person.jpg" alt="Login" type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" width="30px" height="30px" style="margin-top: -3%">
+    <ul class="dropdown-menu dropdown-menu-right" style="background-color: rgba(0,0,0,0.4); margin-right: auto; margin-top: 7px">
+      <li><a class="dropdown-item" style="text-align: center; font-family: Aharoni" href="/Profile">Profile</a></li>
+      <li><a class="dropdown-item" style="text-align: center; font-family: Aharoni; background-color: rgba(0,0,0,0.4); color: rgba(255,255,255,0.4)" @onclick="go">Logout</a></li>
+    </ul>
+  </div>
+</div>
+</div>
+<hr style=" border: 2px solid white" />
+<br>
+<h3 style="text-align: center; font-size: 4vw; font-weight: bolder; color: black">Welcome </h3>
+
+<div style="text-align: center; margin-top: 5%">
+      <a href="/TeacherCourse">
+        <img src="css/image/course.png" width="23%" height="60%" style="box-shadow: 10px 10px 15px white; border-radius: 15%; overflow: hidden">
+      </a>
+      <a href="/TeacherAnnoucement">
+        <img src="css/image/announcement.png" width="23%" height="60%" style="box-shadow: 10px 10px 15px white; border-radius: 15%; overflow: hidden; margin-left: 5%">
+      </a>
+      <a href="/wechat">
+        <img src="css/image/chat.png" width="23%" height="60%" style="box-shadow: 10px 10px 15px white; border-radius: 15%; overflow: hidden; margin-left: 5%">
+      </a>
+</div>
+
+@code {
+  public async Task go() {
+
+    try {
+      ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+      _navigationManager.NavigateTo("/Login");
+    } catch (Exception e) { }
+  }
+}

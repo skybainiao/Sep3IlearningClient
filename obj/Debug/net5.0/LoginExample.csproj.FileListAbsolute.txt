@@ -376,3 +376,17 @@ C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\RazorDeclaration\Pages\OwnMoment.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\EditMoment.razor.g.cs
 C:\Users\45527\Desktop\Sep3Project\Sep3Client\obj\Debug\net5.0\Razor\Pages\OwnMoment.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\Pages\TeacherHome.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\Pages\TeacherHome.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\Pages\TeacherAnnoucement.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\Pages\TeacherCourse.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\Pages\TeacherAnnoucement.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\Pages\TeacherCourse.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\Pages\TeacherCAO.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\Pages\TeacherDNP.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\Pages\TeacherNES.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\RazorDeclaration\Pages\TeacherSDJ.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\Pages\TeacherCAO.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\Pages\TeacherDNP.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\Pages\TeacherNES.razor.g.cs
+D:\JetBrainsRider\Sep3IlearningClient1\obj\Debug\net5.0\Razor\Pages\TeacherSDJ.razor.g.cs

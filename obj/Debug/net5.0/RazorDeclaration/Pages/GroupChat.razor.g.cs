@@ -105,7 +105,7 @@ using LoginExample.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 45 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\GroupChat.razor"
+#line 58 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\GroupChat.razor"
        
     private string type = "";
     private GroupData _groupData = new GroupDataService();
@@ -119,10 +119,20 @@ using LoginExample.Models;
         groupName = await _groupData.getAllGroupName();
     }
 
+    public void group()
+    {
+        type = "Group";
+    }
+    
+    public void mygroup()
+    {
+        type = "MyGroup";
+    }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUserService _service { get; set; }
     }
 }
 #pragma warning restore 1591

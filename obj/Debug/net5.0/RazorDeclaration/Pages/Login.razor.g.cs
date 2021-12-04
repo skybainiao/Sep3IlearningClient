@@ -105,7 +105,7 @@ using LoginExample.Data.Impl;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Login.razor"
+#line 39 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Login.razor"
        
     
     public string username;
@@ -122,6 +122,11 @@ using LoginExample.Data.Impl;
         }
     }
 
+    public void admin()
+    {
+        NavigationManager.NavigateTo("/TeacherHome");
+    }
+    
     public void goRegister()
     {
         NavigationManager.NavigateTo("/Register");

@@ -22,7 +22,9 @@
                     <button type="submit" @onclick="PerformLogin" style="border-radius: 10px;width: 80px;height: 35px">
                         Login
                     </button>
-
+                    <button type="submit" @onclick="admin" style="border-radius: 10px;width: 80px;height: 35px; margin-left: 90px">
+                        Admin
+                    </button>
                     <button type="button" @onclick="goRegister" style="border-radius: 10px;width: 80px;height: 35px; margin-left: 90px">
                         Register
                     </button>
@@ -50,6 +52,11 @@
         }
     }
 
+    public void admin()
+    {
+        NavigationManager.NavigateTo("/TeacherHome");
+    }
+    
     public void goRegister()
     {
         NavigationManager.NavigateTo("/Register");

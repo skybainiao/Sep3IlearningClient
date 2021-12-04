@@ -105,7 +105,7 @@ using LoginExample.Data.Impl;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 36 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Register.razor"
+#line 33 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Register.razor"
        
     private String username;
     private String password;

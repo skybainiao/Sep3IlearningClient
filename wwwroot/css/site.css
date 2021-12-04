@@ -174,7 +174,8 @@ button:hover{
 
 input::-webkit-input-placeholder {
     color: white;
-    font-size: 15px;
+    font-size: 20px;
+    text-align: center;
 }
 
 form{
