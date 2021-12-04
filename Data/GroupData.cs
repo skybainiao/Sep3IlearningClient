@@ -9,5 +9,7 @@ namespace LoginExample.Data
         Task<IList<Group>> getAllGroups();
 
         Task<IList<string>> getAllGroupName();
+
+        Task<IList<string>> getAllGroupMember();
     }
 }

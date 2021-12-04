@@ -35,5 +35,18 @@ namespace LoginExample.Data.Impl
         }
         
         
+        public async Task<IList<string>> getAllGroupMember()
+        {
+            using HttpClient client = new HttpClient();
+            Task<string> stringAsync = client.GetStringAsync($"http://localhost:8080/getGroupMember");
+            string message = await stringAsync;
+            IList<string> result = JsonSerializer.Deserialize<List<string>>(message, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            return result;
+        }
+        
+        
     }
 }
