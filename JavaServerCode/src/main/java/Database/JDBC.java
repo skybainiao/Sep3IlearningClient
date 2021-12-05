@@ -1,7 +1,6 @@
 package Database;
 
-import Model.Moment;
-
+import Model.Group;
 import java.sql.*;
 
 public class JDBC {
@@ -311,6 +310,59 @@ public class JDBC {
   }
 
 
+  public ResultSet getGroups() throws SQLException
+  {
+    String sql = "select * from sep3data.Groups";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+    return preparedStatement.executeQuery();
+  }
+
+
+  public ResultSet getGroupName() throws SQLException
+  {
+    String sql = "select groupName\n" + "from sep3data.Groups\n" + "group by groupName;";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+    return preparedStatement.executeQuery();
+  }
+
+
+  public int addGroup(Group group) throws SQLException
+  {
+    String sql = "insert into sep3data.Groups(groupName,memberName)\n" + "values (?,?)";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+    preparedStatement.setString(1,group.getGroupName());
+    preparedStatement.setString(2,group.getMemberName());
+
+    return preparedStatement.executeUpdate();
+  }
+
+
+  public ResultSet getGroupMember(String username) throws SQLException
+  {
+    String sql = "select memberName\n" + "from sep3data.Groups\n"
+        + "where groupName = (select groupName from sep3data.Groups where memberName = ?);";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+    preparedStatement.setString(1,username);
+
+    return preparedStatement.executeQuery();
+  }
+
+
+  public int addCourse(String courseName,String session,String date,String content,String preparation)
+      throws SQLException
+  {
+    String sql = "insert into sep3data.Course(courseName, session, date, content,preparation)\n" + "values (?,?,?,?,?)";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+    preparedStatement.setString(1,courseName);
+    preparedStatement.setString(2,session);
+    preparedStatement.setString(3,date);
+    preparedStatement.setString(4,content);
+    preparedStatement.setString(5,preparation);
+
+    return preparedStatement.executeUpdate();
+  }
 
 
 }

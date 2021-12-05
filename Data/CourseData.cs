@@ -13,5 +13,7 @@ namespace LoginExample.Data
         Task<IList<Announcement>> getAllAnnouncement(string courseName);
 
         Task addCourse(Course course);
+
+        Task addAnnouncement(Announcement announcement);
     }
 }

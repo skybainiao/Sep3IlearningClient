@@ -1,4 +1,4 @@
-﻿package Model;
+package Model;
 
 import javafx.beans.property.StringProperty;
 

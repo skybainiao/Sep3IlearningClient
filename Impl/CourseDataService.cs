@@ -51,5 +51,17 @@ namespace LoginExample.Data.Impl
         }
         
         
+        public async Task addAnnouncement(Announcement announcement)
+        {
+            using HttpClient client = new HttpClient();
+            String stringasjson = JsonSerializer.Serialize(announcement, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            HttpContent content = new StringContent(stringasjson, Encoding.UTF8, "application/json");
+            await client.PostAsync("http://localhost:8080/addAnnouncement",content);
+        }
+        
+        
     }
 }

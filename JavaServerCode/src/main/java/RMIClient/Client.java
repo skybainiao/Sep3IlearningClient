@@ -63,5 +63,13 @@ public interface Client extends Remote
 
   ArrayList<Comment> getAllComments(String username,String publisher,String time) throws SQLException,RemoteException;
 
+  ArrayList<Group> groups() throws SQLException,RemoteException;
+
+  ArrayList<String> getGroupName() throws SQLException,RemoteException;
+
+  ArrayList<String> getGroupMember(String username) throws SQLException,RemoteException;
+
+  void addCourse(Course course) throws SQLException,RemoteException;
+
 
 }

@@ -1,11 +1,25 @@
 package Model;
 
-public class Group
+import java.io.Serializable;
+
+public class Group implements Serializable
 {
   private String groupName;
+  private String memberName;
 
-  public Group(String groupName){
+  public Group(String groupName,String memberName){
     this.groupName=groupName;
+    this.memberName=memberName;
+  }
+
+  public void setMemberName(String memberName)
+  {
+    this.memberName = memberName;
+  }
+
+  public String getMemberName()
+  {
+    return memberName;
   }
 
   public void setGroupName(String groupName)
@@ -20,6 +34,7 @@ public class Group
 
   @Override public String toString()
   {
-    return "Group{" + "groupName='" + groupName + '\'' + '}';
+    return "Group{" + "groupName='" + groupName + '\'' + ", memberName='"
+        + memberName + '\'' + '}';
   }
 }

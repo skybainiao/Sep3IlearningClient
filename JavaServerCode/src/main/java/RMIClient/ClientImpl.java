@@ -197,4 +197,28 @@ public class ClientImpl implements Client
     return server.getAllComments(username, publisher, time);
   }
 
+  @Override public ArrayList<Group> groups()
+      throws SQLException, RemoteException
+  {
+    return server.groups();
+  }
+
+  @Override public ArrayList<String> getGroupName()
+      throws SQLException, RemoteException
+  {
+    return server.getGroupName();
+  }
+
+  @Override public ArrayList<String> getGroupMember(String username)
+      throws SQLException, RemoteException
+  {
+    return server.getGroupMember(username);
+  }
+
+  @Override public void addCourse(Course course)
+      throws SQLException, RemoteException
+  {
+    server.addCourse(course);
+  }
+
 }

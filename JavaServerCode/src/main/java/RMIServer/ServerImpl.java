@@ -446,5 +446,81 @@ public class ServerImpl implements Server
   }
 
 
+  public ArrayList<Group> groups() throws SQLException,RemoteException
+  {
+    ResultSet resultSet = jdbc.getGroups();
+    ArrayList<Group> groups = new ArrayList<>();
+
+    try
+    {
+      while (resultSet.next()){
+        String groupName = resultSet.getString(1);
+        String memberName = resultSet.getString(2);
+
+        Group group = new Group(groupName,memberName);
+        groups.add(group);
+
+      }
+    }
+    catch (SQLException throwables)
+    {
+      throwables.printStackTrace();
+    }
+
+    return groups;
+  }
+
+
+  public ArrayList<String> getGroupName() throws SQLException,RemoteException
+  {
+    ResultSet resultSet = jdbc.getGroupName();
+    ArrayList<String> groups = new ArrayList<>();
+
+    try
+    {
+      while (resultSet.next()){
+        String groupName = resultSet.getString(1);
+
+        groups.add(groupName);
+
+      }
+    }
+    catch (SQLException throwables)
+    {
+      throwables.printStackTrace();
+    }
+
+    return groups;
+  }
+
+
+  public ArrayList<String> getGroupMember(String username) throws SQLException,RemoteException
+  {
+    ResultSet resultSet = jdbc.getGroupMember(username);
+    ArrayList<String> groupMember = new ArrayList<>();
+
+    try
+    {
+      while (resultSet.next()){
+        String groupMemberName = resultSet.getString(1);
+
+        groupMember.add(groupMemberName);
+
+      }
+    }
+    catch (SQLException throwables)
+    {
+      throwables.printStackTrace();
+    }
+
+    return groupMember;
+  }
+
+
+  public void addCourse(Course course) throws SQLException,RemoteException
+  {
+    jdbc.addCourse(course.getCourseName(),course.getSession(),course.getDate(),course.getContent(),course.getPreparation());
+  }
+
 
 }
