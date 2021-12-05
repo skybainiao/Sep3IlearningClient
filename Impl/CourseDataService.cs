@@ -39,6 +39,19 @@ namespace LoginExample.Data.Impl
         }
         
         
+        public async Task<IList<Announcement>> getAnnouncements()
+        {
+            using HttpClient client = new HttpClient();
+            Task<string> stringAsync = client.GetStringAsync($"http://localhost:8080/getAllAnnouncement");
+            string message = await stringAsync;
+            IList<Announcement> result = JsonSerializer.Deserialize<List<Announcement>>(message, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            return result;
+        }
+        
+        
         public async Task addCourse(Course course)
         {
             using HttpClient client = new HttpClient();

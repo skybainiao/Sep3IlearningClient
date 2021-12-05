@@ -90,8 +90,10 @@
     
     if (_profile!=null)
     {
+      
+      
       await userData.deleteProfile(_service.getName());
-
+      
       await userData.addProfile(_profile);
       
       _navigationManager.NavigateTo("/profile");
