@@ -4,6 +4,7 @@
 @using LoginExample.Models
 @using System.Diagnostics
 @inject IUserService _service;
+@inject NavigationManager NavigationManager;
 
 <hr style=" border: 2px solid white" />
 <br>
@@ -95,7 +96,12 @@
                 }
                 else if (type.Equals("Announcement"))
                 {
-                        <p style="font-size: 30px; margin-left: 3%; margin-top: 1%"><img src="css/image/trumpet.png" width="4%" height="4%" style="margin-right: 1%">New announcement available in <a></a><a></a>by teacher</p>
+                        @foreach (var announcement in _announcements)
+                        {
+                                <p style="font-size: 30px; margin-left: 3%; margin-top: 1%"><img src="css/image/trumpet.png" width="4%" height="4%" style="margin-right: 1%">New announcement available in <a type="button" style="text-decoration: underline; color: #0366d6; border: #9fcdff" @onclick="() => check(announcement.courseName)">@announcement.courseName</a> <label>@announcement.time</label> by <label>@announcement.LecturerName</label></p>
+                                
+                        }
+                        
                 }
 
         </div>
@@ -122,16 +128,35 @@
                 _messages = await chatData.getAllMessages(_service.getName());
                 friends = await _userData.getAllFriends(_service.getName());
                 requests = await _userData.getRequest(_service.getName());
+                _announcements = await _courseData.getAnnouncements();
         }
 
+
+        public void check(string courseName)
+        {
+                
+                if (courseName.Equals("SDJ"))
+                {
+                        NavigationManager.NavigateTo("/SDJ");
+                }
+                else if (courseName.Equals("DNP"))
+                {
+                        NavigationManager.NavigateTo("/DNP");
+                }
+                else if (courseName.Equals("CAO"))
+                {
+                        NavigationManager.NavigateTo("/CAO");
+                }
+                else if (courseName.Equals("NES"))
+                {
+                        NavigationManager.NavigateTo("/NES");
+                }
+
+        }
+        
         public async void getRequest()
         {
                 _requests = await _userData.getRequest(_service.getName());
-        }
-
-        public async void getgetAllAnnouncement()
-        {
-                
         }
 
         public void getFriendRequest()

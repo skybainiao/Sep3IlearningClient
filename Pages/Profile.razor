@@ -16,7 +16,7 @@
     
     @foreach (var profile in _profiles)
     {
-      if (profile.username.Contains(_service.getName()))
+      if (profile.username.Equals(_service.getName()))
         {
           <div style="margin-left: 12%; max-height: 100%">
                   
@@ -61,6 +61,7 @@
 <button @onclick="setttings" style="margin-top: 10%; margin-left: 90%">Edit</button>
 
 @code {
+  private string src;
   private UserData _userData = new UserDataService();
   private IList<Models.Profile> _profiles = new List<Models.Profile>();
 

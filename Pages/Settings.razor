@@ -17,11 +17,11 @@
             <div style="margin-left: 10%; ">
         
               <label class="settings-label1">Username:</label>
-              <label style="margin-left:2%; width: 25%; height: 20%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">@_service.getName()</label>
+              <input @bind="_profile.username" style="margin-left:2%; width: 25%; height: 20%; border:none; background-color: rgba(255,255,255,0.3); text-align: center">
         
               <label style="margin-left: 20%; font-family: Forte; font-size: 25px; color: white">Sex:</label>
-              <label @bind="_profile.sex" style="margin-left: 3%; color: white"><input type="radio" name="sexRadio" οnclick="getRadio();" checked="checked"/>Male</label>
-              <label @bind="_profile.sex" style="margin-left: 3%; color: white"><input type="radio" name="sexRadio" οnclick="getRadio();"/>Female</label>
+              <label style="margin-left: 3%; color: white"><input @bind-value="_profile.sex" type="radio" name="sexRadio" onclick="this" checked="checked"/>Male</label>
+              <label style="margin-left: 3%; color: white"><input @bind-value="_profile.sex" type="radio" name="sexRadio" οnclick="that"/>Female</label>
         
               <br>
               <hr style=" border: 0.5px solid grey"/>
@@ -82,8 +82,6 @@
   protected override async Task OnInitializedAsync()
   {
     _profiles = await userData.getProfile();
-    _profile.username = _service.getName();
-    
   }
 
 
@@ -93,7 +91,7 @@
     if (_profile!=null)
     {
       await userData.deleteProfile(_service.getName());
-    
+
       await userData.addProfile(_profile);
       
       _navigationManager.NavigateTo("/profile");

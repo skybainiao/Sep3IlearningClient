@@ -413,19 +413,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\45527\\.nuget\\packages\\": {}
+    "C:\\Users\\Chenben Tong\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\45527\\Desktop\\Sep3Project\\Sep3Client\\LoginExample.csproj",
+      "projectUniqueName": "D:\\JetBrainsRider\\Sep3IlearningClient1\\LoginExample.csproj",
       "projectName": "LoginExample",
-      "projectPath": "C:\\Users\\45527\\Desktop\\Sep3Project\\Sep3Client\\LoginExample.csproj",
-      "packagesPath": "C:\\Users\\45527\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\45527\\Desktop\\Sep3Project\\Sep3Client\\obj\\",
+      "projectPath": "D:\\JetBrainsRider\\Sep3IlearningClient1\\LoginExample.csproj",
+      "packagesPath": "C:\\Users\\Chenben Tong\\.nuget\\packages\\",
+      "outputPath": "D:\\JetBrainsRider\\Sep3IlearningClient1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\45527\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Chenben Tong\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -472,12 +472,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.12, 5.0.12]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -486,7 +480,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
