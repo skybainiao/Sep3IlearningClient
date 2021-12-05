@@ -35,19 +35,26 @@
         }
         else if(type.Equals("MyGroup"))
         {
-            foreach (var group in _groups)
-            {
-                if (group.memberName.Equals(_service.getName()))
+            <div style="width: 20%; height: 55%; background: -webkit-linear-gradient(left, #a0ffd7,#00ff95,#a0ffd7); top: 0; bottom: 0; left: 0; right: 0; margin: auto; margin-top: 4%; border-radius: 1vw">
+                @foreach (var group in _groups)
                 {
-                    <div>@group.groupName</div>
-                                     
-
+                
+                    if (group.memberName.Equals(_service.getName()))
+                    {
+                        <div style="text-align: center; font-size: 2vw; font-family: 'Arial Black'; margin-top: 3%">@group.groupName</div>
+                    }
                 }
-            }
-            foreach (var memberName in memberName)
-            {
-                <div>@memberName</div>
-            }
+            
+                @foreach (var memberName in memberName)
+                {
+                
+                    <div style="text-align: center; font-size: 1.5vw; font-family: 'Arial'; margin-top: 3%">@memberName</div>
+                } 
+            </div>
+            <form class="chaxun" style="flex-direction: row; align-items: center; justify-content: center; margin-top:-10%">
+                    <input style=" background-color: rgba(0,0,0,0.6); color:white; width:400px; height: 30px; border-radius: 10px; text-align: center" type="text" placeholder="Invite person" >
+                    <span><button style="margin-left: 20%; width: 70px; height: 30px;text-align: center; border-radius: 10px" type="button">Invite</button></span>
+            </form>
         }
     </div>
 </div>

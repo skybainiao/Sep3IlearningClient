@@ -100,7 +100,6 @@ using LoginExample.Data.Impl;
 #nullable restore
 #line 63 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Profile.razor"
        
-  private string src;
   private UserData _userData = new UserDataService();
   private IList<Models.Profile> _profiles = new List<Models.Profile>();
 
