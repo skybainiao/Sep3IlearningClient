@@ -111,8 +111,6 @@ using LoginExample.Data.Impl;
   protected override async Task OnInitializedAsync()
   {
     _profiles = await userData.getProfile();
-    _profile.username = _service.getName();
-    
   }
 
 
@@ -121,8 +119,10 @@ using LoginExample.Data.Impl;
     
     if (_profile!=null)
     {
+      
+      
       await userData.deleteProfile(_service.getName());
-    
+      
       await userData.addProfile(_profile);
       
       _navigationManager.NavigateTo("/profile");
