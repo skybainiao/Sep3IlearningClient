@@ -11,5 +11,7 @@ namespace LoginExample.Data
         Task<IList<string>> getAllGroupName();
 
         Task<IList<string>> getAllGroupMember(string username);
+
+        Task addGroup(Group group);
     }
 }

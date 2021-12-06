@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using LoginExample.Models;
@@ -45,6 +47,18 @@ namespace LoginExample.Data.Impl
                 PropertyNameCaseInsensitive = true
             });
             return result;
+        }
+        
+        
+        public async Task addGroup(Group group)
+        {
+            using HttpClient client = new HttpClient();
+            String stringasjson = JsonSerializer.Serialize(group, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            HttpContent content = new StringContent(stringasjson, Encoding.UTF8, "application/json");
+            await client.PostAsync("http://localhost:8080/addGroup",content);
         }
         
         

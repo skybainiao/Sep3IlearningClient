@@ -13,92 +13,99 @@ namespace LoginExample.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 1 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 2 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 3 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 4 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 5 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 6 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 7 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 8 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using LoginExample;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\JetBrainsRider\Sep3IlearningClient1\_Imports.razor"
+#line 9 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\_Imports.razor"
 using LoginExample.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Notice.razor"
+#line 2 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Notice.razor"
 using LoginExample.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Notice.razor"
+#line 3 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Notice.razor"
 using LoginExample.Data.Impl;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Notice.razor"
+#line 4 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Notice.razor"
 using LoginExample.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Notice.razor"
+#line 5 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Notice.razor"
 using System.Diagnostics;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Notice.razor"
+using Group = System.Text.RegularExpressions.Group;
 
 #line default
 #line hidden
@@ -112,7 +119,7 @@ using System.Diagnostics;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 114 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Notice.razor"
+#line 125 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\Notice.razor"
  
         private String type = "";
         private UserData _userData = new UserDataService();
@@ -121,15 +128,14 @@ using System.Diagnostics;
         private IList<Request> _requests = new List<Request>();
         private IList<Message> _messages = new List<Message>();
         private IList<User> friends = new List<User>();
-        private IList<Request> requests = new List<Request>();
         private IList<Announcement> _announcements = new List<Announcement>();
+        private GroupData _groupData = new GroupDataService();
 
         protected override async Task OnInitializedAsync()
         {
                 _requests = await _userData.getRequest(_service.getName());
                 _messages = await chatData.getAllMessages(_service.getName());
                 friends = await _userData.getAllFriends(_service.getName());
-                requests = await _userData.getRequest(_service.getName());
                 _announcements = await _courseData.getAnnouncements();
         }
 
@@ -200,6 +206,36 @@ using System.Diagnostics;
         }
 
         public void refuse(string username)
+        {
+                chatData.sendMessage(_service.getName(), username, _service.getName() + " refuse your request");
+                _userData.deleteRequest(username, _service.getName());
+        }
+
+        public void acceptGroup(String groupName,String memberName,String sender)
+        {
+                Models.Group group = new Models.Group()
+                {
+                        groupName = groupName,
+                        memberName = memberName
+                };
+                _groupData.addGroup(group);
+
+                for (int i = 0; i < _requests.Count; i++)
+                {
+                        if (!_requests[i].comment.Equals("Hello"))
+                        {
+                                _userData.deleteRequest(sender, _service.getName());
+                        }
+                }
+                _userData.deleteRequest(sender, _service.getName());
+                
+                getRequest();
+                
+                Console.WriteLine("add group");
+                
+        }
+
+        public void refuseGroup(String username)
         {
                 chatData.sendMessage(_service.getName(), username, _service.getName() + " refuse your request");
                 _userData.deleteRequest(username, _service.getName());

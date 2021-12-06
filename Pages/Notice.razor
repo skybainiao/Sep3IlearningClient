@@ -3,6 +3,7 @@
 @using LoginExample.Data.Impl
 @using LoginExample.Models
 @using System.Diagnostics
+@using Group = System.Text.RegularExpressions.Group
 @inject IUserService _service;
 @inject NavigationManager NavigationManager;
 
@@ -57,13 +58,17 @@
                                 <tbody>
                                 @foreach (var request in _requests)
                                 {
-                                        <tr style="text-align: center">
+                                        if (request.comment.Equals("Hello"))
+                                        {
+                                                <tr style="text-align: center">
                                                 <td><span style="font-weight: bolder; font-size: 2vw;">@request.sender</span></td>
                                                 <td><span style="font-weight: bolder; font-size: 2vw;">@request.comment</span></td>
                                                 <td><button @onclick="() =>accept(request.sender,request.receiver) "class="notice-button2"><img src="css/image/GreenBingo.png" width="30%" height="30%"></button></td>
                                                 <td><button @onclick="() => refuse(request.sender)" class="notice-button2"><img src="css/image/RedCross.png" width="30%" height="30%"></button></td>
                                                 <td><button class="notice-button2"><img src="css/image/BlueInformation.png" width="30%" height="30%"></button></td>
-                                        </tr>
+                                                </tr> 
+                                        }
+                                       
                                 }
                                 </tbody>
                         </table>
@@ -75,6 +80,7 @@
                                 <tr style="text-align: center">
                                         <th><span></span></th>
                                         <th><span>Groupname</span></th>
+                                        <th><span>Comment</span></th>
                                         <th><span>Accept</span></th>
                                         <th><span>Refuse</span></th>
                                         <th><span>Information</span></th>
@@ -83,13 +89,18 @@
                                 <tbody>
                                 @foreach (var request in _requests)
                                 {
-                                        <tr style="text-align: center">
-                                                <td><label><img src="css/image/GroupRequest.png" width="30%" height="30%"></label></td>
-                                                <td><span style="font-weight: bolder; font-size: 2vw;"></span></td>
-                                                <td><button class="notice-button2"><img src="css/image/GreenBingo.png" width="30%" height="30%"></button></td>
-                                                <td><button class="notice-button2"><img src="css/image/RedCross.png" width="30%" height="30%"></button></td>
-                                                <td><button class="notice-button2"><img src="css/image/BlueInformation.png" width="30%" height="30%"></button></td>
-                                        </tr>
+                                        if (!request.comment.Equals("Hello"))
+                                        {
+                                             <tr style="text-align: center">
+                                                  <td><label><img src="css/image/GroupRequest.png" width="30%" height="30%"></label></td>
+                                                     <td><span style="font-weight: bolder; font-size: 2vw;">@request.sender</span></td>
+                                                     <td><span style="font-weight: bolder; font-size: 2vw;">@request.comment</span></td>
+                                                  <td><button @onclick="() => acceptGroup(request.comment,_service.getName(),request.sender)" class="notice-button2"><img src="css/image/GreenBingo.png" width="30%" height="30%"></button></td>
+                                                  <td><button @onclick="() => refuseGroup(request.sender)" class="notice-button2"><img src="css/image/RedCross.png" width="30%" height="30%"></button></td>
+                                                  <td><button class="notice-button2"><img src="css/image/BlueInformation.png" width="30%" height="30%"></button></td>
+                                             </tr>   
+                                        }
+                                        
                                 }
                                 </tbody>
                         </table>
@@ -119,15 +130,14 @@
         private IList<Request> _requests = new List<Request>();
         private IList<Message> _messages = new List<Message>();
         private IList<User> friends = new List<User>();
-        private IList<Request> requests = new List<Request>();
         private IList<Announcement> _announcements = new List<Announcement>();
+        private GroupData _groupData = new GroupDataService();
 
         protected override async Task OnInitializedAsync()
         {
                 _requests = await _userData.getRequest(_service.getName());
                 _messages = await chatData.getAllMessages(_service.getName());
                 friends = await _userData.getAllFriends(_service.getName());
-                requests = await _userData.getRequest(_service.getName());
                 _announcements = await _courseData.getAnnouncements();
         }
 
@@ -198,6 +208,36 @@
         }
 
         public void refuse(string username)
+        {
+                chatData.sendMessage(_service.getName(), username, _service.getName() + " refuse your request");
+                _userData.deleteRequest(username, _service.getName());
+        }
+
+        public void acceptGroup(String groupName,String memberName,String sender)
+        {
+                Models.Group group = new Models.Group()
+                {
+                        groupName = groupName,
+                        memberName = memberName
+                };
+                _groupData.addGroup(group);
+
+                for (int i = 0; i < _requests.Count; i++)
+                {
+                        if (!_requests[i].comment.Equals("Hello"))
+                        {
+                                _userData.deleteRequest(sender, _service.getName());
+                        }
+                }
+                _userData.deleteRequest(sender, _service.getName());
+                
+                getRequest();
+                
+                Console.WriteLine("add group");
+                
+        }
+
+        public void refuseGroup(String username)
         {
                 chatData.sendMessage(_service.getName(), username, _service.getName() + " refuse your request");
                 _userData.deleteRequest(username, _service.getName());
