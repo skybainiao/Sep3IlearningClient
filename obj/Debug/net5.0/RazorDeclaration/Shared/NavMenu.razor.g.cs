@@ -97,7 +97,7 @@ using LoginComponent;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 96 "D:\JetBrainsRider\Sep3IlearningClient1\Shared\NavMenu.razor"
+#line 72 "D:\JetBrainsRider\Sep3IlearningClient1\Shared\NavMenu.razor"
        
     public string username;
          private string password;

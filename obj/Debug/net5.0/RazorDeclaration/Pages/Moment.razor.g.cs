@@ -107,7 +107,7 @@ using LoginExample.Models;
 #nullable restore
 #line 73 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Moment.razor"
        
-    private string url1 = "css/image/Redheart.png";
+    private string url1 = "css/image/RedHeart.png";
     private string url2 = "css/image/GreenDislike.png";
     private UserData _userData = new UserDataService();
     private ChatData _chatData = new ChatDataService();

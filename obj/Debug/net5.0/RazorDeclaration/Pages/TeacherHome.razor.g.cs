@@ -82,6 +82,13 @@ using LoginExample.Authentication;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\TeacherHome.razor"
+using LoginExample.Data;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/TeacherHome")]
     public partial class TeacherHome : LayoutComponentBase
     {
@@ -91,8 +98,9 @@ using LoginExample.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\TeacherHome.razor"
+#line 36 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\TeacherHome.razor"
        
+
   public async Task go() {
 
     try {
@@ -104,6 +112,7 @@ using LoginExample.Authentication;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUserService _service { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager _navigationManager { get; set; }
     }

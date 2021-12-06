@@ -1,4 +1,6 @@
 ﻿@page "/OwnMoment"
+@using LoginExample.Data
+@using LoginExample.Data.Impl
 
 <hr style=" border: 2px solid white" />
 <br>
@@ -6,22 +8,26 @@
 <div class="Moment-main" style="height: 70vh">
     <div style="position: relative; width: 100%; height: 100%; background-color: rgba(255,255,255,0.5); overflow-y: auto">
         
-        {
-            <div style="display: flex; flex-direction: row; display: -webkit-flex; justify-content: center; text-align: center">
-                <img src="css/image/MomentPerson.png" width="2.5%" height="2.5%">
-             
-                <div style="display: flex; flex-direction: column">
-                    <a style="font-size: 1vw">username</a>
-                    <span style="font-size: 1vw">.time</span>
-                </div>
+        {@foreach (var mymoment in _moments)
+                     {
+        <div style="display: flex; flex-direction: row; display: -webkit-flex; justify-content: center; text-align: center">
+            <img src="css/image/MomentPerson.png" width="2.5%" height="2.5%">
+            <div style="display: flex; flex-direction: column">
+                <a style="font-size: 1vw; font-family: Algerian; color:#3200f8">@mymoment.username</a>
+                <span style="font-size: 1vw; font-family: 'Berlin Sans FB'">@mymoment.time</span>
             </div>
+        </div>
             <div style="display: flex; flex-direction: column; margin-top: -3%; justify-content: center; text-align: center">
-                <span style="margin-top: 5%; text-align: center; font-family: 'Bell MT'; font-weight: bolder; font-size: 1vw">content</span>
+                <span style="margin-top: 5%; text-align: center; font-family: 'Bell MT'; font-weight: bolder; font-size: 1vw">@mymoment.content</span>
                 <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 3%">
-                    <p>Like:
-                    </p>
-                    <p>Dislike:
-                    </p>
+                    <p>
+                        <img src=@url1 width="10%" height="60%" style="text-align: center">
+                        <label style="color: black">@mymoment.like</label>
+                        </p>
+                    <p>
+                        <img src=@url2 width="10%" height="60%" style="text-align: center">
+                        <label style="color: black">@mymoment.dislike</label>
+                        </p>
                 </div>
             </div>
                           
@@ -34,5 +40,14 @@
 
 <hr style=" border: 2px solid white" />
 @code {
-    
+    private IList<Models.Moment> _moments = new List<Models.Moment>();
+    private UserData _userData = new UserDataService();
+    private string url1 = "css/image/RedHeart.png";
+    private string url2 = "css/image/GreenDislike.png";
+
+    protected override async Task OnInitializedAsync()
+    {
+        _moments = await _userData.getMoments();
+    }
+
 }

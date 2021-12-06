@@ -6,5 +6,7 @@ public interface IUserService {
     User ValidateUser(string userName, string password);
 
     String getName();
+
+    void setName(String name);
 }
 }

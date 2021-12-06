@@ -3,6 +3,7 @@
 @using LoginExample.Authentication
 @using LoginExample.Data
 @using LoginExample.Data.Impl
+@using LoginExample.Models
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
 
@@ -42,11 +43,18 @@
     private string password;
     private string errorMessage;
     private UserData _userData = new UserDataService();
+    private IList<User> _users = new List<User>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _users = await _userData.getAllUsers();
+    }
 
     public async Task PerformLogin() {
         errorMessage = "";
         try {
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+            NavigationManager.NavigateTo("/Home");
         } catch (Exception e) {
             errorMessage = e.Message;
         }
@@ -54,7 +62,50 @@
 
     public void admin()
     {
-        NavigationManager.NavigateTo("/TeacherHome");
+        for (int i = 0; i < _users.Count; i++)
+        {
+            if (username.Equals("Jan Munch Pedersen") && password.Equals("Jan"))
+            {
+                errorMessage = "";
+                try {
+                    ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+                    NavigationManager.NavigateTo("/TeacherHome");
+                } catch (Exception e) {
+                    errorMessage = e.Message;
+                }
+            }
+            else if (username.Equals("Troels Mortensen") && password.Equals("Troels"))
+            {
+                errorMessage = "";
+                try {
+                    ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+                    NavigationManager.NavigateTo("/TeacherHome");
+                } catch (Exception e) {
+                    errorMessage = e.Message;
+                }
+            }
+            else if (username.Equals("Poul Væggemose") && password.Equals("Poul"))
+            {
+                errorMessage = "";
+                try {
+                    ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+                    NavigationManager.NavigateTo("/TeacherHome");
+                } catch (Exception e) {
+                    errorMessage = e.Message;
+                }
+            }
+            else if (username.Equals("Lars Bech Sørensen") && password.Equals("Lars"))
+            {
+                errorMessage = "";
+                try {
+                    ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+                    NavigationManager.NavigateTo("/TeacherHome");
+                } catch (Exception e) {
+                    errorMessage = e.Message;
+                }
+            }
+        }
+        
     }
     
     public void goRegister()

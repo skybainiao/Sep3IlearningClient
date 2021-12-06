@@ -1,17 +1,22 @@
 ﻿@using LoginComponent
 @using LoginExample.Authentication
+@using LoginExample.Data
 @inherits LayoutComponentBase
 @inject NavigationManager NavigationManager
 @inject AuthenticationStateProvider AuthenticationStateProvider
+ @inject IUserService _service;
 
 
 <AuthorizeView>
     
-    <div class="nav">
-        <NavMenu/>
-        <Home/>
-    </div>
-   
+    @if (!(_service.getName().Equals("Troels Mortensen") || _service.getName().Equals("Jan Munch Pedersen") || _service.getName().Equals("Poul Væggemose") || _service.getName().Equals("Lars Bech Sørensen")))
+    {
+        <div class="nav">
+                <NavMenu/>
+                <Home/>
+            </div>
+    }
+    
 </AuthorizeView>
 
 

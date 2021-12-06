@@ -2,7 +2,9 @@
 @inject NavigationManager _navigationManager;
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @using LoginExample.Authentication
+@using LoginExample.Data
 @inherits LayoutComponentBase
+@inject IUserService _service;
 
 <div class="nav">
 <div class="nav-ul">
@@ -17,7 +19,7 @@
 </div>
 <hr style=" border: 2px solid white" />
 <br>
-<h3 style="text-align: center; font-size: 4vw; font-weight: bolder; color: black">Welcome </h3>
+<h3 style="text-align: center; font-size: 4vw; font-weight: bolder; color: black">Welcome @_service.getName()</h3>
 
 <div style="text-align: center; margin-top: 5%">
       <a href="/TeacherCourse">
@@ -32,6 +34,7 @@
 </div>
 
 @code {
+
   public async Task go() {
 
     try {

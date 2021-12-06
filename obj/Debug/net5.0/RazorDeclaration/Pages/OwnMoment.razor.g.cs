@@ -75,6 +75,20 @@ using LoginExample.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\OwnMoment.razor"
+using LoginExample.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\OwnMoment.razor"
+using LoginExample.Data.Impl;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/OwnMoment")]
     public partial class OwnMoment : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -83,6 +97,23 @@ using LoginExample.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 42 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\OwnMoment.razor"
+       
+    private IList<Models.Moment> _moments = new List<Models.Moment>();
+    private UserData _userData = new UserDataService();
+    private string url1 = "css/image/RedHeart.png";
+    private string url2 = "css/image/GreenDislike.png";
+
+    protected override async Task OnInitializedAsync()
+    {
+        _moments = await _userData.getMoments();
+    }
+
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

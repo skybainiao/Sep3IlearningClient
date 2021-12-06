@@ -96,6 +96,13 @@ using LoginExample.Data.Impl;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Login.razor"
+using LoginExample.Models;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/login")]
     public partial class Login : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -105,18 +112,25 @@ using LoginExample.Data.Impl;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Login.razor"
+#line 40 "D:\JetBrainsRider\Sep3IlearningClient1\Pages\Login.razor"
        
     
     public string username;
     private string password;
     private string errorMessage;
     private UserData _userData = new UserDataService();
+    private IList<User> _users = new List<User>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _users = await _userData.getAllUsers();
+    }
 
     public async Task PerformLogin() {
         errorMessage = "";
         try {
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+            NavigationManager.NavigateTo("/Home");
         } catch (Exception e) {
             errorMessage = e.Message;
         }
@@ -124,7 +138,50 @@ using LoginExample.Data.Impl;
 
     public void admin()
     {
-        NavigationManager.NavigateTo("/TeacherHome");
+        for (int i = 0; i < _users.Count; i++)
+        {
+            if (username.Equals("Jan Munch Pedersen") && password.Equals("Jan"))
+            {
+                errorMessage = "";
+                try {
+                    ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+                    NavigationManager.NavigateTo("/TeacherHome");
+                } catch (Exception e) {
+                    errorMessage = e.Message;
+                }
+            }
+            else if (username.Equals("Troels Mortensen") && password.Equals("Troels"))
+            {
+                errorMessage = "";
+                try {
+                    ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+                    NavigationManager.NavigateTo("/TeacherHome");
+                } catch (Exception e) {
+                    errorMessage = e.Message;
+                }
+            }
+            else if (username.Equals("Poul Væggemose") && password.Equals("Poul"))
+            {
+                errorMessage = "";
+                try {
+                    ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+                    NavigationManager.NavigateTo("/TeacherHome");
+                } catch (Exception e) {
+                    errorMessage = e.Message;
+                }
+            }
+            else if (username.Equals("Lars Bech Sørensen") && password.Equals("Lars"))
+            {
+                errorMessage = "";
+                try {
+                    ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+                    NavigationManager.NavigateTo("/TeacherHome");
+                } catch (Exception e) {
+                    errorMessage = e.Message;
+                }
+            }
+        }
+        
     }
     
     public void goRegister()

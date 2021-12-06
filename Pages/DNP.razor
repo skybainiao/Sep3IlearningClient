@@ -9,8 +9,8 @@
 
 <div style="display:flex; flex-direction: column; height: 75vh">
     <div style="display: flex; flex-direction: row; justify-content: center">
-        <button @onclick="announcement">Announcement</button>
-        <button @onclick="plan" style="margin-left: 5%">Plan</button>
+        <button @onclick="announcement" style="border-radius: 1vw; color: #cddc39; background: transparent; border: 1px solid orangered">Announcement</button>
+        <button @onclick="plan" style="margin-left: 5%; border-radius: 1vw; color: #cddc39; background: transparent; border: 1px solid orangered">Plan</button>
     </div>
 <div class="DNP-text" style="position: relative; width: 70%; height: 100%; top: 0; right: 0; left: 0; bottom: 0; margin: auto; background-color: rgba(255,255,255,0.7); color: black; margin-top: 3%; overflow-y: auto">
     @if (type.Equals("Announcement"))
