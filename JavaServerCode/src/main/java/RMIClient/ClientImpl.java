@@ -221,4 +221,22 @@ public class ClientImpl implements Client
     server.addCourse(course);
   }
 
+  @Override public void addAnnouncement(Announcement announcement)
+      throws SQLException, RemoteException
+  {
+    server.addAnnouncement(announcement);
+  }
+
+  @Override public ArrayList<Announcement> getAllAnnouncement()
+      throws SQLException, RemoteException
+  {
+    return server.getAllAnnouncement();
+  }
+
+  @Override public void addGroup(Group group)
+      throws SQLException, RemoteException
+  {
+    server.addGroup(group);
+  }
+
 }

@@ -140,7 +140,7 @@ using LoginExample.Models;
     {
         for (int i = 0; i < _users.Count; i++)
         {
-            if (username.Equals("Jan Munch Pedersen") && password.Equals("Jan"))
+            if (username.Equals("Jan") && password.Equals("Jan"))
             {
                 errorMessage = "";
                 try {

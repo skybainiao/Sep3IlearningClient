@@ -241,6 +241,15 @@ public class JDBC {
   }
 
 
+  public ResultSet getAllAnnouncement() throws SQLException
+  {
+    String sql = "select *\n" + "from sep3data.Announcement";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+    return preparedStatement.executeQuery();
+  }
+
+
   public ResultSet getAllMoments() throws SQLException
   {
     String sql = "select * from sep3data.Moment;";
@@ -360,6 +369,20 @@ public class JDBC {
     preparedStatement.setString(3,date);
     preparedStatement.setString(4,content);
     preparedStatement.setString(5,preparation);
+
+    return preparedStatement.executeUpdate();
+  }
+
+
+  public int addAnnouncement(String courseName,String LecturerName,String time,String content)
+      throws SQLException
+  {
+    String sql = "insert into Announcement(courseName, LecturerName, time, content)\n" + "values (?,?,?,?)";
+    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+    preparedStatement.setString(1,courseName);
+    preparedStatement.setString(2,LecturerName);
+    preparedStatement.setString(3,time);
+    preparedStatement.setString(4,content);
 
     return preparedStatement.executeUpdate();
   }

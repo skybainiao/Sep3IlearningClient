@@ -75,6 +75,27 @@ using LoginExample.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\TeacherDNP.razor"
+using LoginExample.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\TeacherDNP.razor"
+using LoginExample.Data.Impl;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\TeacherDNP.razor"
+using LoginExample.Extra;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/TeacherDNP")]
     public partial class TeacherDNP : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -83,6 +104,34 @@ using LoginExample.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 16 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\TeacherDNP.razor"
+       
+    private CourseData courseData = new CourseDataService();
+
+    private Models.Course _course = new Models.Course();
+
+    private Time _time = new Time();
+
+
+    public async void upload()
+    {
+        Models.Course course = new Models.Course()
+        {
+            content = _course.content,
+            preparation = _course.preparation,
+            session = _course.session,
+            courseName = "DNP",
+            date = _time.getNowTime()
+        };
+        await courseData.addCourse(course);
+        Console.WriteLine("DNP post");
+        
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

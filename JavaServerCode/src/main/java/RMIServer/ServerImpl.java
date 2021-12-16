@@ -367,6 +367,33 @@ public class ServerImpl implements Server
   }
 
 
+  public ArrayList<Announcement> getAllAnnouncement() throws SQLException,RemoteException
+  {
+    ResultSet resultSet = jdbc.getAllAnnouncement();
+    ArrayList<Announcement> announcements = new ArrayList<>();
+
+    try
+    {
+      while (resultSet.next()){
+        String coursename = resultSet.getString(1);
+        String LecturerName = resultSet.getString(2);
+        String time = resultSet.getString(3);
+        String content = resultSet.getString( 4);
+
+        Announcement announcement = new Announcement(coursename,LecturerName,time,content);
+        announcements.add( announcement);
+
+      }
+    }
+    catch (SQLException throwables)
+    {
+      throwables.printStackTrace();
+    }
+
+    return announcements;
+  }
+
+
   public ArrayList<Moment> getAllMoments() throws SQLException,RemoteException
   {
     ResultSet resultSet = jdbc.getAllMoments();
@@ -520,6 +547,18 @@ public class ServerImpl implements Server
   public void addCourse(Course course) throws SQLException,RemoteException
   {
     jdbc.addCourse(course.getCourseName(),course.getSession(),course.getDate(),course.getContent(),course.getPreparation());
+  }
+
+
+  public void addAnnouncement(Announcement announcement) throws SQLException,RemoteException
+  {
+    jdbc.addAnnouncement(announcement.getCourseName(),announcement.getLecturerName(),announcement.getTime(),announcement.getContent());
+  }
+
+
+  public void addGroup(Group group) throws SQLException,RemoteException
+  {
+    jdbc.addGroup(group);
   }
 
 

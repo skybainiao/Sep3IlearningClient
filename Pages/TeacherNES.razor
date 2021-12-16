@@ -1,14 +1,38 @@
 ﻿@page "/TeacherNES"
+@using LoginExample.Data
+@using LoginExample.Data.Impl
+@using LoginExample.Extra
 
 <hr style=" border: 2px solid white" />
 <br>
 <h3 style="text-align: center; font-family: 'Arial Black'; font-size: 2.5vw">NES</h3>
 
 <div style="display: flex; flex-direction: column; width: 100%; height: 70vh; text-align: center; justify-content: center; align-items: center; margin-top: -4%">
-    <input style="width: 50%; height: 20%; color: black; background-color: rgba(255,255,255,0.5)" placeholder="Session">
-    <input style="width: 50%; height: 20%; color: black; background-color: rgba(255,255,255,0.5); margin-top: 2%" placeholder="Preparation">
-    <input style="width: 50%; height: 20%; color: black; background-color: rgba(255,255,255,0.5); margin-top: 2%" placeholder="Content">
+    <input @bind="_course.session" style="width: 50%; height: 20%; color: black; background-color: rgba(255,255,255,0.5)" placeholder="Session">
+    <input @bind="_course.preparation" style="width: 50%; height: 20%; color: black; background-color: rgba(255,255,255,0.5); margin-top: 2%" placeholder="Preparation">
+    <input @bind="_course.content" style="width: 50%; height: 20%; color: black; background-color: rgba(255,255,255,0.5); margin-top: 2%" placeholder="Content">
 </div>
+<button @onclick="upload" style="margin-top: 2%; margin-left: 90%">Upload</button>
 @code {
-    
+    private CourseData courseData = new CourseDataService();
+
+    private Models.Course _course = new Models.Course();
+
+    private Time _time = new Time();
+
+
+    public async void upload()
+    {
+        Models.Course course = new Models.Course()
+        {
+            content = _course.content,
+            preparation = _course.preparation,
+            session = _course.session,
+            courseName = "NES",
+            date = _time.getNowTime()
+        };
+        await courseData.addCourse(course);
+        Console.WriteLine("NES post");
+        
+    }
 }

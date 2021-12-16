@@ -75,6 +75,34 @@ using LoginExample.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\TeacherAnnoucement.razor"
+using LoginExample.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\TeacherAnnoucement.razor"
+using LoginExample.Data.Impl;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\TeacherAnnoucement.razor"
+using LoginExample.Extra;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\TeacherAnnoucement.razor"
+using LoginExample.Models;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/TeacherAnnoucement")]
     public partial class TeacherAnnoucement : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -83,6 +111,77 @@ using LoginExample.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 19 "C:\Users\45527\Desktop\Sep3Project\Sep3Client\Pages\TeacherAnnoucement.razor"
+       
+    private CourseData _courseData = new CourseDataService();
+
+    private Announcement _announcement = new Announcement();
+
+    private Time _time = new Time();
+
+
+    public async void upload()
+    {
+        if (_service.getName().Equals("Jan"))
+        {
+            Announcement announcement = new Announcement()
+            {
+                content = _announcement.content,
+                courseName = "SDJ",
+                LecturerName = _service.getName(),
+                time = _time.getNowTime()
+            };
+            Console.WriteLine("announcement");
+            await _courseData.addAnnouncement(announcement);
+            
+        }
+        else if (_service.getName().Equals("Troels Mortensen"))
+        {
+            Announcement announcement = new Announcement()
+            {
+                content = _announcement.content,
+                courseName = "DNP",
+                LecturerName = _service.getName(),
+                time = _time.getNowTime()
+            };
+            await _courseData.addAnnouncement(announcement);
+        }
+        else if (_service.getName().Equals("Poul Væggemose"))
+        {
+            Announcement announcement = new Announcement()
+            {
+                content = _announcement.content,
+                courseName = "NES",
+                LecturerName = _service.getName(),
+                time = _time.getNowTime()
+            };
+            await _courseData.addAnnouncement(announcement);
+        }
+        else if (_service.getName().Equals("Lars Bech Sørensen"))
+        {
+            Announcement announcement = new Announcement()
+            {
+                content = _announcement.content,
+                courseName = "CAO",
+                LecturerName = _service.getName(),
+                time = _time.getNowTime()
+            };
+            await _courseData.addAnnouncement(announcement);
+        }
+        
+        
+        
+        
+    }
+
+
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUserService _service { get; set; }
     }
 }
 #pragma warning restore 1591

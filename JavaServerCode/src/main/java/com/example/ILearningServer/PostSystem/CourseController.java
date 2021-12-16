@@ -1,5 +1,6 @@
 package com.example.ILearningServer.PostSystem;
 
+import Model.Announcement;
 import Model.Course;
 import RMIClient.Client;
 import RMIClient.ClientImpl;
@@ -48,12 +49,31 @@ public class CourseController
   }
 
 
+  @GetMapping("/getAllAnnouncement")
+  public String getAllAnnouncement()
+      throws SQLException, RemoteException
+  {
+    String str = gson.toJson(client.getAllAnnouncement());
+
+    return str;
+  }
+
+
   @PostMapping("/addCourse")
   public void addCourse(@RequestParam String course)
       throws SQLException, RemoteException
   {
     Course course1 = gson.fromJson(course,Course.class);
     client.addCourse(course1);
+  }
+
+
+  @PostMapping("/addAnnouncement")
+  public void addAnnouncement(@RequestParam String announcement)
+      throws SQLException, RemoteException
+  {
+    Announcement announcement1 = gson.fromJson(announcement, Announcement.class);
+    client.addAnnouncement(announcement1);
   }
 
 

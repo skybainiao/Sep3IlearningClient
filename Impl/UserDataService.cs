@@ -79,7 +79,7 @@ namespace LoginExample.Data.Impl
             HttpContent content = new StringContent(stringasjson, Encoding.UTF8, "application/json");
             await client.PostAsync("http://localhost:8080/sendRequest",content);
             Console.WriteLine(request.sender);
-        }
+        }  
 
 
         public async Task<IList<Request>> getRequest(String username)
